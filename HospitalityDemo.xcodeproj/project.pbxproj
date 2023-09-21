@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FB82ABB325C00BA95E5 /* libFMDB.a */; };
+		099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */; };
+		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
 		099AC4282AB4E1CF0023D8B3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4272AB4E1CF0023D8B3 /* AppState.swift */; };
 		099AC42C2AB4E2EF0023D8B3 /* SystemServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC42B2AB4E2EF0023D8B3 /* SystemServices.swift */; };
 		099AC42E2AB4E43C0023D8B3 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC42D2AB4E43C0023D8B3 /* AppTabView.swift */; };
@@ -20,6 +23,7 @@
 		099AC4432AB7D8180023D8B3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4422AB7D8180023D8B3 /* WebView.swift */; };
 		099AC4452AB7DBC20023D8B3 /* ConciergeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4442AB7DBC20023D8B3 /* ConciergeView.swift */; };
 		099AC4472AB7DD030023D8B3 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4462AB7DD030023D8B3 /* RewardsView.swift */; };
+		099AC4622AB8F0010023D8B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4612AB8F0000023D8B3 /* AppDelegate.swift */; };
 		099B12662AB201A000DA4B8F /* HospitalityDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B12652AB201A000DA4B8F /* HospitalityDemoApp.swift */; };
 		099B12682AB201A000DA4B8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B12672AB201A000DA4B8F /* ContentView.swift */; };
 		099B126A2AB201A200DA4B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099B12692AB201A200DA4B8F /* Assets.xcassets */; };
@@ -53,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		099A2FB82ABB325C00BA95E5 /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = HospitalityDemo/Shared/Libraries/libFMDB.a; sourceTree = "<group>"; };
+		099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLCipher.a; path = HospitalityDemo/Shared/Libraries/libSQLCipher.a; sourceTree = "<group>"; };
+		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
 		099AC4272AB4E1CF0023D8B3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		099AC42B2AB4E2EF0023D8B3 /* SystemServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemServices.swift; sourceTree = "<group>"; };
 		099AC42D2AB4E43C0023D8B3 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -66,6 +73,8 @@
 		099AC4422AB7D8180023D8B3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		099AC4442AB7DBC20023D8B3 /* ConciergeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeView.swift; sourceTree = "<group>"; };
 		099AC4462AB7DD030023D8B3 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
+		099AC4582AB8D5090023D8B3 /* HospitalityDemo-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HospitalityDemo-BridgingHeader.h"; sourceTree = "<group>"; };
+		099AC4612AB8F0000023D8B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		099B12622AB201A000DA4B8F /* HospitalityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HospitalityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099B12652AB201A000DA4B8F /* HospitalityDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalityDemoApp.swift; sourceTree = "<group>"; };
 		099B12672AB201A000DA4B8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +99,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */,
+				099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */,
+				099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +129,7 @@
 				099B12672AB201A000DA4B8F /* ContentView.swift */,
 				099AC4272AB4E1CF0023D8B3 /* AppState.swift */,
 				099AC42D2AB4E43C0023D8B3 /* AppTabView.swift */,
+				099AC4612AB8F0000023D8B3 /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -124,6 +137,7 @@
 		099AC4292AB4E2B40023D8B3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				099AC44A2AB8BF0B0023D8B3 /* Libraries */,
 				099AC42F2AB4E5810023D8B3 /* Models */,
 				099AC42A2AB4E2CE0023D8B3 /* Services */,
 				099AC4302AB4E58E0023D8B3 /* Views */,
@@ -195,6 +209,23 @@
 			path = Rewards;
 			sourceTree = "<group>";
 		};
+		099AC44A2AB8BF0B0023D8B3 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		099AC44B2AB8CCB80023D8B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */,
+				099A2FB82ABB325C00BA95E5 /* libFMDB.a */,
+				099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		099B12592AB201A000DA4B8F = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +233,7 @@
 				099B12762AB201A200DA4B8F /* HospitalityDemoTests */,
 				099B12802AB201A200DA4B8F /* HospitalityDemoUITests */,
 				099B12632AB201A000DA4B8F /* Products */,
+				099AC44B2AB8CCB80023D8B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,6 +260,7 @@
 				099B12692AB201A200DA4B8F /* Assets.xcassets */,
 				099B126B2AB201A200DA4B8F /* HospitalityDemo.entitlements */,
 				099B126C2AB201A200DA4B8F /* Preview Content */,
+				099AC4582AB8D5090023D8B3 /* HospitalityDemo-BridgingHeader.h */,
 			);
 			path = HospitalityDemo;
 			sourceTree = "<group>";
@@ -330,7 +363,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					099B12612AB201A000DA4B8F = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -408,6 +441,7 @@
 				EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */,
 				EBF7ACAD2AB8949F00731645 /* ReservationDetailsView.swift in Sources */,
 				099AC4282AB4E1CF0023D8B3 /* AppState.swift in Sources */,
+				099AC4622AB8F0010023D8B3 /* AppDelegate.swift in Sources */,
 				099AC4472AB7DD030023D8B3 /* RewardsView.swift in Sources */,
 				099AC4372AB4F15E0023D8B3 /* Hotel.swift in Sources */,
 				099B12682AB201A000DA4B8F /* ContentView.swift in Sources */,
@@ -486,9 +520,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -507,6 +543,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -544,9 +581,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -558,6 +597,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -573,13 +613,18 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HospitalityDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = T4C34A8L7X;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -587,15 +632,23 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = quadient.spt.HospitalityDemo;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.spt.HospitalityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HospitalityDemo/HospitalityDemo-BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries/include";
 			};
 			name = Debug;
 		};
@@ -610,13 +663,18 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HospitalityDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = T4C34A8L7X;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -624,15 +682,23 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = quadient.spt.HospitalityDemo;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quadient.spt.HospitalityDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HospitalityDemo/HospitalityDemo-BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries/include";
 			};
 			name = Release;
 		};
@@ -643,6 +709,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -665,6 +732,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -686,6 +754,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -707,6 +776,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
