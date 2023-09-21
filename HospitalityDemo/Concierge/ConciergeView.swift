@@ -10,7 +10,6 @@ struct ConciergeView: View {
   
   var body: some View {
     WebView(url: url!)
-      .edgesIgnoringSafeArea(.all)
   }
 }
 

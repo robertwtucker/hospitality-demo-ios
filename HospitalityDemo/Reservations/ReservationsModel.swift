@@ -6,8 +6,6 @@
 import Foundation
 
 class ReservationsModel: ObservableObject {
-//  private let service: ReservationService()
-  
   @Published var reservations: [Reservation] = []
   
   @MainActor

@@ -9,13 +9,14 @@ import Foundation
 
 // MARK: - Hotel
 struct Hotel: Codable {
-    let _id: Int
-    let name, location, imageName: String
-
-    enum CodingKeys: String, CodingKey {
-        case _id = "id"
-        case name, location, imageName
-    }
+  let _id: Int
+  let name, location, imageName, checkInTime, checkOutTime: String
+  let rating: Double
+  
+  enum CodingKeys: String, CodingKey {
+    case _id = "id"
+    case name, location, checkInTime, checkOutTime, imageName, rating
+  }
 }
 
 // MARK: - Sample Data
@@ -24,6 +25,9 @@ extension Hotel {
     _id: 1,
     name: "QUADY Boutique Hotel",
     location: "Santorini",
-    imageName: "tbdAssetName"
+    imageName: "hotel/logo",
+    checkInTime: "15:00",
+    checkOutTime: "12:00",
+    rating: 3.5
   )
 }
