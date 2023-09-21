@@ -7,29 +7,65 @@ import SwiftUI
 
 struct AppTabView: View {
   @EnvironmentObject var appState: AppState
+  @State var checkin = CheckIn.sample
   
   var body: some View {
     TabView(selection: $appState.currentTab) {
-      ReservationsView()
+      Group {
+        // RESERVATIONS TAB
+        ZStack {
+          ReservationsView()
+          SessionBannerView()
+        }
         .tabItem {
           Label("Reservations", systemImage: "calendar")
         }
         .tag(AppTabs.reservations)
-      ConciergeView()
+        // CONCIERGE TAB
+        ZStack {
+          ConciergeView()
+            .padding(.top, 35)
+          SessionBannerView()
+        }
         .tabItem {
           Label("Concierge", systemImage: "photo.on.rectangle.angled")
         }
         .tag(AppTabs.conceirge)
-      CheckOutView()
-        .tabItem {
-          Label("Check Out", systemImage: "figure.walk.departure")
+        // CHECK IN TAB ## OPTIONAL ##
+        if !checkin.checkedIn {
+          ZStack {
+            CheckInView()
+              .padding(.top, 10)
+            SessionBannerView()
+          }
+          .tabItem {
+            Label("Check In", systemImage: "door.left.hand.open")
+          }
+          .tag(AppTabs.checkin)
         }
-        .tag(AppTabs.checkout)
-      RewardsView()
+        // CHECK OUT TAB ## OPTIONAL ##
+        if checkin.checkedIn {
+          ZStack {
+            CheckOutView()
+              .padding(.top, 35)
+            SessionBannerView()
+          }
+          .tabItem {
+            Label("Check Out", systemImage: "figure.walk.departure")
+          }
+          .tag(AppTabs.checkout)
+        }
+        // REWARDS TAB
+        ZStack {
+          RewardsView()
+            .padding(.top, 35)
+          SessionBannerView()
+        }
         .tabItem {
           Label("Rewards", systemImage: "trophy")
         }
         .tag(AppTabs.rewards)
+      }
     }
   }
 }

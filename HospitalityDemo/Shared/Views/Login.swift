@@ -6,13 +6,13 @@
 import SwiftUI
 
 struct Login: View {
-    var body: some View {
-        Text("Login View")
-    }
+  var body: some View {
+    Text("Login View")
+  }
 }
 
 struct Login_Previews: PreviewProvider {
-    static var previews: some View {
-        Login()
-    }
+  static var previews: some View {
+    Login()
+  }
 }

@@ -6,17 +6,17 @@
 import SwiftUI
 
 struct LoadingView: View {
-    var body: some View {
-      VStack {
-        ProgressView()
-        Spacer()
-      }
-      .padding()
+  var body: some View {
+    VStack {
+      ProgressView()
+      Spacer()
     }
+    .padding()
+  }
 }
 
 struct LoadingView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoadingView()
-    }
+  static var previews: some View {
+    LoadingView()
+  }
 }

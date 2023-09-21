@@ -9,13 +9,13 @@ import Foundation
 
 struct Reservation: Codable {
   let _id: Int
-  let hotel: Hotel
-  let confirmationNumber, guests: Int
+  var hotel: Hotel
+  let confirmationNumber, guests, creditPrefix, creditSuffix: Int
   let checkIn, checkOut: String
   
   enum CodingKeys: String, CodingKey {
     case _id = "id"
-    case hotel, confirmationNumber, guests, checkIn, checkOut
+    case hotel, confirmationNumber, guests, checkIn, checkOut, creditPrefix, creditSuffix
   }
 }
 
@@ -31,6 +31,8 @@ extension Reservation {
     hotel: Hotel.sample,
     confirmationNumber: 1756895,
     guests: 2,
+    creditPrefix: 54,
+    creditSuffix: 79,
     checkIn: "2023-10-14",
     checkOut: "2023-10-18"
   )

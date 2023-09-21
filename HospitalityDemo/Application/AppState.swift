@@ -6,7 +6,7 @@
 import Foundation
 
 enum AppTabs: Int {
-  case reservations, conceirge, checkout, rewards
+  case reservations, conceirge, checkout, checkin, rewards
 }
 
 class AppState: ObservableObject {
