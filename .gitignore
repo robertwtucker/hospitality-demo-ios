@@ -38,4 +38,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 # Shared Library folders (avoid checking in lib files)
-Shared/Libraries/
+HospitalityDemo/Shared/Libraries/
