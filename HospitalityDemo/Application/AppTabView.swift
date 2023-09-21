@@ -7,7 +7,7 @@ import SwiftUI
 
 struct AppTabView: View {
   @EnvironmentObject var appState: AppState
-  @State var checkin = CheckIn.sample
+  @SwiftUI.State var checkin = CheckIn.sample
   
   var body: some View {
     TabView(selection: $appState.currentTab) {

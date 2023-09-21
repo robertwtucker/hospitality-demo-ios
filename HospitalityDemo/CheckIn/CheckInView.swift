@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CheckInView: View {
-  @State var checkin = CheckIn.sample
-  @State var reservations = [Reservation.sample]
-  @State private var selectedReservation = ""
-  @State private var arrivalTime = Date.now
+  @SwiftUI.State var checkin = CheckIn.sample
+  @SwiftUI.State var reservations = [Reservation.sample]
+  @SwiftUI.State private var selectedReservation = ""
+  @SwiftUI.State private var arrivalTime = Date.now
   
   var body: some View {
     NavigationView {
