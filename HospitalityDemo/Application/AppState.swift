@@ -5,10 +5,14 @@
 
 import Foundation
 
-enum AppTabs: Int {
+public enum Tab: Int, Identifiable, Hashable {
   case reservations, conceirge, checkout, checkin, rewards
+  
+  public var id: Int {
+    rawValue
+  }
 }
 
-class AppState: ObservableObject {
-  @Published var currentTab = AppTabs.reservations
+@Observable public class AppState {
+  public var selectedTab: Tab = .reservations
 }

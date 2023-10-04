@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    AppTabView().modifier(SystemServices())
+    AppTabView()
   }
 }
 

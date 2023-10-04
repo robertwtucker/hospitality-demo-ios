@@ -1,17 +1,17 @@
 //
-//  Banner.swift
-//  HospitalityDemo
-//
-//  Created by j.stobie on 9/18/23.
+//  SPDX-FileCopyright-Text: 2023 Quadient Group AG
+//  SPDX-License-Identifier: MIT
 //
 
 import SwiftUI
 
 struct SessionBannerView: View {
+  @Environment(UserManager.self) private var userManager
+  
   var body: some View {
     VStack {
       HStack {
-        Text("Welcome Mr. John Doe")
+        Text("Welcome, \(userManager.currentSession?.name ?? "guest")")
           .padding(.leading, 25)
         Spacer()
         Image(systemName: "person.wave.2")

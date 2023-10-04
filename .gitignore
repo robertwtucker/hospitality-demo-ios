@@ -39,3 +39,7 @@ fastlane/test_output
 
 # Shared Library folders (avoid checking in lib files)
 HospitalityDemo/Shared/Libraries/
+!HospitalityDemo/Shared/Libraries/HospitalityDemo-BridgingHeader.h
+
+# Configuration files
+quadientcloud.json

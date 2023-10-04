@@ -6,11 +6,13 @@
 import SwiftUI
 
 struct AppTabView: View {
-  @EnvironmentObject var appState: AppState
-  @SwiftUI.State var checkin = CheckIn.sample
+  @Environment(UserManager.self) private var userManager
+  
+  @SwiftUI.State private var selectedTab: Tab = .reservations
+  @SwiftUI.State private var checkin = CheckIn.sample
   
   var body: some View {
-    TabView(selection: $appState.currentTab) {
+    TabView(selection: $selectedTab) {
       Group {
         // RESERVATIONS TAB
         ZStack {
@@ -20,7 +22,7 @@ struct AppTabView: View {
         .tabItem {
           Label("Reservations", systemImage: "calendar")
         }
-        .tag(AppTabs.reservations)
+        .tag(Tab.reservations)
         // CONCIERGE TAB
         ZStack {
           ConciergeView()
@@ -30,7 +32,7 @@ struct AppTabView: View {
         .tabItem {
           Label("Concierge", systemImage: "photo.on.rectangle.angled")
         }
-        .tag(AppTabs.conceirge)
+        .tag(Tab.conceirge)
         // CHECK IN TAB ## OPTIONAL ##
         if !checkin.checkedIn {
           ZStack {
@@ -41,7 +43,7 @@ struct AppTabView: View {
           .tabItem {
             Label("Check In", systemImage: "door.left.hand.open")
           }
-          .tag(AppTabs.checkin)
+          .tag(Tab.checkin)
         }
         // CHECK OUT TAB ## OPTIONAL ##
         if checkin.checkedIn {
@@ -53,7 +55,7 @@ struct AppTabView: View {
           .tabItem {
             Label("Check Out", systemImage: "figure.walk.departure")
           }
-          .tag(AppTabs.checkout)
+          .tag(Tab.checkout)
         }
         // REWARDS TAB
         ZStack {
@@ -64,7 +66,12 @@ struct AppTabView: View {
         .tabItem {
           Label("Rewards", systemImage: "trophy")
         }
-        .tag(AppTabs.rewards)
+        .tag(Tab.rewards)
+      }
+    }
+    .overlay {
+      if !userManager.isAuthenticated {
+        LoginView()
       }
     }
   }
@@ -72,6 +79,6 @@ struct AppTabView: View {
 
 struct AppTabView_Previews: PreviewProvider {
   static var previews: some View {
-    AppTabView().environmentObject(AppState())
+    AppTabView()
   }
 }
