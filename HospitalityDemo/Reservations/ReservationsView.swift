@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ReservationsView: View {
   @StateObject var model = ReservationsModel()
-  @State var isLoading = false
+  @SwiftUI.State var isLoading = false
   
   var body: some View {
     VStack {

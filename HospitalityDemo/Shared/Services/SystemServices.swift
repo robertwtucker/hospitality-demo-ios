@@ -11,6 +11,6 @@ struct SystemServices: ViewModifier {
   
   func body(content: Content) -> some View {
     content
-      .environmentObject(Self.appState)
+      .environment(Self.appState)
   }
 }
