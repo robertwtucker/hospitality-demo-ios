@@ -1,8 +1,6 @@
 //
-//  ReservationDetailsView.swift
-//  HospitalityDemo
-//
-//  Created by j.stobie on 9/18/23.
+//  SPDX-FileCopyright-Text: 2023 Quadient Group AG
+//  SPDX-License-Identifier: MIT
 //
 
 import SwiftUI
