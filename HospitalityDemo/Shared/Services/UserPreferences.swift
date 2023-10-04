@@ -8,7 +8,7 @@ import SwiftUI
 @Observable public class UserPreferences {
   class Storage {
     @AppStorage("advantageSdkClientId") public var clientId = ""
-    @AppStorage("advantageSdkDeviceId") public var deviceId = ""
+    @AppStorage("advantageSdkRegistrationId") public var registrationId = ""
   }
   
   public static let shared = UserPreferences()
@@ -20,14 +20,14 @@ import SwiftUI
     }
   }
   
-  public var deviceId: String {
+  public var registrationId: String {
     didSet {
-      storage.deviceId = deviceId
+      storage.registrationId = registrationId
     }
   }
   
   private init() {
     clientId = storage.clientId
-    deviceId = storage.deviceId
+    registrationId = storage.registrationId
   }
 }
