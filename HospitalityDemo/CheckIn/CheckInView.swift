@@ -6,8 +6,7 @@
 import SwiftUI
 
 struct CheckInView: View {
-  @SwiftUI.State var checkin = CheckIn.sample
-  @SwiftUI.State var reservations = [Reservation.sample]
+  @SwiftUI.StateObject var model = ReservationsModel()
   @SwiftUI.State private var selectedReservation = ""
   @SwiftUI.State private var arrivalTime = Date.now
   
@@ -16,22 +15,22 @@ struct CheckInView: View {
       Form {
         Section {
           Picker("Hotel", selection: $selectedReservation) {
-            ForEach(reservations) {reservation in
+            ForEach(model.reservations) {reservation in
               Text(reservation.hotel.name)
             }
           }
           Picker("Date", selection: $selectedReservation) {
-            ForEach(reservations) {reservation in
-              Text(reservation.checkIn)
+            ForEach(model.reservations) {reservation in
+              Text(reservation.checkInDate)
             }
           }
         } header: {Text("Select Reservation")}
         Section {
-          TextField("First name", text: $checkin.firstName)
-          TextField("Last name", text: $checkin.lastName)
-          TextField("Phone", text: $checkin.phone)
+          TextField("First name", text: $model.reservations[0].checkIn.firstName)
+          TextField("Last name", text: $model.reservations[0].checkIn.lastName)
+          TextField("Phone", text: $model.reservations[0].checkIn.phone)
             .keyboardType(.phonePad)
-          TextField("E-mail", text: $checkin.email)
+          TextField("E-mail", text: $model.reservations[0].checkIn.email)
             .keyboardType(.emailAddress)
         } header: {Text("Your Information")}
         Section {

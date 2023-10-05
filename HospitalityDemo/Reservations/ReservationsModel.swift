@@ -9,7 +9,7 @@ class ReservationsModel: ObservableObject {
   @Published var reservations: [Reservation] = []
   
   @MainActor
-  func loadAsync() async {
-    reservations = [Reservation.sample]
+  func load() {
+    reservations = Bundle.main.decode(Reservations.self, from: "reservations.json")
   }
 }

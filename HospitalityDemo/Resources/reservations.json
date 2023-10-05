@@ -1,0 +1,25 @@
+[{
+  "id": 1,
+  "hotel": {
+    "id": 1,
+    "name": "QUADY Boutique Hotel",
+    "location": "Santorini",
+    "imageName": "hotel/logo",
+    "checkInTime": "15:00",
+    "checkOutTime": "12:00",
+    "rating": 3.5
+  },
+  "checkIn": {
+    "firstName": "Rob",
+    "lastName": "Ott",
+    "phone": "(972) 757-3698",
+    "email": "j.stobie@quadient.com",
+    "checkedIn": false
+  },
+  "confirmationNumber": 1756895,
+  "guests": 2,
+  "creditPrefix": 54,
+  "creditSuffix": 79,
+  "checkIn": "2023-10-14",
+  "checkOut": "2023-10-18"
+}]

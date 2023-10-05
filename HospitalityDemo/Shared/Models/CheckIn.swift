@@ -5,28 +5,15 @@
 
 import Foundation
 
-// TODO: Complete implementation
-
 // MARK: - CheckIn
-struct CheckIn: Codable {
-  let _id: Int
-  var firstName, lastName, phone, email: String
-  var checkedIn: Bool
+struct CheckInElement: Codable {
+    let id: Int
+    var firstName, lastName, phone, email: String
+    var checkIn: Bool
   
   enum CodingKeys: String, CodingKey {
-    case _id = "id"
-    case firstName, lastName, phone, email, checkedIn
+    case id
+    case firstName, lastName, phone, email
+    case checkIn
   }
-}
-
-// MARK: - Sample Data
-extension CheckIn {
-  static var sample = CheckIn(
-    _id: 1,
-    firstName: "Rob",
-    lastName: "Ott",
-    phone: "(972) 757-3698",
-    email: "j.stobie@quadient.com",
-    checkedIn: false
-  )
 }

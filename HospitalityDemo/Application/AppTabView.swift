@@ -9,7 +9,7 @@ struct AppTabView: View {
   @Environment(UserManager.self) private var userManager
   
   @SwiftUI.State private var selectedTab: Tab = .reservations
-  @SwiftUI.State private var checkin = CheckIn.sample
+  @StateObject var model = ReservationsModel()
   
   var body: some View {
     TabView(selection: $selectedTab) {
@@ -34,7 +34,7 @@ struct AppTabView: View {
         }
         .tag(Tab.conceirge)
         // CHECK IN TAB ## OPTIONAL ##
-        if !checkin.checkedIn {
+        if !model.reservations[0].checkIn.checkedIn {
           ZStack {
             CheckInView()
               .padding(.top, 10)
@@ -46,7 +46,7 @@ struct AppTabView: View {
           .tag(Tab.checkin)
         }
         // CHECK OUT TAB ## OPTIONAL ##
-        if checkin.checkedIn {
+        if model.reservations[0].checkIn.checkedIn {
           ZStack {
             CheckOutView()
               .padding(.top, 35)
@@ -69,11 +69,11 @@ struct AppTabView: View {
         .tag(Tab.rewards)
       }
     }
-    .overlay {
-      if !userManager.isAuthenticated {
-        LoginView()
-      }
-    }
+//    .sheet(isPresented: Binding(get: { !userManager.isAuthenticated }, set: {_,_ in }) ) {
+//      LoginView()
+//        .presentationDetents([.large])
+//        .presentationDragIndicator(.hidden)
+//    }
   }
 }
 

@@ -6,13 +6,28 @@
 import SwiftUI
 
 struct RewardsView: View {
-    var body: some View {
-        Text("Rewards View")
+  @SwiftUI.StateObject var model = RewardsModel()
+  
+  var body: some View {
+    NavigationStack {
+      List(model.rewards) { reward in
+        NavigationLink {
+          Text(reward.hotelName)
+        } label: {
+            Text("\(reward.hotelName)\n").bold() +
+            Text("Check-In: \(reward.checkIn)").font(.caption)
+        }
+        .navigationTitle("Account Activity")
+      }
     }
+    .onAppear() {
+      model.load()
+    }
+  }
 }
 
 struct RewardsView_Previews: PreviewProvider {
-    static var previews: some View {
-        RewardsView()
-    }
+  static var previews: some View {
+    RewardsView()
+  }
 }

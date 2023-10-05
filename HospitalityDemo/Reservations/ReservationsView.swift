@@ -56,7 +56,7 @@ struct ReservationsView: View {
     .onAppear {
       Task {
         isLoading.toggle()
-        await model.loadAsync()
+        model.load()
         isLoading.toggle()
       }
     }
