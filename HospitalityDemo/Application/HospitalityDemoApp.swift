@@ -246,7 +246,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     do {
       let documentInfo = try await sdk.documentService.document(withDocumentId: documentId)
       guard let documentInfo = documentInfo else { return .noData }
-      if let isDownloaded = documentInfo.isDownloaded, Bool(truncating: isDownloaded)  {
+      if let downloaded = documentInfo.isDownloaded, downloaded.boolValue  {
         self.logger.debug("Document id:\(documentId) already downloaded")
         return .noData
       }
