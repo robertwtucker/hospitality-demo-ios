@@ -6,8 +6,9 @@
 import SwiftUI
 
 struct ReservationsView: View {
-  @StateObject var model = ReservationsModel()
-  @SwiftUI.State var isLoading = false
+  @Environment(ReservationsModel.self) private var model
+  
+  @SwiftUI.State private var isLoading = false
   
   var body: some View {
     VStack {
@@ -54,11 +55,9 @@ struct ReservationsView: View {
       }
     }
     .onAppear {
-      Task {
-        isLoading.toggle()
-        await model.loadAsync()
-        isLoading.toggle()
-      }
+      isLoading.toggle()
+      model.load()
+      isLoading.toggle()
     }
   }
 }

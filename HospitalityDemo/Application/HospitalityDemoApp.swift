@@ -12,8 +12,10 @@ struct HospitalityDemoApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
   @Environment(\.scenePhase) private var scenePhase
   
+  @SwiftUI.State private var appState = AppState()
   @SwiftUI.State private var userPreferences = UserPreferences.shared
   @SwiftUI.State private var userManager = UserManager.shared
+  @SwiftUI.State private var model = ReservationsModel()
   
   var body: some Scene {
     WindowGroup {
@@ -23,8 +25,10 @@ struct HospitalityDemoApp: App {
           authorizeDeviceForNotifications()
           loginWithCurrentSession()
         }
+        .environment(appState)
         .environment(userPreferences)
         .environment(userManager)
+        .environment(model)
         .onChange(of: scenePhase) { _, newValue in
           handleScenePhase(scenePhase: newValue)
         }
@@ -128,7 +132,9 @@ struct HospitalityDemoApp: App {
   private func setupUserSession(_ sessionInfo: SessionInfo) {
     UserPreferences.shared.clientId = sessionInfo.clientID!
     logger.info("Setting up for user: \(sessionInfo.name!) (\(sessionInfo.email!))")
+#if !targetEnvironment(simulator)
     UIApplication.shared.registerForRemoteNotifications()
+#endif
   }
   
   private func authorizeDeviceForNotifications() {

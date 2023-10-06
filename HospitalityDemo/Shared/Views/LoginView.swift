@@ -29,11 +29,20 @@ struct LoginView: View {
   
   var body: some View {
     NavigationStack {
+      Image("general/traveling")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(maxWidth: .infinity)
+        .background(Color(UIColor.systemBackground))
+      Text("Welcome Back")
+        .font(.largeTitle)
+        .bold()
+      Text("Login Below")
+        .font(.callout)
       Form {
         credentialsSection
         buttonSection
       }
-      .navigationTitle("Login")
       .onAppear {
         isUsernameFocused = true
       }
@@ -43,6 +52,7 @@ struct LoginView: View {
           .presentationDragIndicator(.visible)
       }
     }
+    .interactiveDismissDisabled(true)
   }
   
   private var credentialsSection: some View {
