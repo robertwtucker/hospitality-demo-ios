@@ -227,11 +227,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     if newValue != oldValue {
       UserPreferences.shared.registrationId = ""
       let clientId = UserPreferences.shared.clientId
-      Task {
-        do {
-          try await sdk.notificationService.unregisterFromNotifications(withDeviceToken: oldValue, clientID: clientId)
-        } catch let error {
-          logger.error("Failed to unregister previous device due to error: \(error.localizedDescription)")
+      if !oldValue.isEmpty && !clientId.isEmpty {
+        Task {
+          do {
+            try await sdk.notificationService.unregisterFromNotifications(withDeviceToken: oldValue, clientID: clientId)
+          } catch let error {
+            logger.error("Failed to unregister previous device due to error: \(error.localizedDescription)")
+          }
         }
       }
     }
