@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0916E3BC2ACDD3E1000801D0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0916E3BB2ACDD3E0000801D0 /* UserNotifications.framework */; };
 		099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FB82ABB325C00BA95E5 /* libFMDB.a */; };
 		099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */; };
 		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0916E3BB2ACDD3E0000801D0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.0.sdk/System/Library/Frameworks/UserNotifications.framework; sourceTree = DEVELOPER_DIR; };
+		0916E3BD2ACE7154000801D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		099A2FB82ABB325C00BA95E5 /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = HospitalityDemo/Shared/Libraries/libFMDB.a; sourceTree = "<group>"; };
 		099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLCipher.a; path = HospitalityDemo/Shared/Libraries/libSQLCipher.a; sourceTree = "<group>"; };
 		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0916E3BC2ACDD3E1000801D0 /* UserNotifications.framework in Frameworks */,
 				099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */,
 				099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */,
 				099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */,
@@ -234,6 +238,7 @@
 		099AC44B2AB8CCB80023D8B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0916E3BB2ACDD3E0000801D0 /* UserNotifications.framework */,
 				099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */,
 				099A2FB82ABB325C00BA95E5 /* libFMDB.a */,
 				099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */,
@@ -265,6 +270,7 @@
 		099B12642AB201A000DA4B8F /* HospitalityDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0916E3BD2ACE7154000801D0 /* Info.plist */,
 				099AC4262AB4B6FE0023D8B3 /* Application */,
 				EB2513532ABB7BBF003AF103 /* CheckIn */,
 				099AC4382AB4F7B60023D8B3 /* CheckOut */,
@@ -639,10 +645,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HospitalityDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 94GENMY2GG;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HospitalityDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -689,10 +696,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HospitalityDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 94GENMY2GG;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HospitalityDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
