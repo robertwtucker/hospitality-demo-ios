@@ -10,13 +10,7 @@
     "rating": 3.5,
     "conciergeUrl": "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html"
   },
-  "checkIn": {
-    "firstName": "Rob",
-    "lastName": "Ott",
-    "phone": "(972) 757-3698",
-    "email": "j.stobie@quadient.com",
-    "checkedIn": false
-  },
+  "checkedIn": false,
   "confirmationNumber": 1756895,
   "guests": 2,
   "creditPrefix": 54,

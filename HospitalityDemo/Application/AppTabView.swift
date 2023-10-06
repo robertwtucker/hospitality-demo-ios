@@ -36,10 +36,10 @@ struct AppTabView: View {
         }
         .tag(Tab.conceirge)
         // CHECK IN TAB ## OPTIONAL ##
-        if !model.currentReservation.checkIn.checkedIn {
+        if !model.currentReservation.checkedIn {
           ZStack {
             CheckInView()
-              .padding(.top, 10)
+              .padding(.top, 35)
             SessionBannerView()
           }
           .tabItem {

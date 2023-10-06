@@ -6,15 +6,15 @@
 import Foundation
 
 struct Reservation: Codable {
-    var hotel: Hotel
-  var checkIn: CheckIn
-    let _id, confirmationNumber, guests, creditPrefix, creditSuffix: Int
-    let checkInDate, checkOutDate: String
+  var hotel: Hotel
+  let _id, confirmationNumber, guests, creditPrefix, creditSuffix: Int
+  let checkInDate, checkOutDate: String
+  var checkedIn: Bool
   
-    enum CodingKeys: String, CodingKey {
-      case _id = "id"
-      case hotel, checkIn, confirmationNumber, guests, creditPrefix, creditSuffix, checkInDate, checkOutDate
-    }
+  enum CodingKeys: String, CodingKey {
+    case _id = "id"
+    case hotel, confirmationNumber, guests, creditPrefix, creditSuffix, checkInDate, checkOutDate, checkedIn
+  }
 }
 
 typealias Reservations = [Reservation]
@@ -22,22 +22,11 @@ typealias Reservations = [Reservation]
 // MARK: - Hotel
 
 struct Hotel: Codable {
-    let name, location, imageName, checkInTime, checkOutTime, conciergeUrl: String
-    let rating: Double
+  let name, location, imageName, checkInTime, checkOutTime, conciergeUrl: String
+  let rating: Double
   
   enum CodingKeys: String, CodingKey {
     case name, location, imageName, checkInTime, checkOutTime, rating, conciergeUrl
-  }
-}
-
-// MARK: - CheckIn
-
-struct CheckIn: Codable {
-  var firstName, lastName, phone, email: String
-  var checkedIn: Bool
-  
-  enum CodingKeys: String, CodingKey {
-    case firstName, lastName, phone, email, checkedIn
   }
 }
 
@@ -59,19 +48,14 @@ extension Reservation {
       checkOutTime: "12:00",
       conciergeUrl: "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html",
       rating: 3.5),
-    checkIn: CheckIn(
-      firstName: "Rob",
-      lastName: "Ott",
-      phone: "(972) 757-3698",
-      email: "robott@example.com",
-      checkedIn: false),
-    _id: 1,
+    _id: 0,
     confirmationNumber: 1756895,
     guests: 2,
     creditPrefix: 54,
     creditSuffix: 79,
     checkInDate: "2023-10-14",
-    checkOutDate: "2023-10-18")
+    checkOutDate: "2023-10-18",
+    checkedIn: false)
   static var empty = Reservation(
     hotel: Hotel(
       name: "",
@@ -81,17 +65,12 @@ extension Reservation {
       checkOutTime: "",
       conciergeUrl: "",
       rating: 0),
-    checkIn: CheckIn(
-      firstName: "",
-      lastName: "",
-      phone: "",
-      email: "",
-      checkedIn: false),
     _id: 0,
     confirmationNumber: 0,
     guests: 0,
     creditPrefix: 0,
     creditSuffix: 0,
     checkInDate: "",
-    checkOutDate: "")
+    checkOutDate: "",
+    checkedIn: false)
 }

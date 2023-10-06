@@ -11,6 +11,10 @@ struct RewardsView: View {
   
   var body: some View {
     NavigationStack {
+      Text("Reward/Stay History")
+        .foregroundStyle(Color("brand/brown"))
+        .padding(.top, 10)
+        .font(.headline).bold()
       List(model.rewards) { reward in
         NavigationLink {
           Text(reward.hotelName)
@@ -18,14 +22,9 @@ struct RewardsView: View {
           Text("\(reward.hotelName)\n").bold() +
           Text("Check-In: \(reward.checkIn)").font(.caption)
         }
-        .navigationTitle("Account Activity")
-      }
-      .overlay {
-        if isLoading {
-          LoadingView()
-        }
       }
     }
+    .toolbar(.hidden)
     .onAppear() {
       isLoading.toggle()
       model.load()
