@@ -3,44 +3,8 @@
 //  SPDX-License-Identifier: MIT
 //
 
-//import Foundation
-//
-//// TODO: Complete implementation
-//
-//struct Reservation: Codable {
-//  let _id: Int
-//  var hotel: Hotel
-//  let confirmationNumber, guests, creditPrefix, creditSuffix: Int
-//  let checkIn, checkOut: String
-//
-//  enum CodingKeys: String, CodingKey {
-//    case _id = "id"
-//    case hotel, confirmationNumber, guests, checkIn, checkOut, creditPrefix, creditSuffix
-//  }
-//}
-//
-//// MARK: - Identifiable
-//extension Reservation: Identifiable {
-//  public var id: Int { _id }
-//}
-//
-//// MARK: - Sample Data
-//extension Reservation {
-//  static var sample = Reservation(
-//    _id: 1,
-//    hotel: Hotel.sample,
-//    confirmationNumber: 1756895,
-//    guests: 2,
-//    creditPrefix: 54,
-//    creditSuffix: 79,
-//    checkIn: "2023-10-14",
-//    checkOut: "2023-10-18"
-//  )
-//}
-
 import Foundation
 
-// MARK: - ReservationElement
 struct Reservation: Codable {
     var hotel: Hotel
   var checkIn: CheckIn
@@ -53,17 +17,21 @@ struct Reservation: Codable {
     }
 }
 
+typealias Reservations = [Reservation]
+
 // MARK: - Hotel
+
 struct Hotel: Codable {
-    let name, location, imageName, checkInTime, checkOutTime: String
+    let name, location, imageName, checkInTime, checkOutTime, conciergeUrl: String
     let rating: Double
   
   enum CodingKeys: String, CodingKey {
-    case name, location, imageName, checkInTime, checkOutTime, rating
+    case name, location, imageName, checkInTime, checkOutTime, rating, conciergeUrl
   }
 }
 
 // MARK: - CheckIn
+
 struct CheckIn: Codable {
   var firstName, lastName, phone, email: String
   var checkedIn: Bool
@@ -74,9 +42,56 @@ struct CheckIn: Codable {
 }
 
 // MARK: - Identifiable
+
 extension Reservation: Identifiable {
   public var id: Int { _id }
 }
 
-typealias Reservations = [Reservation]
+// MARK: - Sample Data
 
+extension Reservation {
+  static var sample = Reservation(
+    hotel: Hotel(
+      name: "QUADY Boutique Hotel",
+      location: "Santorini",
+      imageName: "hotel/logo",
+      checkInTime: "15:00",
+      checkOutTime: "12:00",
+      conciergeUrl: "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html",
+      rating: 3.5),
+    checkIn: CheckIn(
+      firstName: "Rob",
+      lastName: "Ott",
+      phone: "(972) 757-3698",
+      email: "robott@example.com",
+      checkedIn: false),
+    _id: 1,
+    confirmationNumber: 1756895,
+    guests: 2,
+    creditPrefix: 54,
+    creditSuffix: 79,
+    checkInDate: "2023-10-14",
+    checkOutDate: "2023-10-18")
+  static var empty = Reservation(
+    hotel: Hotel(
+      name: "",
+      location: "",
+      imageName: "",
+      checkInTime: "",
+      checkOutTime: "",
+      conciergeUrl: "",
+      rating: 0),
+    checkIn: CheckIn(
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      checkedIn: false),
+    _id: 0,
+    confirmationNumber: 0,
+    guests: 0,
+    creditPrefix: 0,
+    creditSuffix: 0,
+    checkInDate: "",
+    checkOutDate: "")
+}

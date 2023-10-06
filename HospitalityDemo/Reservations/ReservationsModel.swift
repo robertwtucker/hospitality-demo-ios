@@ -5,11 +5,16 @@
 
 import Foundation
 
-class ReservationsModel: ObservableObject {
-  @Published var reservations: [Reservation] = []
+@Observable class ReservationsModel {
+  var reservations: [Reservation] = []
+  var currentReservation = Reservation.empty
   
   @MainActor
   func load() {
-    reservations = Bundle.main.decode(Reservations.self, from: "reservations.json")
+    let result  = Bundle.main.decode(Reservations.self, from: "reservations.json")
+    if result.count > 0 {
+      reservations = result
+      currentReservation = result[0]
+    }
   }
 }

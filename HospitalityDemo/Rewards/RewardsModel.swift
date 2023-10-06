@@ -1,14 +1,12 @@
 //
-//  RewardsModel.swift
-//  HospitalityDemo
-//
-//  Created by j.stobie on 10/4/23.
+//  SPDX-FileCopyright-Text: 2023 Quadient Group AG
+//  SPDX-License-Identifier: MIT
 //
 
 import Foundation
 
-class RewardsModel: ObservableObject {
-  @Published var rewards: [Reward] = []
+@Observable class RewardsModel {
+  var rewards: [Reward] = []
   
   @MainActor
   func load() {

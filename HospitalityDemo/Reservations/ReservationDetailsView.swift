@@ -6,11 +6,11 @@
 import SwiftUI
 
 struct ReservationDetailsView: View {
-  @StateObject var model = ReservationsModel()
+  @Environment(ReservationsModel.self) private var model
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text("We are happy to provide you with your hotel confirmation for your upcoming stay at the **\(model.reservations[0].hotel.name)**.")
+      Text("We are happy to provide you with your hotel confirmation for your upcoming stay at the **\(model.currentReservation.hotel.name)**.")
         .padding(.bottom, 10)
       Text("Your booking details:")
         .bold()
@@ -22,38 +22,38 @@ struct ReservationDetailsView: View {
         Image(systemName: "mappin.and.ellipse")
           .foregroundColor(.red)
           .padding(.horizontal, -5)
-        Text("**\(model.reservations[0].hotel.name) | \(model.reservations[0].hotel.location)**")
+        Text("**\(model.currentReservation.hotel.name) | \(model.currentReservation.hotel.location)**")
       }
       .padding(.bottom, 1)
       HStack {
         Text("Confirmation Number: ")
         Spacer()
-        Text(String(model.reservations[0].confirmationNumber))
+        Text(String(model.currentReservation.confirmationNumber))
           .bold()
       }
       .padding(.bottom, 1)
       HStack {
         Text("Check-In Date: ")
         Spacer()
-        Text(model.reservations[0].checkInDate)
+        Text(model.currentReservation.checkInDate)
           .bold()
       }
       .padding(.bottom, 1)
       HStack {
         Text("Check-Out Date: ")
         Spacer()
-        Text(model.reservations[0].checkOutDate)
+        Text(model.currentReservation.checkOutDate)
           .bold()
       }
       .padding(.bottom, 10)
-      Text("Hotel check-in time is **\(model.reservations[0].hotel.checkInTime)**, check out time is **\(model.reservations[0].hotel.checkOutTime)**")
+      Text("Hotel check-in time is **\(model.currentReservation.hotel.checkInTime)**, check out time is **\(model.currentReservation.hotel.checkOutTime)**")
         .padding(.bottom, 10)
         .font(.system(size: 10))
       HStack {
         Text("Credit Card Number: ")
         Spacer()
         Image(systemName: "creditcard.and.123")
-        Text("\(String(model.reservations[0].creditPrefix))** **** **** **\(String(model.reservations[0].creditSuffix))")
+        Text("\(String(model.currentReservation.creditPrefix))** **** **** **\(String(model.currentReservation.creditSuffix))")
           .bold()
       }
       .padding(.bottom, 10)

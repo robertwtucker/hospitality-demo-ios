@@ -7,7 +7,8 @@
     "imageName": "hotel/logo",
     "checkInTime": "15:00",
     "checkOutTime": "12:00",
-    "rating": 3.5
+    "rating": 3.5,
+    "conciergeUrl": "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html"
   },
   "checkIn": {
     "firstName": "Rob",
@@ -20,6 +21,6 @@
   "guests": 2,
   "creditPrefix": 54,
   "creditSuffix": 79,
-  "checkIn": "2023-10-14",
-  "checkOut": "2023-10-18"
+  "checkInDate": "2023-10-14",
+  "checkOutDate": "2023-10-18"
 }]

@@ -12,7 +12,6 @@
 		099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */; };
 		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
 		099AC4282AB4E1CF0023D8B3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4272AB4E1CF0023D8B3 /* AppState.swift */; };
-		099AC42C2AB4E2EF0023D8B3 /* SystemServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC42B2AB4E2EF0023D8B3 /* SystemServices.swift */; };
 		099AC42E2AB4E43C0023D8B3 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC42D2AB4E43C0023D8B3 /* AppTabView.swift */; };
 		099AC4332AB4E5C20023D8B3 /* ReservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4322AB4E5C20023D8B3 /* ReservationsView.swift */; };
 		099AC4352AB4E6410023D8B3 /* ReservationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */; };
@@ -37,7 +36,6 @@
 		09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B490062ACCF6FB00273F0E /* CloudConfig.swift */; };
 		09B4900C2ACD01A900273F0E /* quadientcloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 09B4900B2ACD01A900273F0E /* quadientcloud.json */; };
 		EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513542ABB7BE9003AF103 /* CheckInView.swift */; };
-		EB2513592ABB9045003AF103 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513582ABB9045003AF103 /* CheckIn.swift */; };
 		EB4FD0C12ACF12AA009B1D2C /* rewards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C02ACF12AA009B1D2C /* rewards.json */; };
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
 		EB895AF22ACDCEEA00BF7711 /* RewardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB895AF12ACDCEEA00BF7711 /* RewardsModel.swift */; };
@@ -71,7 +69,6 @@
 		099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLCipher.a; path = HospitalityDemo/Shared/Libraries/libSQLCipher.a; sourceTree = "<group>"; };
 		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
 		099AC4272AB4E1CF0023D8B3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		099AC42B2AB4E2EF0023D8B3 /* SystemServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemServices.swift; sourceTree = "<group>"; };
 		099AC42D2AB4E43C0023D8B3 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		099AC4322AB4E5C20023D8B3 /* ReservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsView.swift; sourceTree = "<group>"; };
 		099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsModel.swift; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		09B490062ACCF6FB00273F0E /* CloudConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConfig.swift; sourceTree = "<group>"; };
 		09B4900B2ACD01A900273F0E /* quadientcloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quadientcloud.json; sourceTree = "<group>"; };
 		EB2513542ABB7BE9003AF103 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
-		EB2513582ABB9045003AF103 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		EB4FD0C02ACF12AA009B1D2C /* rewards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rewards.json; sourceTree = "<group>"; };
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
 		EB895AF12ACDCEEA00BF7711 /* RewardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsModel.swift; sourceTree = "<group>"; };
@@ -165,7 +161,6 @@
 		099AC42A2AB4E2CE0023D8B3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				099AC42B2AB4E2EF0023D8B3 /* SystemServices.swift */,
 				09B48FFD2ACC529D00273F0E /* UserManager.swift */,
 				09B48FFF2ACC5DA700273F0E /* UserPreferences.swift */,
 				09B490042ACCF4F200273F0E /* FileReader.swift */,
@@ -177,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				099AC43B2AB4FB7F0023D8B3 /* Reservation.swift */,
-				EB2513582ABB9045003AF103 /* CheckIn.swift */,
 				09B490062ACCF6FB00273F0E /* CloudConfig.swift */,
 				EB895AF32ACDCF2200BF7711 /* Reward.swift */,
 			);
@@ -484,12 +478,10 @@
 				EB895AF22ACDCEEA00BF7711 /* RewardsModel.swift in Sources */,
 				099AC4472AB7DD030023D8B3 /* RewardsView.swift in Sources */,
 				099B12682AB201A000DA4B8F /* ContentView.swift in Sources */,
-				099AC42C2AB4E2EF0023D8B3 /* SystemServices.swift in Sources */,
 				099AC4332AB4E5C20023D8B3 /* ReservationsView.swift in Sources */,
 				09B490002ACC5DA700273F0E /* UserPreferences.swift in Sources */,
 				EBF7ACA92AB8905C00731645 /* SessionBannerView.swift in Sources */,
 				099B12662AB201A000DA4B8F /* HospitalityDemoApp.swift in Sources */,
-				EB2513592ABB9045003AF103 /* CheckIn.swift in Sources */,
 				09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */,
 				09B48FFE2ACC529D00273F0E /* UserManager.swift in Sources */,
 				099AC42E2AB4E43C0023D8B3 /* AppTabView.swift in Sources */,

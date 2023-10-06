@@ -6,10 +6,10 @@
 import SwiftUI
 
 struct ConciergeView: View {
-  let url = URL(string: "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html")
+  @Environment(ReservationsModel.self) private var model
   
   var body: some View {
-    WebView(url: url!)
+    WebView(url: URL(string: model.currentReservation.hotel.conciergeUrl)!)
   }
 }
 

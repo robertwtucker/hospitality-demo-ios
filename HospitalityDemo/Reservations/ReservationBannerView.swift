@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct ReservationBannerView: View {
-  @StateObject var model = ReservationsModel()
+  @Environment(ReservationsModel.self) private var model
   
   var body: some View {
     
