@@ -109,7 +109,7 @@ struct LoginView: View {
       return
     }
     
-    guard let identityProvider = await selectIdentityProvider(sdk) else {
+    guard let identityProvider = await selectIdentityProvider(using: sdk) else {
       errorMessage = "Error selecting identity provider: Inspire Authentication not available."
       logger.error("\(errorMessage)")
       showError.toggle()
@@ -117,62 +117,33 @@ struct LoginView: View {
     }
     logger.debug("Using identity provider: \(identityProvider.providerType!) (\(identityProvider.providerId!))")
     
-    if let sessionInfo = await loginWithCredentials(
-      sdk,
-      username: username,
-      password: password,
-      identityProvider: identityProvider
-    ) {
+    do {
+      guard let sessionInfo = try await sdk.authenticationService.login(withCredentials: username, password: password, identityProvider: identityProvider) else {
+        return }
       clearFormFields()
       userManager.currentSession = sessionInfo
+    } catch let error {
+      errorMessage = "Login error: \(error.localizedDescription)"
+      logger.error("\(errorMessage)")
+      showError.toggle()
     }
   }
-  
-  private func selectIdentityProvider(
-    _ sdk: AdvantageSDK,
-    providerType: String = "InspireAuthentication"
-  ) async -> IdentityProvider? {
-    return await withCheckedContinuation { continuation in
-      sdk.authenticationService.listAvailableIdentityProviders { providers, error in
-        if let error = error {
-          errorMessage = "Error getting list of providers: \(error.localizedDescription)"
-          logger.error("\(errorMessage)")
-          showError.toggle()
-          continuation.resume(returning: nil)
-        } else {
-          for provider in providers! {
-            if provider.providerType == providerType {
-              continuation.resume(returning: provider)
-            }
+    
+    private func selectIdentityProvider(using sdk: AdvantageSDK, ofType: String = "InspireAuthentication" ) async -> IdentityProvider? {
+      do {
+        guard let providers = try await sdk.authenticationService.listAvailableIdentityProviders() else {
+          return nil
+        }
+        for provider in providers {
+          if provider.providerType == ofType {
+            return provider
           }
         }
+      } catch let error {
+        logger.error("Advantage SDK returned an error getting list of identity providers: \(error.localizedDescription)")
       }
+      return nil
     }
-  }
-  
-  private func loginWithCredentials(
-    _ sdk: AdvantageSDK,
-    username: String,
-    password: String,
-    identityProvider: IdentityProvider
-  ) async -> SessionInfo? {
-    return await withCheckedContinuation { continuation in
-      sdk.authenticationService.login(
-        withCredentials: username,
-        password: password,
-        identityProvider: identityProvider
-      ) { (sessionInfo, error) in
-        if let error = error {
-          errorMessage = "Login error: \(error.localizedDescription)"
-          logger.error("\(errorMessage)")
-          showError.toggle()
-          continuation.resume(returning: nil)
-        } else {
-          continuation.resume(returning: sessionInfo)
-        }
-      }
-    }
-  }
   
   private func clearFormFields() {
     username = ""
