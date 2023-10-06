@@ -47,7 +47,7 @@ struct AppTabView: View {
           }
           .tag(Tab.checkin)
         } else {
-        // CHECK OUT TAB ## OPTIONAL ##
+          // CHECK OUT TAB ## OPTIONAL ##
           ZStack {
             CheckOutView()
               .padding(.top, 35)
@@ -70,11 +70,13 @@ struct AppTabView: View {
         .tag(Tab.rewards)
       }
     }
-    //    .sheet(isPresented: Binding(get: { !userManager.isAuthenticated }, set: {_,_ in }) ) {
-    //      LoginView()
-    //        .presentationDetents([.large])
-    //        .presentationDragIndicator(.hidden)
-    //    }
+    .sheet(isPresented: Binding(
+      get: { !userManager.isAuthenticated },
+      set: {_,_ in })) {
+      LoginView()
+        .presentationDetents([.large])
+        .presentationDragIndicator(.hidden)
+    }
   }
 }
 
