@@ -6,10 +6,10 @@
 import SwiftUI
 
 struct AppTabView: View {
-  @Environment(UserManager.self) private var userManager
+  @Environment(UserManager.self) private var user
   @Environment(ReservationsModel.self) private var model
   @Environment(AppState.self) private var appState
-  
+
   var body: some View {
     TabView(selection: Binding(
       get: { appState.selectedTab },
@@ -70,12 +70,12 @@ struct AppTabView: View {
         .tag(Tab.rewards)
       }
     }
-    .sheet(isPresented: Binding(
-      get: { !userManager.isAuthenticated },
-      set: {_,_ in })) {
-      LoginView()
-        .presentationDetents([.large])
-        .presentationDragIndicator(.hidden)
+    .overlay {
+      if AdvantageSDK.sharedInstance().isInitialized && !user.isAuthenticated {
+        LoginView()
+          .presentationDetents([.large])
+          .presentationDragIndicator(.hidden)
+      }
     }
   }
 }

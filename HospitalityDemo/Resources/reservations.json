@@ -1,20 +1,22 @@
-[{
-  "id": 1,
-  "hotel": {
+[
+  {
     "id": 1,
-    "name": "QUADY Boutique Hotel",
-    "location": "Santorini",
-    "imageName": "hotel/logo",
-    "checkInTime": "15:00",
-    "checkOutTime": "12:00",
-    "rating": 3.5,
-    "conciergeUrl": "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html"
-  },
-  "checkedIn": false,
-  "confirmationNumber": 1756895,
-  "guests": 2,
-  "creditPrefix": 54,
-  "creditSuffix": 79,
-  "checkInDate": "2023-10-14",
-  "checkOutDate": "2023-10-18"
-}]
+    "hotel": {
+      "id": 1,
+      "name": "QUADY Boutique Hotel",
+      "location": "Santorini",
+      "imageName": "hotel/logo",
+      "checkInTime": "15:00",
+      "checkOutTime": "12:00",
+      "rating": 3.5,
+      "conciergeUrl": "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html"
+    },
+    "checkedIn": false,
+    "confirmationNumber": 1756895,
+    "guests": 2,
+    "creditPrefix": 54,
+    "creditSuffix": 79,
+    "checkInDate": "2023-10-14",
+    "checkOutDate": "2023-10-18"
+  }
+]

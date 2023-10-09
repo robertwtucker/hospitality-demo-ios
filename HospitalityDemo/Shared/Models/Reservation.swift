@@ -10,7 +10,7 @@ struct Reservation: Codable {
   let _id, confirmationNumber, guests, creditPrefix, creditSuffix: Int
   let checkInDate, checkOutDate: String
   var checkedIn: Bool
-  
+
   enum CodingKeys: String, CodingKey {
     case _id = "id"
     case hotel, confirmationNumber, guests, creditPrefix, creditSuffix, checkInDate, checkOutDate, checkedIn
@@ -24,7 +24,7 @@ typealias Reservations = [Reservation]
 struct Hotel: Codable {
   let name, location, imageName, checkInTime, checkOutTime, conciergeUrl: String
   let rating: Double
-  
+
   enum CodingKeys: String, CodingKey {
     case name, location, imageName, checkInTime, checkOutTime, rating, conciergeUrl
   }
@@ -32,11 +32,13 @@ struct Hotel: Codable {
 
 // MARK: - Identifiable
 
+
 extension Reservation: Identifiable {
   public var id: Int { _id }
 }
 
 // MARK: - Sample Data
+
 
 extension Reservation {
   static var sample = Reservation(
