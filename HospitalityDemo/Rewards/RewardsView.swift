@@ -21,7 +21,7 @@ struct RewardsView: View {
         }
         .navigationTitle("Account Activity")
         .overlay {
-          if model.rewards.count == 0 {
+          if rewards.count == 0 {
             ContentUnavailableView {
               Label("No recent activity", systemImage: "trophy.circle")
             } description: {

@@ -10,7 +10,6 @@ import os
   typealias Output = Rewards
   
   private(set) var state: LoadingState<Output> = .idle
-  var rewards: Rewards = []
   
   private let logger = Logger(
     subsystem: Bundle.main.bundleIdentifier!,
@@ -20,19 +19,13 @@ import os
   func load() async {
     do {
       let documents = try await fetchRemoteDocuments()
+      logger.debug("Fetch returned \(documents.count) documents (rewards)")
       state = .loaded(documents.map { document in
         Reward(from: document)
       })
     } catch {
       logger.error("Error loading remote documents: \(error.localizedDescription)")
       state = .failed(error)
-    }
-    
-    switch state {
-    case .loaded(let rewards):
-      self.rewards = rewards
-    default:
-      break
     }
   }
   
