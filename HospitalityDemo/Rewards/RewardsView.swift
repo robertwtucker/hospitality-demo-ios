@@ -15,8 +15,12 @@ struct RewardsView: View {
           NavigationLink {
             DocumentView(document: reward.document!)
           } label: {
-            Text("\(reward.hotelName)\n").bold() +
-            Text("Check-In: \(reward.checkIn)").font(.caption)
+            VStack(alignment: .leading) {
+              Text("\(reward.hotelName ?? "Property Name")")
+                .bold()
+              Text("Check-In: \(reward.checkIn ?? "Check-In Date")")
+                .font(.caption)
+            }
           }
         }
         .navigationTitle("Account Activity")
