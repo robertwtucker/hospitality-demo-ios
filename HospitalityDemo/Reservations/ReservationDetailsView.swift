@@ -6,11 +6,11 @@
 import SwiftUI
 
 struct ReservationDetailsView: View {
-  @Environment(ReservationsModel.self) private var model
+  let reservation: Reservation
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text("We are happy to provide you with your hotel confirmation for your upcoming stay at the **\(model.currentReservation.hotel.name)**.")
+      Text("We are happy to provide you with your hotel confirmation for your upcoming stay at the **\(reservation.hotel.name)**.")
         .padding(.bottom, 10)
       Text("Your booking details:")
         .bold()
@@ -22,38 +22,38 @@ struct ReservationDetailsView: View {
         Image(systemName: "mappin.and.ellipse")
           .foregroundColor(.red)
           .padding(.horizontal, -5)
-        Text("**\(model.currentReservation.hotel.name) | \(model.currentReservation.hotel.location)**")
+        Text("**\(reservation.hotel.name) | \(reservation.hotel.location)**")
       }
       .padding(.bottom, 1)
       HStack {
         Text("Confirmation Number: ")
         Spacer()
-        Text(String(model.currentReservation.confirmationNumber))
+        Text(String(reservation.confirmationNumber))
           .bold()
       }
       .padding(.bottom, 1)
       HStack {
         Text("Check-In Date: ")
         Spacer()
-        Text(model.currentReservation.checkInDate)
+        Text(reservation.checkInDate)
           .bold()
       }
       .padding(.bottom, 1)
       HStack {
         Text("Check-Out Date: ")
         Spacer()
-        Text(model.currentReservation.checkOutDate)
+        Text(reservation.checkOutDate)
           .bold()
       }
       .padding(.bottom, 10)
-      Text("Hotel check-in time is **\(model.currentReservation.hotel.checkInTime)**, check out time is **\(model.currentReservation.hotel.checkOutTime)**")
+      Text("Hotel check-in time is **\(reservation.hotel.checkInTime)**, check out time is **\(reservation.hotel.checkOutTime)**")
         .padding(.bottom, 10)
         .font(.system(size: 10))
       HStack {
         Text("Credit Card Number: ")
         Spacer()
         Image(systemName: "creditcard.and.123")
-        Text("\(String(model.currentReservation.creditPrefix))** **** **** **\(String(model.currentReservation.creditSuffix))")
+        Text("\(String(reservation.creditPrefix))** **** **** **\(String(reservation.creditSuffix))")
           .bold()
       }
       .padding(.bottom, 10)
@@ -63,8 +63,6 @@ struct ReservationDetailsView: View {
   }
 }
 
-struct ReservationDetailsView_Previews: PreviewProvider {
-  static var previews: some View {
-    ReservationDetailsView()
-  }
+#Preview {
+  ReservationDetailsView(reservation: Reservation.sample)
 }

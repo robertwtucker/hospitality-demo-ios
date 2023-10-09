@@ -6,11 +6,11 @@
 import SwiftUI
 
 struct ReservationBannerView: View {
-  @Environment(ReservationsModel.self) private var model
+  let reservations: Reservations
   
   var body: some View {
     
-    ForEach(model.reservations) { reservation in
+    ForEach(reservations) { reservation in
       HStack {
         Image(reservation.hotel.imageName)
           .padding(.leading, 20)
@@ -53,6 +53,6 @@ func buildStar(starType: String) -> some View {
 
 struct ReservationBannerView_Previews: PreviewProvider {
   static var previews: some View {
-    ReservationBannerView()
+    ReservationBannerView(reservations: Reservations())
   }
 }
