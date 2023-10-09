@@ -6,34 +6,30 @@
 import SwiftUI
 
 struct SessionBannerView: View {
-  @Environment(UserManager.self) private var userManager
+  @Environment(UserManager.self) private var user
+  
+  @SwiftUI.State private var showSettings = false
   
   var body: some View {
     VStack {
       HStack {
-        Text("Welcome, \(userManager.currentSession?.name ?? "guest")")
-          .padding(.leading, 25)
+        Text("Welcome, \(user.name ?? "Guest")!")
         Spacer()
-        Button(action: {
-          // NEED TO INCLUDE A LOGOUT FUNCTION HERE
-        }, label: {
-          Image(systemName: "person.wave.2")
-            .padding(.trailing, 25)
-        })
+        SessionBannerMenu(showSettings: $showSettings)
       }
-      .padding(.bottom, 15
-      )
+      .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
       .background(Color("brand/brown"))
       .foregroundColor(.white)
       .bold()
       Spacer()
     }
+    .sheet(isPresented: $showSettings) {
+      SettingsView(showSettings: $showSettings)
+        .presentationDetents([.medium])
+    }
   }
 }
 
-
-struct SessionBannerView_Previews: PreviewProvider {
-  static var previews: some View {
-    SessionBannerView()
-  }
+#Preview {
+  SessionBannerView()
 }

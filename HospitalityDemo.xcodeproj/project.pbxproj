@@ -38,6 +38,8 @@
 		09B490052ACCF4F200273F0E /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B490042ACCF4F200273F0E /* FileReader.swift */; };
 		09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B490062ACCF6FB00273F0E /* CloudConfig.swift */; };
 		09B4900C2ACD01A900273F0E /* quadientcloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 09B4900B2ACD01A900273F0E /* quadientcloud.json */; };
+		09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */; };
+		09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E52AD45684006BDA40 /* SettingsView.swift */; };
 		EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513542ABB7BE9003AF103 /* CheckInView.swift */; };
 		EB4FD0C12ACF12AA009B1D2C /* rewards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C02ACF12AA009B1D2C /* rewards.json */; };
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
@@ -103,6 +105,8 @@
 		09B490042ACCF4F200273F0E /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		09B490062ACCF6FB00273F0E /* CloudConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConfig.swift; sourceTree = "<group>"; };
 		09B4900B2ACD01A900273F0E /* quadientcloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quadientcloud.json; sourceTree = "<group>"; };
+		09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBannerMenu.swift; sourceTree = "<group>"; };
+		09B727E52AD45684006BDA40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EB2513542ABB7BE9003AF103 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		EB4FD0C02ACF12AA009B1D2C /* rewards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rewards.json; sourceTree = "<group>"; };
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
@@ -191,10 +195,12 @@
 				099AC43F2AB7D4C40023D8B3 /* LoginView.swift */,
 				099AC4422AB7D8180023D8B3 /* WebView.swift */,
 				EBF7ACA82AB8905C00731645 /* SessionBannerView.swift */,
+				09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */,
 				09B490012ACCDF2D00273F0E /* ErrorView.swift */,
 				0967352F2AD0CA3B00C6AEE0 /* DocumentView.swift */,
 				096735312AD1957900C6AEE0 /* AsyncContentView.swift */,
 				096735392AD36EBC00C6AEE0 /* DCViewController.swift */,
+				09B727E52AD45684006BDA40 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				096735322AD1957900C6AEE0 /* AsyncContentView.swift in Sources */,
 				EB895AF22ACDCEEA00BF7711 /* RewardsModel.swift in Sources */,
 				099AC4472AB7DD030023D8B3 /* RewardsView.swift in Sources */,
+				09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */,
 				099B12682AB201A000DA4B8F /* ContentView.swift in Sources */,
 				0967353A2AD36EBC00C6AEE0 /* DCViewController.swift in Sources */,
 				099AC4332AB4E5C20023D8B3 /* ReservationsView.swift in Sources */,
@@ -495,6 +502,7 @@
 				EBF7ACA92AB8905C00731645 /* SessionBannerView.swift in Sources */,
 				099B12662AB201A000DA4B8F /* HospitalityDemoApp.swift in Sources */,
 				09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */,
+				09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */,
 				09B48FFE2ACC529D00273F0E /* UserManager.swift in Sources */,
 				099AC42E2AB4E43C0023D8B3 /* AppTabView.swift in Sources */,
 			);
