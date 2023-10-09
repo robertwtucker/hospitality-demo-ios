@@ -10,11 +10,16 @@ struct AppTabView: View {
   @Environment(ReservationsModel.self) private var model
   @Environment(AppState.self) private var appState
 
+  private var selectedTab: Binding<Tab> {
+    Binding {
+      appState.selectedTab
+    } set: {
+      appState.selectedTab = $0
+    }
+  }
+  
   var body: some View {
-    TabView(selection: Binding(
-      get: { appState.selectedTab },
-      set: { newValue in appState.selectedTab = newValue }
-    )) {
+    TabView(selection: selectedTab) {
       Group {
         // RESERVATIONS TAB
         ZStack {
