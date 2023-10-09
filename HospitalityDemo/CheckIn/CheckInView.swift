@@ -11,11 +11,6 @@ struct CheckInView: View {
   @Environment(ReservationsModel.self) private var model
 
   //  @SwiftUI.State private var selectedReservation
-  @Environment(AppState.self) private var appState
-  @Environment(UserManager.self) private var user
-  @Environment(ReservationsModel.self) private var model
-
-  //  @SwiftUI.State private var selectedReservation
   @SwiftUI.State private var arrivalTime = Date.now
   @SwiftUI.State private var showDetails = false
 
