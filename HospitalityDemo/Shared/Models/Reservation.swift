@@ -7,13 +7,14 @@ import Foundation
 
 struct Reservation: Codable {
   var hotel: Hotel
-  let _id, confirmationNumber, guests, creditPrefix, creditSuffix: Int
+  let _id, confirmationNumber, guests, creditPrefix, creditSuffix, points: Int
   let checkInDate, checkOutDate: String
   var checkedIn: Bool
 
   enum CodingKeys: String, CodingKey {
     case _id = "id"
-    case hotel, confirmationNumber, guests, creditPrefix, creditSuffix, checkInDate, checkOutDate, checkedIn
+    case hotel, confirmationNumber, guests, creditPrefix, creditSuffix
+    case checkInDate, checkOutDate, checkedIn, points
   }
 }
 
@@ -55,6 +56,7 @@ extension Reservation {
     guests: 2,
     creditPrefix: 54,
     creditSuffix: 79,
+    points: 300,
     checkInDate: "2023-10-14",
     checkOutDate: "2023-10-18",
     checkedIn: false)
@@ -72,6 +74,7 @@ extension Reservation {
     guests: 0,
     creditPrefix: 0,
     creditSuffix: 0,
+    points: 0,
     checkInDate: "",
     checkOutDate: "",
     checkedIn: false)
