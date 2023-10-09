@@ -41,7 +41,6 @@
 		09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */; };
 		09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E52AD45684006BDA40 /* SettingsView.swift */; };
 		EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513542ABB7BE9003AF103 /* CheckInView.swift */; };
-		EB4FD0C12ACF12AA009B1D2C /* rewards.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C02ACF12AA009B1D2C /* rewards.json */; };
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
 		EB895AF22ACDCEEA00BF7711 /* RewardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB895AF12ACDCEEA00BF7711 /* RewardsModel.swift */; };
 		EB895AF42ACDCF2200BF7711 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB895AF32ACDCF2200BF7711 /* Reward.swift */; };
@@ -108,7 +107,6 @@
 		09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBannerMenu.swift; sourceTree = "<group>"; };
 		09B727E52AD45684006BDA40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EB2513542ABB7BE9003AF103 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
-		EB4FD0C02ACF12AA009B1D2C /* rewards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rewards.json; sourceTree = "<group>"; };
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
 		EB895AF12ACDCEEA00BF7711 /* RewardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsModel.swift; sourceTree = "<group>"; };
 		EB895AF32ACDCF2200BF7711 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				EB4FD0C22ACF5DF1009B1D2C /* reservations.json */,
-				EB4FD0C02ACF12AA009B1D2C /* rewards.json */,
 				09B4900B2ACD01A900273F0E /* quadientcloud.json */,
 			);
 			path = Resources;
@@ -447,7 +444,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB4FD0C12ACF12AA009B1D2C /* rewards.json in Resources */,
 				099B126E2AB201A200DA4B8F /* Preview Assets.xcassets in Resources */,
 				099B126A2AB201A200DA4B8F /* Assets.xcassets in Resources */,
 				09B4900C2ACD01A900273F0E /* quadientcloud.json in Resources */,
