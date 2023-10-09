@@ -6,19 +6,38 @@
 import Foundation
 
 struct Reward {
-  let _id, reservationNumber, guests, points: Int
-  let hotelName, checkIn, checkOut: String
-  let document: DocumentInfo?
-
+  var _id: Int
+  var reservationNumber, guests, points: Int?
+  var hotelName, checkIn, checkOut: String?
+  var document: DocumentInfo?
+  
   init(from document: DocumentInfo) {
     self._id = Int(document.documentID!)!
-    self.reservationNumber = 0
-    self.guests = 1
-    self.points = 0
-    self.hotelName = document.name!
-    self.checkIn = "temp"
-    self.checkOut = "temp"
     self.document = document
+    
+    if let metadata = document.metadata {
+      for meta in metadata {
+        guard let name = meta.name else {
+          break
+        }
+        switch name {
+        case "checkIn":
+          self.checkIn = meta.value
+        case "checkOut":
+          self.checkOut = meta.value
+        case "hotelName":
+          self.hotelName = meta.value
+        case "guests":
+          self.guests = Int(meta.value!)
+        case "points":
+          self.points = Int(meta.value!)
+        case "reservationNumber":
+          self.reservationNumber = Int(meta.value!)
+        default:
+          break
+        }
+      }
+    }
   }
 }
 
@@ -28,20 +47,4 @@ typealias Rewards = [Reward]
 
 extension Reward: Identifiable {
   public var id: Int { _id }
-}
-
-// MARK: - Sample Data
-extension Reward {
-  static var documents: [DocumentInfo] {
-    let doc1 = DocumentInfo()
-    doc1.name = "doc1"
-    let doc2 = DocumentInfo()
-    doc2.name = "doc2"
-    return [doc1, doc2]
-  }
-
-  static var samples = [
-    Reward(from: documents[0]),
-    Reward(from: documents[1])
-  ]
 }
