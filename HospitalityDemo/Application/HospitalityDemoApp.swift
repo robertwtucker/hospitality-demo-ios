@@ -189,7 +189,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         } else {
           logger.info("Notification registration skipped due to verification status: \(verificationResult.status.rawValue)")
         }
-      } catch let error {
+      } catch {
         logger.error("Notification registration failed due to error: \(error.localizedDescription)")
       }
     }
@@ -231,7 +231,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         Task {
           do {
             try await sdk.notificationService.unregisterFromNotifications(withDeviceToken: oldValue, clientID: clientId)
-          } catch let error {
+          } catch {
             logger.error("Failed to unregister previous device due to error: \(error.localizedDescription)")
           }
         }
@@ -255,7 +255,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       sdk.notificationService.save(notification)
       sdk.documentService.downloadDocumentContent(inBackground: documentInfo.documentID)
       return .newData
-    } catch let error {
+    } catch {
       logger.error("Failed to get document w/ID:\(documentId) due to error: \(error.localizedDescription)")
       return .failed
     }
@@ -294,7 +294,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
       logger.debug("Received response for notificationToken: \(notificationToken), with documentId: \(documentId)")
       do {
         try await sdk.statisticsService.confirmDocumentOpen(fromNotification: documentId, notificationToken: notificationToken)
-      } catch let error {
+      } catch {
         logger.error("Failed to confirm document open due to error: \(error.localizedDescription)")
       }
       /*
