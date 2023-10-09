@@ -16,6 +16,7 @@
     "guests": 2,
     "creditPrefix": 54,
     "creditSuffix": 79,
+    "points": 300,
     "checkInDate": "2023-10-14",
     "checkOutDate": "2023-10-18"
   }
