@@ -14,8 +14,12 @@ struct SessionBannerView: View {
         Text("Welcome, \(userManager.currentSession?.name ?? "guest")")
           .padding(.leading, 25)
         Spacer()
-        Image(systemName: "person.wave.2")
-          .padding(.trailing, 25)
+        Button(action: {
+          // NEED TO INCLUDE A LOGOUT FUNCTION HERE
+        }, label: {
+          Image(systemName: "person.wave.2")
+            .padding(.trailing, 25)
+        })
       }
       .padding(.bottom, 15
       )

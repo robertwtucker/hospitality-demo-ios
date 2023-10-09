@@ -7,7 +7,7 @@ import SwiftUI
 
 struct RewardsView: View {
   @SwiftUI.State private var model = RewardsModel()
-  
+
   var body: some View {
     NavigationStack {
       AsyncContentView(source: model) { rewards in

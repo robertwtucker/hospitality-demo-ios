@@ -9,7 +9,7 @@ struct Reward {
   let _id, reservationNumber, guests, points: Int
   let hotelName, checkIn, checkOut: String
   let document: DocumentInfo?
-  
+
   init(from document: DocumentInfo) {
     self._id = Int(document.documentID!)!
     self.reservationNumber = 0
@@ -39,7 +39,7 @@ extension Reward {
     doc2.name = "doc2"
     return [doc1, doc2]
   }
-  
+
   static var samples = [
     Reward(from: documents[0]),
     Reward(from: documents[1])

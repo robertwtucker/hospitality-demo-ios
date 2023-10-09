@@ -9,7 +9,7 @@ struct AppTabView: View {
   @Environment(UserManager.self) private var user
   @Environment(ReservationsModel.self) private var model
   @Environment(AppState.self) private var appState
-  
+
   var body: some View {
     TabView(selection: Binding(
       get: { appState.selectedTab },
@@ -36,10 +36,10 @@ struct AppTabView: View {
         }
         .tag(Tab.conceirge)
         // CHECK IN TAB ## OPTIONAL ##
-        if !model.currentReservation.checkIn.checkedIn {
+        if !model.currentReservation.checkedIn {
           ZStack {
             CheckInView()
-              .padding(.top, 10)
+              .padding(.top, 35)
             SessionBannerView()
           }
           .tabItem {
