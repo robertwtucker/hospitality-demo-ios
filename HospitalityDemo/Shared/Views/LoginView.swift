@@ -122,7 +122,7 @@ struct LoginView: View {
         return }
       clearFormFields()
       userManager.currentSession = sessionInfo
-    } catch let error {
+    } catch {
       errorMessage = "Login error: \(error.localizedDescription)"
       logger.error("\(errorMessage)")
       showError.toggle()
@@ -139,7 +139,7 @@ struct LoginView: View {
             return provider
           }
         }
-      } catch let error {
+      } catch {
         logger.error("Advantage SDK returned an error getting list of identity providers: \(error.localizedDescription)")
       }
       return nil
