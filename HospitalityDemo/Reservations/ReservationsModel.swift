@@ -5,16 +5,26 @@
 
 import Foundation
 
-@Observable class ReservationsModel {
-  var reservations: [Reservation] = []
+@Observable class ReservationsModel: LoadableModel {
+  typealias Output = Reservations
+  
+  private(set) var state: LoadingState<Output> = .idle
+  var reservations: Reservations = []
   var currentReservation = Reservation.empty
   
   @MainActor
-  func load() {
-    let result  = Bundle.main.decode(Reservations.self, from: "reservations.json")
-    if result.count > 0 {
-      reservations = result
-      currentReservation = result[0]
+  func load() async {
+    let result = Bundle.main.decode(Reservations.self, from: "reservations.json")
+    state = .loaded(result)
+    
+    switch state {
+    case .loaded(let reservations):
+      self.reservations = reservations
+      if reservations.count > 0 {
+        self.currentReservation = reservations[0]
+      }
+    default:
+      break
     }
   }
 }
