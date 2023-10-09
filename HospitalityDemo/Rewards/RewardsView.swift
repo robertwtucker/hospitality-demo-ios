@@ -7,35 +7,36 @@ import SwiftUI
 
 struct RewardsView: View {
   @SwiftUI.State private var model = RewardsModel()
-  @SwiftUI.State private var isLoading = false
   
   var body: some View {
     NavigationStack {
-      List(model.rewards) { reward in
-        NavigationLink {
-          Text(reward.hotelName)
-        } label: {
-          Text("\(reward.hotelName)\n").bold() +
-          Text("Check-In: \(reward.checkIn)").font(.caption)
+      AsyncContentView(source: model) { rewards in
+        List(rewards) { reward in
+          NavigationLink {
+            DocumentView(document: reward.document!)
+          } label: {
+            Text("\(reward.hotelName)\n").bold() +
+            Text("Check-In: \(reward.checkIn)").font(.caption)
+          }
         }
         .navigationTitle("Account Activity")
-      }
-      .overlay {
-        if isLoading {
-          LoadingView()
+        .overlay {
+          if model.rewards.count == 0 {
+            ContentUnavailableView {
+              Label("No recent activity", systemImage: "trophy.circle")
+            } description: {
+              Text("Reward statements you receive will appear here.")
+            }
+          }
+        }
+        .refreshable {
+          await model.load()
         }
       }
-    }
-    .onAppear() {
-      isLoading.toggle()
-      model.load()
-      isLoading.toggle()
     }
   }
 }
 
-struct RewardsView_Previews: PreviewProvider {
-  static var previews: some View {
-    RewardsView()
-  }
+#Preview {
+  RewardsView()
 }

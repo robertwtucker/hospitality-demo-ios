@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0916E3BC2ACDD3E1000801D0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0916E3BB2ACDD3E0000801D0 /* UserNotifications.framework */; };
+		096735302AD0CA3B00C6AEE0 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967352F2AD0CA3B00C6AEE0 /* DocumentView.swift */; };
+		096735322AD1957900C6AEE0 /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096735312AD1957900C6AEE0 /* AsyncContentView.swift */; };
+		0967353A2AD36EBC00C6AEE0 /* DCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096735392AD36EBC00C6AEE0 /* DCViewController.swift */; };
 		099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FB82ABB325C00BA95E5 /* libFMDB.a */; };
 		099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */; };
 		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
@@ -65,6 +68,9 @@
 /* Begin PBXFileReference section */
 		0916E3BB2ACDD3E0000801D0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.0.sdk/System/Library/Frameworks/UserNotifications.framework; sourceTree = DEVELOPER_DIR; };
 		0916E3BD2ACE7154000801D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0967352F2AD0CA3B00C6AEE0 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
+		096735312AD1957900C6AEE0 /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
+		096735392AD36EBC00C6AEE0 /* DCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCViewController.swift; sourceTree = "<group>"; };
 		099A2FB82ABB325C00BA95E5 /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = HospitalityDemo/Shared/Libraries/libFMDB.a; sourceTree = "<group>"; };
 		099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLCipher.a; path = HospitalityDemo/Shared/Libraries/libSQLCipher.a; sourceTree = "<group>"; };
 		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
@@ -186,6 +192,9 @@
 				099AC4422AB7D8180023D8B3 /* WebView.swift */,
 				EBF7ACA82AB8905C00731645 /* SessionBannerView.swift */,
 				09B490012ACCDF2D00273F0E /* ErrorView.swift */,
+				0967352F2AD0CA3B00C6AEE0 /* DocumentView.swift */,
+				096735312AD1957900C6AEE0 /* AsyncContentView.swift */,
+				096735392AD36EBC00C6AEE0 /* DCViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -465,6 +474,7 @@
 				099AC43A2AB4F7D60023D8B3 /* CheckOutView.swift in Sources */,
 				099AC4432AB7D8180023D8B3 /* WebView.swift in Sources */,
 				099AC43C2AB4FB7F0023D8B3 /* Reservation.swift in Sources */,
+				096735302AD0CA3B00C6AEE0 /* DocumentView.swift in Sources */,
 				EB895AF42ACDCF2200BF7711 /* Reward.swift in Sources */,
 				EBF7ACAB2AB8935E00731645 /* ReservationBannerView.swift in Sources */,
 				099AC4402AB7D4C40023D8B3 /* LoginView.swift in Sources */,
@@ -475,9 +485,11 @@
 				09B490052ACCF4F200273F0E /* FileReader.swift in Sources */,
 				EBF7ACAD2AB8949F00731645 /* ReservationDetailsView.swift in Sources */,
 				099AC4282AB4E1CF0023D8B3 /* AppState.swift in Sources */,
+				096735322AD1957900C6AEE0 /* AsyncContentView.swift in Sources */,
 				EB895AF22ACDCEEA00BF7711 /* RewardsModel.swift in Sources */,
 				099AC4472AB7DD030023D8B3 /* RewardsView.swift in Sources */,
 				099B12682AB201A000DA4B8F /* ContentView.swift in Sources */,
+				0967353A2AD36EBC00C6AEE0 /* DCViewController.swift in Sources */,
 				099AC4332AB4E5C20023D8B3 /* ReservationsView.swift in Sources */,
 				09B490002ACC5DA700273F0E /* UserPreferences.swift in Sources */,
 				EBF7ACA92AB8905C00731645 /* SessionBannerView.swift in Sources */,

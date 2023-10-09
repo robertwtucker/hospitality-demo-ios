@@ -5,14 +5,20 @@
 
 import Foundation
 
-// MARK: - Reward
-struct Reward: Codable {
+struct Reward {
   let _id, reservationNumber, guests, points: Int
   let hotelName, checkIn, checkOut: String
+  let document: DocumentInfo?
   
-  enum CodingKeys: String, CodingKey {
-    case _id = "id"
-    case reservationNumber, guests, points, hotelName, checkIn, checkOut
+  init(from document: DocumentInfo) {
+    self._id = Int(document.documentID!)!
+    self.reservationNumber = 0
+    self.guests = 1
+    self.points = 0
+    self.hotelName = document.name!
+    self.checkIn = "temp"
+    self.checkOut = "temp"
+    self.document = document
   }
 }
 
@@ -26,23 +32,16 @@ extension Reward: Identifiable {
 
 // MARK: - Sample Data
 extension Reward {
+  static var documents: [DocumentInfo] {
+    let doc1 = DocumentInfo()
+    doc1.name = "doc1"
+    let doc2 = DocumentInfo()
+    doc2.name = "doc2"
+    return [doc1, doc2]
+  }
+  
   static var samples = [
-    Reward(
-      _id: 1,
-      reservationNumber: 1756895,
-      guests: 2,
-      points: 300,
-      hotelName: "Omni Quady Inn",
-      checkIn: "2023-10-14",
-      checkOut: "2023-10-18"
-    ),
-    Reward(
-      _id: 2,
-      reservationNumber: 1445875,
-      guests: 1,
-      points: 150,
-      hotelName: "Quady Holiday Inn",
-      checkIn: "2023-8-17",
-      checkOut: "2023-8-21"
-    )]
+    Reward(from: documents[0]),
+    Reward(from: documents[1])
+  ]
 }
