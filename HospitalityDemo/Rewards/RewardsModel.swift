@@ -18,8 +18,9 @@ import os
   @MainActor
   func load() async {
     do {
-      let documents = try await fetchRemoteDocuments()
+      var documents = try await fetchRemoteDocuments()
       logger.debug("Fetch returned \(documents.count) documents (rewards)")
+      documents = filterRewardActivity(from: documents)
       state = .loaded(documents.map { document in
         Reward(from: document)
       })
@@ -40,6 +41,18 @@ import os
           continuation.resume(returning: documents)
         }
       }
+    }
+  }
+  
+  private func filterRewardActivity(from documents: [DocumentInfo]) -> [DocumentInfo] {
+    return documents.filter { document in
+      guard let metadata = document.metadata else { return false }
+      guard let metatype = metadata.first(where: { meta in
+        meta.name == "type"
+      }) else {
+        return false
+      }
+      return metatype.value == "reward_activity"
     }
   }
   
