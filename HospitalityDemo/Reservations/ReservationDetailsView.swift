@@ -10,11 +10,6 @@ struct ReservationDetailsView: View {
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text("We are happy to provide you with your hotel confirmation for your upcoming stay at the **\(reservation.hotel.name)**.")
-        .padding(.bottom, 10)
-      Text("Your booking details:")
-        .bold()
-        .padding(.bottom, 10)
       HStack {
         Text("Hotel: ")
           .padding(.trailing, -5)

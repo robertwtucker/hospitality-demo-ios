@@ -16,7 +16,6 @@
 		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
 		099AC4282AB4E1CF0023D8B3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4272AB4E1CF0023D8B3 /* AppState.swift */; };
 		099AC42E2AB4E43C0023D8B3 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC42D2AB4E43C0023D8B3 /* AppTabView.swift */; };
-		099AC4332AB4E5C20023D8B3 /* ReservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4322AB4E5C20023D8B3 /* ReservationsView.swift */; };
 		099AC4352AB4E6410023D8B3 /* ReservationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */; };
 		099AC43A2AB4F7D60023D8B3 /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4392AB4F7D60023D8B3 /* CheckOutView.swift */; };
 		099AC43C2AB4FB7F0023D8B3 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC43B2AB4FB7F0023D8B3 /* Reservation.swift */; };
@@ -40,6 +39,7 @@
 		09B4900C2ACD01A900273F0E /* quadientcloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 09B4900B2ACD01A900273F0E /* quadientcloud.json */; };
 		09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */; };
 		09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E52AD45684006BDA40 /* SettingsView.swift */; };
+		EB1292A72AD5B4F10000AB85 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1292A62AD5B4F10000AB85 /* WelcomeView.swift */; };
 		EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513542ABB7BE9003AF103 /* CheckInView.swift */; };
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
 		EB895AF22ACDCEEA00BF7711 /* RewardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB895AF12ACDCEEA00BF7711 /* RewardsModel.swift */; };
@@ -77,7 +77,6 @@
 		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
 		099AC4272AB4E1CF0023D8B3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		099AC42D2AB4E43C0023D8B3 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
-		099AC4322AB4E5C20023D8B3 /* ReservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsView.swift; sourceTree = "<group>"; };
 		099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsModel.swift; sourceTree = "<group>"; };
 		099AC4392AB4F7D60023D8B3 /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		099AC43B2AB4FB7F0023D8B3 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		09B4900B2ACD01A900273F0E /* quadientcloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quadientcloud.json; sourceTree = "<group>"; };
 		09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBannerMenu.swift; sourceTree = "<group>"; };
 		09B727E52AD45684006BDA40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EB1292A62AD5B4F10000AB85 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		EB2513542ABB7BE9003AF103 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
 		EB895AF12ACDCEEA00BF7711 /* RewardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsModel.swift; sourceTree = "<group>"; };
@@ -206,7 +206,6 @@
 		099AC4312AB4E5A10023D8B3 /* Reservations */ = {
 			isa = PBXGroup;
 			children = (
-				099AC4322AB4E5C20023D8B3 /* ReservationsView.swift */,
 				099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */,
 				EBF7ACAA2AB8935E00731645 /* ReservationBannerView.swift */,
 				EBF7ACAC2AB8949F00731645 /* ReservationDetailsView.swift */,
@@ -282,6 +281,7 @@
 		099B12642AB201A000DA4B8F /* HospitalityDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EB1292A52AD5B4DC0000AB85 /* Welcome */,
 				0916E3BD2ACE7154000801D0 /* Info.plist */,
 				099AC4262AB4B6FE0023D8B3 /* Application */,
 				EB2513532ABB7BBF003AF103 /* CheckIn */,
@@ -330,6 +330,14 @@
 				09B4900B2ACD01A900273F0E /* quadientcloud.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB1292A52AD5B4DC0000AB85 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				EB1292A62AD5B4F10000AB85 /* WelcomeView.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		EB2513532ABB7BBF003AF103 /* CheckIn */ = {
@@ -493,10 +501,10 @@
 				09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */,
 				099B12682AB201A000DA4B8F /* ContentView.swift in Sources */,
 				0967353A2AD36EBC00C6AEE0 /* DCViewController.swift in Sources */,
-				099AC4332AB4E5C20023D8B3 /* ReservationsView.swift in Sources */,
 				09B490002ACC5DA700273F0E /* UserPreferences.swift in Sources */,
 				EBF7ACA92AB8905C00731645 /* SessionBannerView.swift in Sources */,
 				099B12662AB201A000DA4B8F /* HospitalityDemoApp.swift in Sources */,
+				EB1292A72AD5B4F10000AB85 /* WelcomeView.swift in Sources */,
 				09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */,
 				09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */,
 				09B48FFE2ACC529D00273F0E /* UserManager.swift in Sources */,
