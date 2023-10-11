@@ -81,10 +81,8 @@ struct LoginView: View {
   private var buttonSection: some View {
     Section {
       Button {
-        withAnimation {
-          isLoggingIn = true
-        }
         Task {
+          isLoggingIn = true
           await login()
           isLoggingIn = false
         }
