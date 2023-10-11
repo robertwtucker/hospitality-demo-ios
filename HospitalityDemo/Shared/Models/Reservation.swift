@@ -10,11 +10,13 @@ struct Reservation: Codable {
   let _id, confirmationNumber, guests, creditPrefix, creditSuffix, points: Int
   let checkInDate, checkOutDate: String
   var checkedIn: Bool
+  var guestName, guestEmail: String?
 
   enum CodingKeys: String, CodingKey {
     case _id = "id"
     case hotel, confirmationNumber, guests, creditPrefix, creditSuffix
     case checkInDate, checkOutDate, checkedIn, points
+    case guestName, guestEmail
   }
 }
 

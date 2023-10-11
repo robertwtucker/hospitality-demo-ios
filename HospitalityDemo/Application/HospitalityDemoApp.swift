@@ -56,24 +56,24 @@ struct HospitalityDemoApp: App {
     logger.debug("Reading cloud configuration from file")
     var config = Bundle.main.decode(CloudConfig.self, from: "quadientcloud.json")
 #if targetEnvironment(simulator)
-    config.rootedDeviceEnabled = true
+    config.advantageSdk.rootedDeviceEnabled = true
 #else
-    config.rootedDeviceEnabled = false
+    config.advantageSdk.rootedDeviceEnabled = false
 #endif
     
     let connectionSettings = ConnectionSettings()
-    connectionSettings.applicationId = config.applicationId
+    connectionSettings.applicationId = config.advantageSdk.applicationId
     connectionSettings.companyName = config.companyName
     connectionSettings.cloudURL = config.cloudUrl
-    connectionSettings.authenticationClientId = config.authenticationClientId
-    connectionSettings.redirectUrl = config.redirectUrl
+    connectionSettings.authenticationClientId = config.advantageSdk.authenticationClientId
+    connectionSettings.redirectUrl = config.advantageSdk.redirectUrl
     
     let options = Options(
       customSettings: true,
-      rootedDeviceEnabled: config.rootedDeviceEnabled,
+      rootedDeviceEnabled: config.advantageSdk.rootedDeviceEnabled,
       loggerSettings: LoggerSettings.server.rawValue,
       encryptionRequired: false)
-    options?.minimumSupportedCloudVersion = config.minimumSupportedCloudVersion
+    options?.minimumSupportedCloudVersion = config.advantageSdk.minimumSupportedCloudVersion
     
     sdk.initialize(with: connectionSettings, databaseKey: "", options: options)
     
