@@ -44,6 +44,7 @@ struct CheckOutView: View {
   private func generateInvoice() async {
     model.currentReservation.guestName = user.name
     model.currentReservation.guestEmail = user.email
+    model.currentReservation.guestClientId = user.clientId
     do {
       let reservation = try stringifyReservation(model.currentReservation)
       let payload = "{\"Clients\":[{\"ClientID\":\"ID123\", \(reservation)}]}"
