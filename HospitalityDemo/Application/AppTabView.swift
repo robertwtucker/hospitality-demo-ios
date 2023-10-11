@@ -23,11 +23,12 @@ struct AppTabView: View {
       Group {
         // RESERVATIONS TAB
         ZStack {
-          ReservationsView()
+          WelcomeView()
+            .padding(.top, 35)
           SessionBannerView()
         }
         .tabItem {
-          Label("Reservations", systemImage: "calendar")
+          Label("Welcome", systemImage: "figure.wave")
         }
         .tag(Tab.reservations)
         // CONCIERGE TAB
@@ -70,7 +71,7 @@ struct AppTabView: View {
           SessionBannerView()
         }
         .tabItem {
-          Label("Rewards", systemImage: "trophy")
+          Label("Activity", systemImage: "person.and.background.dotted")
         }
         .tag(Tab.rewards)
       }
