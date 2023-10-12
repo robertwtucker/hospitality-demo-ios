@@ -9,7 +9,7 @@ struct AppTabView: View {
   @Environment(UserManager.self) private var user
   @Environment(ReservationsModel.self) private var model
   @Environment(AppState.self) private var appState
-
+  
   private var selectedTab: Binding<Tab> {
     Binding {
       appState.selectedTab
@@ -22,65 +22,48 @@ struct AppTabView: View {
     TabView(selection: selectedTab) {
       Group {
         // RESERVATIONS TAB
-        ZStack {
-          WelcomeView()
-            .padding(.top, 35)
-          SessionBannerView()
-        }
-        .tabItem {
-          Label("Welcome", systemImage: "figure.wave")
-        }
-        .tag(Tab.reservations)
-        // CONCIERGE TAB
-        ZStack {
-          ConciergeView()
-            .padding(.top, 35)
-          SessionBannerView()
-        }
-        .tabItem {
-          Label("Concierge", systemImage: "photo.on.rectangle.angled")
-        }
-        .tag(Tab.conceirge)
+        WelcomeView()
+          .tabItem {
+            Label("Welcome", systemImage: "figure.wave")
+          }
+          .tag(Tab.reservations)
+        ConciergeView()
+          .tabItem {
+            Label("Concierge", systemImage: "photo.on.rectangle.angled")
+          }
+          .tag(Tab.conceirge)
         // CHECK IN TAB ## OPTIONAL ##
         if !model.currentReservation.checkedIn {
-          ZStack {
-            CheckInView()
-              .padding(.top, 35)
-            SessionBannerView()
-          }
-          .tabItem {
-            Label("Check In", systemImage: "door.left.hand.open")
-          }
-          .tag(Tab.checkin)
+          CheckInView()
+            .tabItem {
+              Label("Check In", systemImage: "door.left.hand.open")
+            }
+            .tag(Tab.checkin)
         } else {
           // CHECK OUT TAB ## OPTIONAL ##
-          ZStack {
-            CheckOutView()
-              .padding(.top, 35)
-            SessionBannerView()
-          }
-          .tabItem {
-            Label("Check Out", systemImage: "figure.walk.departure")
-          }
-          .tag(Tab.checkout)
+          CheckOutView()
+            .tabItem {
+              Label("Check Out", systemImage: "figure.walk.departure")
+            }
+            .tag(Tab.checkout)
         }
         // REWARDS TAB
-        ZStack {
-          RewardsView()
-            .padding(.top, 35)
-          SessionBannerView()
-        }
-        .tabItem {
-          Label("Activity", systemImage: "person.and.background.dotted")
-        }
-        .tag(Tab.rewards)
+        RewardsView()
+          .tabItem {
+            Label("Activity", systemImage: "person.and.background.dotted")
+          }
+          .tag(Tab.rewards)
       }
+      .padding(.top, 32)
     }
     .overlay {
-      if AdvantageSDK.sharedInstance().isInitialized && !user.isAuthenticated {
-        LoginView()
-          .presentationDetents([.large])
-          .presentationDragIndicator(.hidden)
+      ZStack {
+        SessionBannerView()
+        if AdvantageSDK.sharedInstance().isInitialized && !user.isAuthenticated {
+          LoginView()
+            .presentationDetents([.large])
+            .presentationDragIndicator(.hidden)
+        }
       }
     }
   }
