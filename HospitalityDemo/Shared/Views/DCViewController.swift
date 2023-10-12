@@ -47,12 +47,11 @@ class DCViewController: UIViewController {
         DispatchQueue.main.async() {
           self.view.addSubview(documentView)
           
-          // TODO: Adjust constraints to fit parent view (correctly)
           documentView.translatesAutoresizingMaskIntoConstraints = false
-          documentView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-          documentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-          documentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-          documentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+          documentView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+          documentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+          documentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
+          documentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
         }
       } else {
           self.showAlertView(title: "Error", message: "Unable to display document: \(error?.localizedDescription ?? "unspecified error")")
