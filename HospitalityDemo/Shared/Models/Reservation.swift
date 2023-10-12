@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Reservation: Codable {
+public struct Reservation: Codable {
   var hotel: Hotel
   let _id, confirmationNumber, guests, creditPrefix, creditSuffix, points: Int
   let checkInDate, checkOutDate: String
@@ -24,7 +24,7 @@ typealias Reservations = [Reservation]
 
 // MARK: - Hotel
 
-struct Hotel: Codable {
+public struct Hotel: Codable {
   let name, location, imageName, checkInTime, checkOutTime, conciergeUrl: String
   let rating: Double
 

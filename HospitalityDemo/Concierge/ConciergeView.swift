@@ -6,15 +6,13 @@
 import SwiftUI
 
 struct ConciergeView: View {
-  @Environment(ReservationsModel.self) private var model
+  @Environment(StayManager.self) private var stay
   
   var body: some View {
-    WebView(url: URL(string: model.currentReservation.hotel.conciergeUrl)!)
+    WebView(url: URL(string: stay.currentStay?.hotel.conciergeUrl ?? "https://www.quadient.com/en/enterprise-industries/service-providers")!)
   }
 }
 
-struct ConciergeView_Previews: PreviewProvider {
-  static var previews: some View {
-    ConciergeView()
-  }
+#Preview {
+  ConciergeView()
 }

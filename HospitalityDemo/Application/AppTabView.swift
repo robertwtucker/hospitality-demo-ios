@@ -7,7 +7,7 @@ import SwiftUI
 
 struct AppTabView: View {
   @Environment(UserManager.self) private var user
-  @Environment(ReservationsModel.self) private var model
+  @Environment(StayManager.self) private var stay
   @Environment(AppState.self) private var appState
   
   private var selectedTab: Binding<Tab> {
@@ -32,9 +32,9 @@ struct AppTabView: View {
             Label("Concierge", systemImage: "photo.on.rectangle.angled")
           }
           .tag(Tab.conceirge)
-        // CHECK IN TAB ## OPTIONAL ##
-        if !model.currentReservation.checkedIn {
-          CheckInView()
+        if stay.currentStay == nil {
+          // CHECK IN TAB ## OPTIONAL ##
+          ReservationsListView()
             .tabItem {
               Label("Check In", systemImage: "door.left.hand.open")
             }

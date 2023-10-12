@@ -15,7 +15,7 @@ struct HospitalityDemoApp: App {
   @SwiftUI.State private var appState = AppState()
   @SwiftUI.State private var userPreferences = UserPreferences.shared
   @SwiftUI.State private var userManager = UserManager.shared
-  @SwiftUI.State private var model = ReservationsModel()
+  @SwiftUI.State private var stayManager = StayManager.shared
   
   var body: some Scene {
     WindowGroup {
@@ -28,7 +28,7 @@ struct HospitalityDemoApp: App {
         .environment(appState)
         .environment(userPreferences)
         .environment(userManager)
-        .environment(model)
+        .environment(stayManager)
         .onChange(of: scenePhase) { _, newValue in
           handleScenePhase(scenePhase: newValue)
         }
