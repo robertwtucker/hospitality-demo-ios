@@ -10,6 +10,7 @@ import UserNotifications
 @main
 struct HospitalityDemoApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+  
   @Environment(\.scenePhase) private var scenePhase
   
   @SwiftUI.State private var stayManager = StayManager.shared
@@ -24,9 +25,9 @@ struct HospitalityDemoApp: App {
           authorizeDeviceForNotifications()
           loginWithCurrentSession()
         }
-        .environment(userPreferences)
-        .environment(userManager)
         .environment(stayManager)
+        .environment(userManager)
+        .environment(userPreferences)
         .onChange(of: scenePhase) { _, newValue in
           handleScenePhase(scenePhase: newValue)
         }

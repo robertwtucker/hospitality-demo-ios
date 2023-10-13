@@ -16,15 +16,12 @@ import os
   
   public static var shared = StayManager()
   
-  init() {
+  private init() {
     cloudConfig = Bundle.main.decode(CloudConfig.self, from: "quadientcloud.json")
   }
   
   public var checkedIn: Bool {
-    guard let _ = currentStay else {
-      return false
-    }
-    return true
+    currentStay != nil ? true : false
   }
   
   public func checkIn(reservation: Reservation) {
@@ -42,27 +39,19 @@ import os
     }
     
     do {
-      let reservation = try stringifyReservation(stay)
-      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\", \(reservation)}]}"
+      let reservation = try JSONEncoder().encode(stay)
+      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\", \"Reservation\": \(reservation)}]}"
+      print("payload:" ,payload)
       
       let url = cloudConfig.cloudUrl.replacingOccurrences(of: "<company>", with: cloudConfig.companyName)
       let client = GenerateClient(baseUrl: URL(string: url)!, apiKey: cloudConfig.generate.apiKey)
       
       _ = await client.send(.onDemandCustomData(
         pipeline: cloudConfig.generate.checkOutPipeline, payload: payload))
+      
+      currentStay = nil
     } catch {
       logger.error("Caught error encoding reservation: \(error)")
     }
-    
-    currentStay = nil
-  }
-  
-  private func stringifyReservation(_ reservation: Reservation) throws -> String {
-    let encoder = JSONEncoder()
-    encoder.outputFormatting = .withoutEscapingSlashes
-    guard var stringified = try String(data: encoder.encode(reservation), encoding: .utf8) else { return "" }
-    stringified.removeFirst()
-    stringified.removeLast()
-    return stringified
   }
 }

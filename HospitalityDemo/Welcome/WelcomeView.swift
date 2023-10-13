@@ -15,5 +15,5 @@ struct WelcomeView: View {
 
 #Preview {
   WelcomeView()
-    .environment(StayManager())
+    .environment(StayManager.shared)
 }

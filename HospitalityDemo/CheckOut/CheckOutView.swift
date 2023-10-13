@@ -7,7 +7,6 @@ import SwiftUI
 import os
 
 struct CheckOutView: View {
-  @Environment(UserManager.self) private var user
   @Environment(StayManager.self) private var stay
   
   @SwiftUI.State private var isProcessing: Bool = false
@@ -45,5 +44,4 @@ struct CheckOutView: View {
 #Preview {
   CheckOutView()
     .environment(StayManager.shared)
-    .environment(UserManager.shared)
 }

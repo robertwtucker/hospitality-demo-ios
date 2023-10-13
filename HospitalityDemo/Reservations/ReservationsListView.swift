@@ -6,8 +6,6 @@
 import SwiftUI
 
 struct ReservationsListView: View {
-  @Environment(UserManager.self) private var user
-  
   @SwiftUI.State private var model = ReservationsModel()
   @SwiftUI.State private var arrivalTime = Date.now
   @SwiftUI.State private var showDetails = false
@@ -50,5 +48,4 @@ struct ReservationsListView: View {
 
 #Preview {
   ReservationsListView()
-    .environment(UserManager.shared)
 }

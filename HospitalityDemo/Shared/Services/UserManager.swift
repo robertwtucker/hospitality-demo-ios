@@ -26,7 +26,7 @@ import SwiftUI
   }
   
   public var isAuthenticated: Bool {
-    guard let sessionInfo = self.currentSession else { return false }
+    guard let sessionInfo = currentSession else { return false }
     return !sessionInfo.isExpired()
   }
   

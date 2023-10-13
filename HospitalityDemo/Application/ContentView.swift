@@ -12,11 +12,13 @@ struct ContentView: View {
   @SwiftUI.State private var selectedTab: Tab = .home
   
   private var availableTabs: [Tab] {
-    if stay.currentStay == nil {
-      Tab.checkedOutTabs()
-    } else {
-      Tab.checkedInTabs()
-    }
+    stay.checkedIn ? Tab.checkedInTabs() : Tab.checkedOutTabs()
+  }
+  
+  private var showLogin: Binding<Bool> {
+    Binding {
+        !user.isAuthenticated
+    } set: { _ in }
   }
   
   var body: some View {
@@ -28,25 +30,23 @@ struct ContentView: View {
           }
           .tag(tab)
       }
-      .padding(.top, 32)
     }
+    .padding(.top, 32)
     .overlay {
       ZStack {
         SessionBannerView()
-        if AdvantageSDK.sharedInstance().isInitialized && !user.isAuthenticated {
-          LoginView()
-            .presentationDetents([.large])
-            .presentationDragIndicator(.hidden)
-        }
       }
+    }
+    .sheet(isPresented: showLogin) {
+      LoginView()
+        .presentationDetents([.large])
+        .presentationDragIndicator(.hidden)
     }
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-      .environment(StayManager())
-      .environment(UserManager.shared)
-  }
+#Preview {
+  ContentView()
+    .environment(StayManager.shared)
+    .environment(UserManager.shared)
 }

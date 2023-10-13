@@ -16,7 +16,7 @@ struct ReservationCardView: View {
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-        .strokeBorder(.gray, lineWidth: 1)
+        .strokeBorder(Color("brand/turquoise"), lineWidth: 1)
         .frame(width: cardAndImageWidth, height: cardHeight)
         .shadow(radius: 2)
       
@@ -36,6 +36,8 @@ struct ReservationCardView: View {
         .padding(.horizontal, 8)
         Spacer()
       }
+      .background(Color("brand/turquoise"))
+      .foregroundColor(.white)
       .frame(width: cardAndImageWidth, height: cardHeight)
       .cornerRadius(cornerRadius)
     }
