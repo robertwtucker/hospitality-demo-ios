@@ -42,7 +42,6 @@ extension Reservation: Identifiable {
 
 // MARK: - Sample Data
 
-
 extension Reservation {
   static var sampleData = Reservation(
     hotel: Hotel(
