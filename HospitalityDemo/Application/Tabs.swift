@@ -32,7 +32,7 @@ enum Tab: Int, Identifiable, Hashable {
     case .checkout:
       CheckOutView()
     case .activity:
-      ActivityView()
+      ActivityListView()
     case .other:
       EmptyView()
     }

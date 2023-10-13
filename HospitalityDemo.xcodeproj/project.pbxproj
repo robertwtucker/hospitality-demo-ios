@@ -17,6 +17,7 @@
 		097FB7212AD8CCC000305AE0 /* ReservationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB7202AD8CCC000305AE0 /* ReservationCardView.swift */; };
 		097FB7232AD8D68900305AE0 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB7222AD8D68900305AE0 /* RatingView.swift */; };
 		097FB7252AD8F5A900305AE0 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB7242AD8F5A900305AE0 /* Tabs.swift */; };
+		097FB7292AD999FE00305AE0 /* ActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB7282AD999FE00305AE0 /* ActivityItemView.swift */; };
 		099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FB82ABB325C00BA95E5 /* libFMDB.a */; };
 		099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */; };
 		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
@@ -27,7 +28,7 @@
 		099AC4402AB7D4C40023D8B3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC43F2AB7D4C40023D8B3 /* LoginView.swift */; };
 		099AC4432AB7D8180023D8B3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4422AB7D8180023D8B3 /* WebView.swift */; };
 		099AC4452AB7DBC20023D8B3 /* ConciergeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4442AB7DBC20023D8B3 /* ConciergeView.swift */; };
-		099AC4472AB7DD030023D8B3 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4462AB7DD030023D8B3 /* ActivityView.swift */; };
+		099AC4472AB7DD030023D8B3 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4462AB7DD030023D8B3 /* ActivityListView.swift */; };
 		099B12662AB201A000DA4B8F /* HospitalityDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B12652AB201A000DA4B8F /* HospitalityDemoApp.swift */; };
 		099B12682AB201A000DA4B8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099B12672AB201A000DA4B8F /* ContentView.swift */; };
 		099B126A2AB201A200DA4B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099B12692AB201A200DA4B8F /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		097FB7202AD8CCC000305AE0 /* ReservationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCardView.swift; sourceTree = "<group>"; };
 		097FB7222AD8D68900305AE0 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		097FB7242AD8F5A900305AE0 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		097FB7282AD999FE00305AE0 /* ActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItemView.swift; sourceTree = "<group>"; };
 		099A2FB82ABB325C00BA95E5 /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = HospitalityDemo/Shared/Libraries/libFMDB.a; sourceTree = "<group>"; };
 		099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLCipher.a; path = HospitalityDemo/Shared/Libraries/libSQLCipher.a; sourceTree = "<group>"; };
 		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
@@ -93,7 +95,7 @@
 		099AC43F2AB7D4C40023D8B3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		099AC4422AB7D8180023D8B3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		099AC4442AB7DBC20023D8B3 /* ConciergeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeView.swift; sourceTree = "<group>"; };
-		099AC4462AB7DD030023D8B3 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		099AC4462AB7DD030023D8B3 /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
 		099AC4582AB8D5090023D8B3 /* HospitalityDemo-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HospitalityDemo-BridgingHeader.h"; sourceTree = "<group>"; };
 		099B12622AB201A000DA4B8F /* HospitalityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HospitalityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099B12652AB201A000DA4B8F /* HospitalityDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalityDemoApp.swift; sourceTree = "<group>"; };
@@ -248,7 +250,8 @@
 		099AC4482AB7DD0D0023D8B3 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				099AC4462AB7DD030023D8B3 /* ActivityView.swift */,
+				099AC4462AB7DD030023D8B3 /* ActivityListView.swift */,
+				097FB7282AD999FE00305AE0 /* ActivityItemView.swift */,
 				EB895AF12ACDCEEA00BF7711 /* ActivityModel.swift */,
 			);
 			path = Activity;
@@ -499,6 +502,7 @@
 				099AC4402AB7D4C40023D8B3 /* LoginView.swift in Sources */,
 				099AC43E2AB7D21A0023D8B3 /* LoadingView.swift in Sources */,
 				09B490022ACCDF2D00273F0E /* ErrorView.swift in Sources */,
+				097FB7292AD999FE00305AE0 /* ActivityItemView.swift in Sources */,
 				099AC4452AB7DBC20023D8B3 /* ConciergeView.swift in Sources */,
 				097FB7232AD8D68900305AE0 /* RatingView.swift in Sources */,
 				097FB7212AD8CCC000305AE0 /* ReservationCardView.swift in Sources */,
@@ -507,7 +511,7 @@
 				EBF7ACAD2AB8949F00731645 /* ReservationDetailsView.swift in Sources */,
 				096735322AD1957900C6AEE0 /* AsyncContentView.swift in Sources */,
 				EB895AF22ACDCEEA00BF7711 /* ActivityModel.swift in Sources */,
-				099AC4472AB7DD030023D8B3 /* ActivityView.swift in Sources */,
+				099AC4472AB7DD030023D8B3 /* ActivityListView.swift in Sources */,
 				09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */,
 				099B12682AB201A000DA4B8F /* ContentView.swift in Sources */,
 				0967353A2AD36EBC00C6AEE0 /* DCViewController.swift in Sources */,
