@@ -215,16 +215,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		099AC4312AB4E5A10023D8B3 /* Reservations */ = {
+		099AC4312AB4E5A10023D8B3 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
+				EB2513542ABB7BE9003AF103 /* CheckInView.swift */,
+				097FB71E2AD88CB900305AE0 /* CheckInConfirmView.swift */,
 				099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */,
-				EBF7ACAA2AB8935E00731645 /* ReservationBannerView.swift */,
-				EBF7ACAC2AB8949F00731645 /* ReservationDetailsView.swift */,
 				097FB71C2AD87B6700305AE0 /* ReservationsListView.swift */,
+				EBF7ACAA2AB8935E00731645 /* ReservationBannerView.swift */,
 				097FB7202AD8CCC000305AE0 /* ReservationCardView.swift */,
+				EBF7ACAC2AB8949F00731645 /* ReservationDetailsView.swift */,
 			);
-			path = Reservations;
+			path = Trips;
 			sourceTree = "<group>";
 		};
 		099AC4382AB4F7B60023D8B3 /* CheckOut */ = {
@@ -298,11 +300,10 @@
 				0916E3BD2ACE7154000801D0 /* Info.plist */,
 				099AC4262AB4B6FE0023D8B3 /* Application */,
 				099AC4482AB7DD0D0023D8B3 /* Activity */,
-				EB2513532ABB7BBF003AF103 /* CheckIn */,
 				099AC4382AB4F7B60023D8B3 /* CheckOut */,
 				099AC4412AB7D7F60023D8B3 /* Concierge */,
 				EB1292A52AD5B4DC0000AB85 /* Home */,
-				099AC4312AB4E5A10023D8B3 /* Reservations */,
+				099AC4312AB4E5A10023D8B3 /* Trips */,
 				09B490082ACD00B800273F0E /* Resources */,
 				099AC4292AB4E2B40023D8B3 /* Shared */,
 				099B12692AB201A200DA4B8F /* Assets.xcassets */,
@@ -352,15 +353,6 @@
 				EB1292A62AD5B4F10000AB85 /* HomeView.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		EB2513532ABB7BBF003AF103 /* CheckIn */ = {
-			isa = PBXGroup;
-			children = (
-				EB2513542ABB7BE9003AF103 /* CheckInView.swift */,
-				097FB71E2AD88CB900305AE0 /* CheckInConfirmView.swift */,
-			);
-			path = CheckIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
