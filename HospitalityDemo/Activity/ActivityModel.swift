@@ -30,6 +30,15 @@ import os
     }
   }
   
+  public var isEmpty: Bool {
+    switch state {
+    case .loaded(let output):
+      return output.isEmpty
+    default:
+      return false
+    }
+  }
+  
   private func fetchRemoteDocuments() async throws -> [DocumentInfo] {
     return try await withCheckedThrowingContinuation { continuation in
       documentService.listDocuments { documents, error in
