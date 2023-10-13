@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct ActivityView: View {
+struct ActivityListView: View {
   @SwiftUI.State private var model = ActivityModel()
 
   var body: some View {
@@ -46,5 +46,5 @@ struct ActivityView: View {
 }
 
 #Preview {
-  ActivityView()
+  ActivityListView()
 }
