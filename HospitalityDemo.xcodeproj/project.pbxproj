@@ -44,7 +44,7 @@
 		09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */; };
 		09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E52AD45684006BDA40 /* SettingsView.swift */; };
 		09B727E82AD5006B006BDA40 /* GenerateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E72AD5006B006BDA40 /* GenerateClient.swift */; };
-		EB1292A72AD5B4F10000AB85 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1292A62AD5B4F10000AB85 /* WelcomeView.swift */; };
+		EB1292A72AD5B4F10000AB85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1292A62AD5B4F10000AB85 /* HomeView.swift */; };
 		EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513542ABB7BE9003AF103 /* CheckInView.swift */; };
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
 		EB895AF22ACDCEEA00BF7711 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB895AF12ACDCEEA00BF7711 /* ActivityModel.swift */; };
@@ -115,7 +115,7 @@
 		09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBannerMenu.swift; sourceTree = "<group>"; };
 		09B727E52AD45684006BDA40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		09B727E72AD5006B006BDA40 /* GenerateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateClient.swift; sourceTree = "<group>"; };
-		EB1292A62AD5B4F10000AB85 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		EB1292A62AD5B4F10000AB85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB2513542ABB7BE9003AF103 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
 		EB895AF12ACDCEEA00BF7711 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
@@ -301,8 +301,8 @@
 				EB2513532ABB7BBF003AF103 /* CheckIn */,
 				099AC4382AB4F7B60023D8B3 /* CheckOut */,
 				099AC4412AB7D7F60023D8B3 /* Concierge */,
+				EB1292A52AD5B4DC0000AB85 /* Home */,
 				099AC4312AB4E5A10023D8B3 /* Reservations */,
-				EB1292A52AD5B4DC0000AB85 /* Welcome */,
 				09B490082ACD00B800273F0E /* Resources */,
 				099AC4292AB4E2B40023D8B3 /* Shared */,
 				099B12692AB201A200DA4B8F /* Assets.xcassets */,
@@ -346,12 +346,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EB1292A52AD5B4DC0000AB85 /* Welcome */ = {
+		EB1292A52AD5B4DC0000AB85 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				EB1292A62AD5B4F10000AB85 /* WelcomeView.swift */,
+				EB1292A62AD5B4F10000AB85 /* HomeView.swift */,
 			);
-			path = Welcome;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EB2513532ABB7BBF003AF103 /* CheckIn */ = {
@@ -524,7 +524,7 @@
 				097FB7252AD8F5A900305AE0 /* Tabs.swift in Sources */,
 				097FB71F2AD88CBA00305AE0 /* CheckInConfirmView.swift in Sources */,
 				099B12662AB201A000DA4B8F /* HospitalityDemoApp.swift in Sources */,
-				EB1292A72AD5B4F10000AB85 /* WelcomeView.swift in Sources */,
+				EB1292A72AD5B4F10000AB85 /* HomeView.swift in Sources */,
 				09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */,
 				09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */,
 				097FB71D2AD87B6700305AE0 /* ReservationsListView.swift in Sources */,

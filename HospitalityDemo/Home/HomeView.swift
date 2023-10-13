@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct HomeView: View {
   @Environment(StayManager.self) private var stay
   
   var body: some View {
@@ -14,6 +14,6 @@ struct WelcomeView: View {
 }
 
 #Preview {
-  WelcomeView()
+  HomeView()
     .environment(StayManager.shared)
 }

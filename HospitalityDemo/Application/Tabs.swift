@@ -24,7 +24,7 @@ enum Tab: Int, Identifiable, Hashable {
   func makeContentView() -> some View {
     switch self {
     case .home:
-      WelcomeView()
+      HomeView()
     case .concierge:
       ConciergeView()
     case .trips:
