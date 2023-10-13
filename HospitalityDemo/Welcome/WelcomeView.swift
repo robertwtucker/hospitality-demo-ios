@@ -6,12 +6,10 @@
 import SwiftUI
 
 struct WelcomeView: View {
-  @Environment(AppState.self) private var appState
-  @Environment(UserManager.self) private var user
   @Environment(StayManager.self) private var stay
   
   var checkedIn: Bool {
-    guard let stay = stay.currentStay else {
+    guard let _ = stay.currentStay else {
       return false
     }
     return true
@@ -24,4 +22,5 @@ struct WelcomeView: View {
 
 #Preview {
   WelcomeView()
+    .environment(StayManager.shared)
 }

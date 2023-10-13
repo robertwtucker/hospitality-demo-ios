@@ -9,7 +9,7 @@ struct CheckInConfirmView: View {
   @Environment(\.dismiss) private var dismiss
   
   var body: some View {
-    VStack {
+    VStack(spacing: 16) {
       Spacer()
       Text("You have been checked in...")
       Button {

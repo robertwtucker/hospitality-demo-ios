@@ -44,11 +44,11 @@ extension Reservation: Identifiable {
 
 
 extension Reservation {
-  static var sample = Reservation(
+  static var sampleData = Reservation(
     hotel: Hotel(
       name: "QUADY Boutique Hotel",
       location: "Santorini",
-      imageName: "hotel/logo",
+      imageName: "hotel/background",
       checkInTime: "15:00",
       checkOutTime: "12:00",
       conciergeUrl: "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html",

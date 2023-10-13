@@ -44,4 +44,5 @@ struct SessionBannerMenu: View {
 
 #Preview {
   SessionBannerMenu(showSettings: .constant(false))
+    .environment(UserManager.shared)
 }

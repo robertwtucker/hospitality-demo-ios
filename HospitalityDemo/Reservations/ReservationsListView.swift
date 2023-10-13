@@ -20,14 +20,17 @@ struct ReservationsListView: View {
           .foregroundStyle(Color("brand/brown"))
           .padding(.top, 20)
           .font(.title2).bold()
-        List(reservations) { reservation in
-          NavigationLink {
-            CheckInView(reservation: reservation)
-          } label: {
-            Text("\(reservation.hotel.name)\n").bold() +
-            Text("Check-In: \(reservation.checkInDate)").font(.caption)
+        ScrollView {
+          ForEach(reservations) { reservation in
+            NavigationLink {
+              CheckInView(reservation: reservation)
+            } label: {
+              ReservationCardView(reservation: reservation)
+            }
           }
         }
+        .buttonStyle(.plain)
+        .scrollIndicators(.hidden)
         .toolbar(.hidden)
         .overlay {
           if reservations.count == 0 {
@@ -47,5 +50,7 @@ struct ReservationsListView: View {
 }
 
 #Preview {
-    ReservationsListView()
+  ReservationsListView()
+    .environment(AppState())
+    .environment(UserManager.shared)
 }

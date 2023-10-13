@@ -44,4 +44,6 @@ struct CheckOutView: View {
 
 #Preview {
   CheckOutView()
+    .environment(StayManager.shared)
+    .environment(UserManager.shared)
 }

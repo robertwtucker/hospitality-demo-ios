@@ -29,7 +29,7 @@
       "imageName": "hotel/reservation2",
       "checkInTime": "15:00",
       "checkOutTime": "12:00",
-      "rating": 3.5,
+      "rating": 4.5,
       "conciergeUrl": "https://www.tripadvisor.com/Tourism-g147342-St_Lucia-Vacations.html"
     },
     "checkedIn": false,
@@ -50,7 +50,7 @@
       "imageName": "hotel/reservation3",
       "checkInTime": "15:00",
       "checkOutTime": "12:00",
-      "rating": 3.5,
+      "rating": 3.0,
       "conciergeUrl": "https://www.tripadvisor.com/Tourism-g187817-Cinque_Terre_Italian_Riviera_Liguria-Vacations.html"
     },
     "checkedIn": false,

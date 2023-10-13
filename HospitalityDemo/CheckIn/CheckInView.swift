@@ -7,12 +7,11 @@ import SwiftUI
 
 struct CheckInView: View {
   @Environment(AppState.self) private var appState
-  @Environment(UserManager.self) private var user
   @Environment(StayManager.self) private var stay
   
-  @SwiftUI.State var reservation: Reservation
+  var reservation: Reservation
   @SwiftUI.State private var arrivalTime = Date.now
-    @SwiftUI.State private var showConfirm = false
+  @SwiftUI.State private var showConfirm = false
   
   var body: some View {
     Group {
@@ -69,5 +68,7 @@ struct CheckInView: View {
 }
 
 #Preview {
-  CheckInView(reservation: Reservation.sample)
+  CheckInView(reservation: Reservation.sampleData)
+    .environment(AppState())
+    .environment(StayManager.shared)
 }

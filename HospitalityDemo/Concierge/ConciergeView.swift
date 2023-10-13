@@ -15,4 +15,5 @@ struct ConciergeView: View {
 
 #Preview {
   ConciergeView()
+    .environment(StayManager.shared)
 }

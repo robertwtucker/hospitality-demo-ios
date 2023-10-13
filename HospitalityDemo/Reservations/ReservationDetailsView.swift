@@ -59,5 +59,5 @@ struct ReservationDetailsView: View {
 }
 
 #Preview {
-  ReservationDetailsView(reservation: Reservation.sample)
+  ReservationDetailsView(reservation: Reservation.sampleData)
 }
