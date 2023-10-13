@@ -20,9 +20,6 @@ struct WebView: UIViewRepresentable {
   }
 }
 
-struct WebView_Previews: PreviewProvider {
-  static var previews: some View {
-    let url = URL(string: "https://quadient.com")
-    WebView(url: url!)
-  }
+#Preview {
+  WebView(url: URL(string: "https://quadient.com")!)
 }

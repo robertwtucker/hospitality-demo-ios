@@ -7,10 +7,9 @@ import SwiftUI
 import os
 
 struct CheckOutView: View {
-  @Environment(UserManager.self) private var user
-  @Environment(ReservationsModel.self) private var model
+  @Environment(StayManager.self) private var stay
   
-  @SwiftUI.State private var isGenerating: Bool = false
+  @SwiftUI.State private var isProcessing: Bool = false
   
   private let logger = Logger(
     subsystem: Bundle.main.bundleIdentifier!,
@@ -22,17 +21,17 @@ struct CheckOutView: View {
       Text("Check Out View")
       Button {
         Task {
-          isGenerating = true
-          await generateInvoice()
-          isGenerating = false
+          isProcessing = true
+          await stay.checkOut()
+          isProcessing = false
         }
       } label: {
         HStack {
           Spacer()
-          if isGenerating {
+          if isProcessing {
             ProgressView()
           } else {
-            Text("Generate")
+            Text("Check Out")
           }
           Spacer()
         }
@@ -40,36 +39,9 @@ struct CheckOutView: View {
       Spacer()
     }
   }
-  
-  private func generateInvoice() async {
-    model.currentReservation.guestName = user.name
-    model.currentReservation.guestEmail = user.email
-    model.currentReservation.guestClientId = user.clientId
-    do {
-      let reservation = try stringifyReservation(model.currentReservation)
-      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\", \(reservation)}]}"
-      
-      let config = Bundle.main.decode(CloudConfig.self, from: "quadientcloud.json")
-      let url = config.cloudUrl.replacingOccurrences(of: "<company>", with: config.companyName)
-      let client = GenerateClient(baseUrl: URL(string: url)!, apiKey: config.generate.apiKey)
-      
-      _ = await client.send(.onDemandCustomData(
-        pipeline: config.generate.checkOutPipeline, payload: payload))
-    } catch {
-      logger.error("Caught error encoding reservation: \(error.localizedDescription)")
-    }
-  }
-  
-  private func stringifyReservation(_ reservation: Reservation) throws -> String {
-    let encoder = JSONEncoder()
-    encoder.outputFormatting = .withoutEscapingSlashes
-    guard var stringified = try String(data: encoder.encode(reservation), encoding: .utf8) else { return "" }
-    stringified.removeFirst()
-    stringified.removeLast()
-    return stringified
-  }
 }
 
 #Preview {
   CheckOutView()
+    .environment(StayManager.shared)
 }

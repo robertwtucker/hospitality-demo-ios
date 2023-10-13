@@ -5,35 +5,35 @@
 
 import SwiftUI
 
-struct RewardsView: View {
-  @SwiftUI.State private var model = RewardsModel()
+struct ActivityView: View {
+  @SwiftUI.State private var model = ActivityModel()
 
   var body: some View {
     NavigationStack {
-      AsyncContentView(source: model) { rewards in
+      AsyncContentView(source: model) { activities in
         Text("Account Activity")
           .foregroundStyle(Color("brand/brown"))
           .padding(.top, 20)
           .font(.title2).bold()
-        List(rewards) { reward in
+        List(activities) { activity in
           NavigationLink {
-            DocumentView(document: reward.document!)
+            DocumentView(document: activity.document!)
           } label: {
             VStack(alignment: .leading) {
-              Text("\(reward.hotelName ?? "Property Name")")
+              Text("\(activity.hotelName ?? "Property Name")")
                 .bold()
-              Text("Stay: \(reward.checkIn ?? "Arrival Date") to \(reward.checkOut ?? "Departure Date")")
+              Text("Stay: \(activity.checkIn ?? "Arrival Date") to \(activity.checkOut ?? "Departure Date")")
                 .font(.caption)
             }
           }
         }
         .toolbar(.hidden)
         .overlay {
-          if rewards.count == 0 {
+          if activities.count == 0 {
             ContentUnavailableView {
               Label("No recent activity", systemImage: "person.and.background.dotted")
             } description: {
-              Text("Reward statements you receive will appear here.")
+              Text("Statements you receive will appear here.")
             }
           }
         }
@@ -46,5 +46,5 @@ struct RewardsView: View {
 }
 
 #Preview {
-  RewardsView()
+  ActivityView()
 }

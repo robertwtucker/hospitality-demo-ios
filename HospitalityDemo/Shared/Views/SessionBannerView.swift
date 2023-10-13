@@ -32,4 +32,5 @@ struct SessionBannerView: View {
 
 #Preview {
   SessionBannerView()
+    .environment(UserManager.shared)
 }

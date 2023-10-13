@@ -6,23 +6,23 @@
 import Foundation
 import os
 
-@Observable class RewardsModel: LoadableModel {
-  typealias Output = Rewards
+@Observable class ActivityModel: LoadableModel {
+  typealias Output = Activities
   
   private(set) var state: LoadingState<Output> = .idle
   
   private let logger = Logger(
     subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: RewardsModel.self))
+    category: String(describing: ActivityModel.self))
   
   @MainActor
   func load() async {
     do {
       var documents = try await fetchRemoteDocuments()
       logger.debug("Fetch returned \(documents.count) documents (rewards)")
-      documents = filterRewardActivity(from: documents)
+      documents = filterActivity(from: documents)
       state = .loaded(documents.map { document in
-        Reward(from: document)
+        Activity(from: document)
       })
     } catch {
       logger.error("Error loading remote documents: \(error.localizedDescription)")
@@ -44,7 +44,7 @@ import os
     }
   }
   
-  private func filterRewardActivity(from documents: [DocumentInfo]) -> [DocumentInfo] {
+  private func filterActivity(from documents: [DocumentInfo]) -> [DocumentInfo] {
     return documents.filter { document in
       guard let metadata = document.metadata else { return false }
       guard let metatype = metadata.first(where: { meta in

@@ -27,4 +27,5 @@ struct SettingsView: View {
 
 #Preview {
   SettingsView(showSettings: .constant(false))
+    .environment(UserPreferences.shared)
 }

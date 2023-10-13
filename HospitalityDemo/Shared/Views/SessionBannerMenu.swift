@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct SessionBannerMenu: View {
+  @Environment(StayManager.self) private var stay
   @Environment(UserManager.self) private var user
   
   @Binding var showSettings: Bool
@@ -33,10 +34,11 @@ struct SessionBannerMenu: View {
     Task {
       await withCheckedContinuation { continuation in
         AdvantageSDK.sharedInstance().authenticationService.logout { error in
-          print("Logged out \(error == nil ? "successfully" : "with error: ")\(String(describing: error))")
+          print("Logged out \(error == nil ? "successfully" : "with error: \(String(describing: error))")")
           continuation.resume()
         }
       }
+      stay.currentStay = nil
       user.currentSession = nil
     }
   }
@@ -44,4 +46,6 @@ struct SessionBannerMenu: View {
 
 #Preview {
   SessionBannerMenu(showSettings: .constant(false))
+    .environment(StayManager.shared)
+    .environment(UserManager.shared)
 }

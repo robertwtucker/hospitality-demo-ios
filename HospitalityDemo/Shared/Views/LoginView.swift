@@ -151,4 +151,5 @@ struct LoginView: View {
 
 #Preview {
   LoginView()
+    .environment(UserManager.shared)
 }

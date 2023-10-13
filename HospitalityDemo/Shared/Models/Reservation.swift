@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Reservation: Codable {
+public struct Reservation: Codable {
   var hotel: Hotel
   let _id, confirmationNumber, guests, creditPrefix, creditSuffix, points: Int
   let checkInDate, checkOutDate: String
@@ -24,7 +24,7 @@ typealias Reservations = [Reservation]
 
 // MARK: - Hotel
 
-struct Hotel: Codable {
+public struct Hotel: Codable {
   let name, location, imageName, checkInTime, checkOutTime, conciergeUrl: String
   let rating: Double
 
@@ -42,13 +42,12 @@ extension Reservation: Identifiable {
 
 // MARK: - Sample Data
 
-
 extension Reservation {
-  static var sample = Reservation(
+  static var sampleData = Reservation(
     hotel: Hotel(
       name: "QUADY Boutique Hotel",
       location: "Santorini",
-      imageName: "hotel/logo",
+      imageName: "hotel/background",
       checkInTime: "15:00",
       checkOutTime: "12:00",
       conciergeUrl: "https://www.tripadvisor.com/Tourism-g189433-Santorini_Cyclades_South_Aegean-Vacations.html",

@@ -5,7 +5,7 @@
       "id": 1,
       "name": "QUADY Boutique Hotel",
       "location": "Santorini",
-      "imageName": "hotel/logo",
+      "imageName": "hotel/background",
       "checkInTime": "15:00",
       "checkOutTime": "12:00",
       "rating": 3.5,
@@ -16,8 +16,50 @@
     "guests": 2,
     "creditPrefix": 54,
     "creditSuffix": 79,
-    "points": 300,
+    "points": 400,
     "checkInDate": "2023-10-14",
     "checkOutDate": "2023-10-18"
-  }
+  },
+  {
+    "id": 2,
+    "hotel": {
+      "id": 2,
+      "name": "QUADY Jade Resort",
+      "location": "St. Lucia",
+      "imageName": "hotel/reservation2",
+      "checkInTime": "15:00",
+      "checkOutTime": "12:00",
+      "rating": 4.5,
+      "conciergeUrl": "https://www.tripadvisor.com/Tourism-g147342-St_Lucia-Vacations.html"
+    },
+    "checkedIn": false,
+    "confirmationNumber": 1778813,
+    "guests": 2,
+    "creditPrefix": 54,
+    "creditSuffix": 79,
+    "points": 1100,
+    "checkInDate": "2023-12-23",
+    "checkOutDate": "2023-12-30"
+  },
+  {
+    "id": 3,
+    "hotel": {
+      "id": 3,
+      "name": "QUADY Charm Apartments Piazza",
+      "location": "Cinque Terre",
+      "imageName": "hotel/reservation3",
+      "checkInTime": "15:00",
+      "checkOutTime": "12:00",
+      "rating": 3.0,
+      "conciergeUrl": "https://www.tripadvisor.com/Tourism-g187817-Cinque_Terre_Italian_Riviera_Liguria-Vacations.html"
+    },
+    "checkedIn": false,
+    "confirmationNumber": 1884137,
+    "guests": 2,
+    "creditPrefix": 54,
+    "creditSuffix": 79,
+    "points": 400,
+    "checkInDate": "2024-04-22",
+    "checkOutDate": "2024-04-25"
+  },
 ]
