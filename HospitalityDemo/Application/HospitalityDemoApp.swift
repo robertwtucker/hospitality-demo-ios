@@ -12,10 +12,9 @@ struct HospitalityDemoApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
   @Environment(\.scenePhase) private var scenePhase
   
-  @SwiftUI.State private var appState = AppState()
-  @SwiftUI.State private var userPreferences = UserPreferences.shared
-  @SwiftUI.State private var userManager = UserManager.shared
   @SwiftUI.State private var stayManager = StayManager.shared
+  @SwiftUI.State private var userManager = UserManager.shared
+  @SwiftUI.State private var userPreferences = UserPreferences.shared
   
   var body: some Scene {
     WindowGroup {
@@ -25,7 +24,6 @@ struct HospitalityDemoApp: App {
           authorizeDeviceForNotifications()
           loginWithCurrentSession()
         }
-        .environment(appState)
         .environment(userPreferences)
         .environment(userManager)
         .environment(stayManager)

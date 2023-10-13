@@ -8,19 +8,12 @@ import SwiftUI
 struct WelcomeView: View {
   @Environment(StayManager.self) private var stay
   
-  var checkedIn: Bool {
-    guard let _ = stay.currentStay else {
-      return false
-    }
-    return true
-  }
-  
   var body: some View {
-    Text("Hello! You are\(checkedIn ? " " : " not ")checked in.")
+    Text("You are\(stay.checkedIn ? " " : " not ")checked in.")
   }
 }
 
 #Preview {
   WelcomeView()
-    .environment(StayManager.shared)
+    .environment(StayManager())
 }

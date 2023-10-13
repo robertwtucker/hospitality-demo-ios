@@ -20,6 +20,13 @@ import os
     cloudConfig = Bundle.main.decode(CloudConfig.self, from: "quadientcloud.json")
   }
   
+  public var checkedIn: Bool {
+    guard let _ = currentStay else {
+      return false
+    }
+    return true
+  }
+  
   public func checkIn(reservation: Reservation) {
     currentStay = reservation
     currentStay?.checkedIn = true

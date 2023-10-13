@@ -6,7 +6,6 @@
 import SwiftUI
 
 struct CheckInView: View {
-  @Environment(AppState.self) private var appState
   @Environment(StayManager.self) private var stay
   
   var reservation: Reservation
@@ -42,7 +41,6 @@ struct CheckInView: View {
       .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
       Button(action: {
         stay.checkIn(reservation: reservation)
-        appState.selectedTab = .reservations
                 showConfirm.toggle()
       }, label: {
         HStack {
@@ -69,6 +67,5 @@ struct CheckInView: View {
 
 #Preview {
   CheckInView(reservation: Reservation.sampleData)
-    .environment(AppState())
-    .environment(StayManager.shared)
+    .environment(StayManager())
 }
