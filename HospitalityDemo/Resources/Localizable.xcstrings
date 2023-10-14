@@ -336,6 +336,16 @@
         }
       }
     },
+    "No recent activity" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay actividad reciente"
+          }
+        }
+      }
+    },
     "reservation.checkin.date" : {
       "localizations" : {
         "en" : {
@@ -476,6 +486,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajustes por deter"
+          }
+        }
+      }
+    },
+    "Statements you receive will appear here." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los estados de cuenta que reciba aparecerán aquí."
           }
         }
       }
