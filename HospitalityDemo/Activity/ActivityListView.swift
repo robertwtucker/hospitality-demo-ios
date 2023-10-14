@@ -4,9 +4,10 @@
 //
 
 import SwiftUI
+import os
 
 struct ActivityListView: View {
-  @SwiftUI.State private var model = ActivityModel()
+  @SwiftUI.State var model = ActivityModel()
   
   var body: some View {
     NavigationStack {
@@ -15,31 +16,59 @@ struct ActivityListView: View {
           .foregroundStyle(Color("brand/brown"))
           .padding(.top, 20)
           .font(.title2).bold()
-        ScrollView {
+        List {
           ForEach(activities) { activity in
-            NavigationLink {
-              DocumentView(document: activity.document!)
-            } label: {
+            ZStack {
+              NavigationLink {
+                DocumentView(document: activity.document!)
+              } label: {
+                EmptyView()
+              }
+              .opacity(0)
+              
               ActivityItemView(activity: activity)
-                .padding(.horizontal, 8)
             }
+            .listRowSeparator(.hidden)
+            .listStyle(.plain)
+            .buttonStyle(.plain)
+          }
+          .onDelete(perform: { indexSet in
+            Task {
+              await delete(activities, at: indexSet)
+            }
+          })
+        }
+        .scrollContentBackground(.hidden)
+      }
+      .toolbar(.hidden)
+      .overlay {
+        if model.isEmpty {
+          ContentUnavailableView {
+            Label("No recent activity", systemImage: "person.and.background.dotted")
+          } description: {
+            Text("Statements you receive will appear here.")
           }
         }
-        .buttonStyle(.plain)
-        .toolbar(.hidden)
       }
-      //      .overlay {
-      //        if model.isEmpty {
-      //          ContentUnavailableView {
-      //            Label("No recent activity", systemImage: "person.and.background.dotted")
-      //          } description: {
-      //            Text("Statements you receive will appear here.")
-      //          }
-      //        }
-      //      }
-      .toolbar(.hidden)
       .refreshable {
         await model.load()
+      }
+    }
+  }
+  
+  private let logger = Logger(
+    subsystem: Bundle.main.bundleIdentifier!,
+    category: String(describing: ActivityListView.self))
+  
+  private func delete(_ activities: Activities, at offsets: IndexSet) async {
+    let idsToDelete = offsets.map { activities[$0].document!.documentID }
+    
+    for id in idsToDelete {
+      do {
+        try await AdvantageSDK.sharedInstance()
+          .documentService.removeDocument(withDocumentId: id)
+      } catch {
+        logger.error("Error deleting document: \(error)")
       }
     }
   }
