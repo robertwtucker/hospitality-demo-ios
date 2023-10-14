@@ -13,33 +13,41 @@ struct HospitalityDemoApp: App {
   
   @Environment(\.scenePhase) private var scenePhase
   
+  @SwiftUI.State private var launchScreen = LaunchScreenManager()
   @SwiftUI.State private var stayManager = StayManager.shared
   @SwiftUI.State private var userManager = UserManager.shared
   @SwiftUI.State private var userPreferences = UserPreferences.shared
   
   var body: some Scene {
     WindowGroup {
-      ContentView()
-        .onAppear {
-          initializeAdvantageSdk()
-          authorizeDeviceForNotifications()
-          loginWithCurrentSession()
+      ZStack {
+        if launchScreen.state != .finished {
+          LaunchScreenView().zIndex(1)
+        } else {
+          ContentView()
         }
-        .environment(stayManager)
-        .environment(userManager)
-        .environment(userPreferences)
-        .onChange(of: scenePhase) { _, newValue in
-          handleScenePhase(scenePhase: newValue)
+      }
+      .task {
+        initializeAdvantageSdk()
+        authorizeDeviceForNotifications()
+        loginWithCurrentSession()
+      }
+      .environment(launchScreen)
+      .environment(stayManager)
+      .environment(userManager)
+      .environment(userPreferences)
+      .onChange(of: scenePhase) { _, newValue in
+        handleScenePhase(scenePhase: newValue)
+      }
+      .onChange(of: userManager.currentSession) { oldValue, newValue in
+        guard let newValue = newValue else {
+          clearUserSettings()
+          return
         }
-        .onChange(of: userManager.currentSession) { oldValue, newValue in
-          guard let newValue = newValue else {
-            clearUserSettings()
-            return
-          }
-          if oldValue?.clientID != newValue.clientID {
-            setupUserSession(newValue)
-          }
+        if oldValue?.clientID != newValue.clientID {
+          setupUserSession(newValue)
         }
+      }
     }
   }
   
@@ -87,7 +95,7 @@ struct HospitalityDemoApp: App {
       sdk.documentService.setDocumentDownloadStatusDelegate(appDelegate)
       sdk.addErrorDelegate(appDelegate)
     } else {
-      logger.error("Advantage SDK could not be initialized")
+      fatalError("Advantage SDK could not be initialized")
     }
   }
   

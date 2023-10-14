@@ -17,25 +17,24 @@ struct ContentView: View {
   
   private var showLogin: Binding<Bool> {
     Binding {
-        !user.isAuthenticated
+      !user.isAuthenticated
     } set: { _ in }
   }
   
   var body: some View {
-    TabView(selection: $selectedTab) {
-      ForEach(availableTabs) { tab in
-        tab.makeContentView()
-          .tabItem {
-            tab.label
-          }
-          .tag(tab)
+    ZStack {
+      TabView(selection: $selectedTab) {
+        ForEach(availableTabs) { tab in
+          tab.makeContentView()
+            .tabItem {
+              tab.label
+            }
+            .tag(tab)
+        }
       }
-    }
-    .padding(.top, 32)
-    .overlay {
-      ZStack {
-        SessionBannerView()
-      }
+      .padding(.top, 32)
+      
+      SessionBannerView()
     }
     .sheet(isPresented: showLogin) {
       LoginView()
