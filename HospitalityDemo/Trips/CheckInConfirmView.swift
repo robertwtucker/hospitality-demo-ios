@@ -11,11 +11,12 @@ struct CheckInConfirmView: View {
   var body: some View {
     VStack(spacing: 16) {
       Spacer()
-      Text("You have been checked in...")
+      Text("checkin.complete",
+        comment: "Message confirming the check in process is complete.")
       Button {
         dismiss()
       } label: {
-        Text("OK")
+        Text("button.ok")
       }
       Spacer()
     }

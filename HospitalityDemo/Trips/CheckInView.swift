@@ -36,7 +36,8 @@ struct CheckInView: View {
           in: ...Date.now,
           displayedComponents: .hourAndMinute
         ) {
-          Text("Arrival Time")
+          Text("checkin.arrival",
+               comment: "Time of arrival")
         }
         .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
         Button(action: {
@@ -45,7 +46,7 @@ struct CheckInView: View {
         }, label: {
           HStack {
             Spacer()
-            Text("Check In")
+            Text("button.checkin")
             Spacer()
           }
         })

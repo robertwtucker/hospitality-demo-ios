@@ -11,7 +11,7 @@ struct ActivityListView: View {
   var body: some View {
     NavigationStack {
       AsyncContentView(source: model) { activities in
-        Text("Account Activity")
+        Text("activity.list.title")
           .foregroundStyle(Color("brand/brown"))
           .padding(.top, 20)
           .font(.title2).bold()

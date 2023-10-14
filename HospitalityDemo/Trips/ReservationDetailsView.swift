@@ -11,41 +11,43 @@ struct ReservationDetailsView: View {
   var body: some View {
     VStack(alignment: .leading) {
       HStack {
-        Text("Hotel: ")
+        Text("reservation.hotel")
           .padding(.trailing, -5)
         Spacer()
         Image(systemName: "mappin.and.ellipse")
           .foregroundColor(.red)
           .padding(.horizontal, -5)
-        Text("**\(reservation.hotel.name) | \(reservation.hotel.location)**")
+        Text("\(Text(reservation.hotel.name).bold()) | \(Text(reservation.hotel.location).bold())",
+             comment: "Hotel name and city")
       }
       .padding(.bottom, 1)
       HStack {
-        Text("Confirmation Number: ")
+        Text("reservation.confirmation.number")
         Spacer()
         Text(String(reservation.confirmationNumber))
           .bold()
       }
       .padding(.bottom, 1)
       HStack {
-        Text("Check-In Date: ")
+        Text("reservation.checkin.date")
         Spacer()
         Text(reservation.checkInDate)
           .bold()
       }
       .padding(.bottom, 1)
       HStack {
-        Text("Check-Out Date: ")
+        Text("reservation.checkout.date")
         Spacer()
         Text(reservation.checkOutDate)
           .bold()
       }
       .padding(.bottom, 10)
-      Text("Hotel check-in time is **\(reservation.hotel.checkInTime)**, check out time is **\(reservation.hotel.checkOutTime)**")
+      Text("Hotel check in time is \(Text(reservation.hotel.checkInTime).bold()), check out time is \(Text(reservation.hotel.checkOutTime).bold())",
+           comment: "Message specifying the hotel's check in and check out times")
         .padding(.bottom, 10)
         .font(.system(size: 10))
       HStack {
-        Text("Credit Card Number: ")
+        Text("reservation.creditcard.number")
         Spacer()
         Image(systemName: "creditcard.and.123")
         Text("\(String(reservation.creditPrefix))** **** **** **\(String(reservation.creditSuffix))")

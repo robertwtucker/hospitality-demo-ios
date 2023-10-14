@@ -34,10 +34,10 @@ struct LoginView: View {
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: .infinity)
         .background(Color(UIColor.systemBackground))
-      Text("Welcome Back")
+      Text("login.title")
         .font(.largeTitle)
         .bold()
-      Text("Login Below")
+      Text("login.cta")
         .font(.callout)
       Form {
         credentialsSection
@@ -57,16 +57,16 @@ struct LoginView: View {
   
   private var credentialsSection: some View {
     Section {
-      TextField("Username", text: $username, prompt: Text("Username"))
+      TextField("login.username", text: $username, prompt: Text("login.username"))
         .textInputAutocapitalization(.never)
         .autocorrectionDisabled()
         .focused($isUsernameFocused)
       HStack {
         Group {
           if showPassword {
-            TextField("Password", text: $password, prompt: Text("Password"))
+            TextField("login.password", text: $password, prompt: Text("login.password"))
           } else {
-            SecureField("Password", text: $password, prompt: Text("Password"))
+            SecureField("login.password", text: $password, prompt: Text("login.password"))
           }
         }
         Button {
@@ -92,7 +92,7 @@ struct LoginView: View {
           if isLoggingIn {
             ProgressView()
           } else {
-            Text("Log In")
+            Text("button.login")
           }
           Spacer()
         }

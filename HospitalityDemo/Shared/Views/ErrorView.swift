@@ -23,12 +23,12 @@ struct ErrorView: View {
         )
       
       if let retry = retry {
-        Button("Try Again") {
+        Button("button.retry") {
           retry()
         }
       }
       
-      Button("Dismiss") {
+      Button("button.dismiss") {
         dismiss()
       }
       

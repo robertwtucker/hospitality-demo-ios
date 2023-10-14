@@ -18,7 +18,7 @@ struct CheckOutView: View {
   var body: some View {
     VStack(spacing: 16) {
       Spacer()
-      Text("Check Out View")
+      Text("checkout.temp.viewname")
       Button {
         Task {
           isProcessing = true
@@ -31,7 +31,7 @@ struct CheckOutView: View {
           if isProcessing {
             ProgressView()
           } else {
-            Text("Check Out")
+            Text("button.checkout")
           }
           Spacer()
         }

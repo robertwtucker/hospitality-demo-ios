@@ -16,15 +16,15 @@ struct SessionBannerMenu: View {
       Button {
         showSettings.toggle()
       } label: {
-        Label("Settings", systemImage: "gear")
+        Label("menu.settings", systemImage: "gear")
       }
       Button {
         logout()
       } label: {
-        Label("Log Out", systemImage: "person.slash.fill")
+        Label("menu.logout", systemImage: "person.slash.fill")
       }
     } label: {
-      Label("User Icon", systemImage: "person.crop.circle")
+      Label("menu.usericon", systemImage: "person.crop.circle")
     }
     .font(.title)
     .labelStyle(.iconOnly)

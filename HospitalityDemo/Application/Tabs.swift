@@ -42,15 +42,15 @@ enum Tab: Int, Identifiable, Hashable {
   var label: some View {
     switch self {
     case .home:
-      Label("Home", systemImage: iconName)
+      Label("tab.home", systemImage: iconName)
     case .concierge:
-      Label("Concierge", systemImage: iconName)
+      Label("tab.concierge", systemImage: iconName)
     case .trips:
-      Label("Trips", systemImage: iconName)
+      Label("tab.trips", systemImage: iconName)
     case .checkout:
-      Label("Check Out", systemImage: iconName)
+      Label("tab.checkout", systemImage: iconName)
     case .activity:
-      Label("Activity", systemImage: iconName)
+      Label("tab.activity", systemImage: iconName)
     case .other:
       EmptyView()
     }
