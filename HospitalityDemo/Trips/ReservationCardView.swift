@@ -27,8 +27,12 @@ struct ReservationCardView: View {
           .clipped()
         HStack {
           VStack(alignment: .leading) {
-            Text("\(reservation.hotel.name)").bold()
-            Text("Check-In: \(reservation.checkInDate)").font(.caption)
+            Text("\(reservation.hotel.name)",
+                 comment: "Hotel name"
+            ).bold()
+            Text("Check In: \(reservation.checkInDate)",
+                 comment: "Date of check in"
+            ).font(.caption)
           }
           Spacer()
           RatingView(rating: reservation.hotel.rating)

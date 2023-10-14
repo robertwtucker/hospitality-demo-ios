@@ -17,9 +17,14 @@ struct ActivityItemView: View {
         .frame(width: 360, height: 100)
       HStack {
         VStack(alignment: .leading) {
-          Text("\(activity.hotelName ?? "QUADY Properrty")").bold()
-          Text("Stay: \(activity.checkIn ?? "Arrival Date") to \(activity.checkOut ?? "Departure Date")")
-            .font(.caption)
+          Text(
+            "\(activity.hotelName!)",
+            comment: "Hotel name"
+          ).bold()
+          Text(
+            "Stay: \(activity.checkIn!) to \(activity.checkOut!)",
+            comment: "Dates of stay"
+          ).font(.caption)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)

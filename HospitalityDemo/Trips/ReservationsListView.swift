@@ -13,7 +13,7 @@ struct ReservationsListView: View {
   var body: some View {
     NavigationStack {
       AsyncContentView(source: model) { reservations in
-        Text("Upcoming Reservations")
+        Text("reservations.list.title")
           .foregroundStyle(Color("brand/brown"))
           .padding(.top, 20)
           .font(.title2).bold()
@@ -32,9 +32,9 @@ struct ReservationsListView: View {
         .overlay {
           if reservations.count == 0 {
             ContentUnavailableView {
-              Label("No reservations found", systemImage: "figure.fall")
+              Label("reservations.list.empty.title", systemImage: "figure.fall")
             } description: {
-              Text("You need to make a reservation to check in.")
+              Text("reservations.list.empty.message")
             }
           }
         }

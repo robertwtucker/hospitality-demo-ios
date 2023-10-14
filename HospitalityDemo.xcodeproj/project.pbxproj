@@ -21,6 +21,7 @@
 		097FB72B2AD9C05A00305AE0 /* splash.gif in Resources */ = {isa = PBXBuildFile; fileRef = 097FB72A2AD9C05A00305AE0 /* splash.gif */; };
 		097FB72D2AD9C41F00305AE0 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB72C2AD9C41F00305AE0 /* LaunchScreenView.swift */; };
 		097FB72F2AD9D1CD00305AE0 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB72E2AD9D1CD00305AE0 /* GifImage.swift */; };
+		097FB7312ADA5F7800305AE0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 097FB7302ADA5F7800305AE0 /* Localizable.xcstrings */; };
 		099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FB82ABB325C00BA95E5 /* libFMDB.a */; };
 		099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */; };
 		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
@@ -91,6 +92,7 @@
 		097FB72A2AD9C05A00305AE0 /* splash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splash.gif; sourceTree = "<group>"; };
 		097FB72C2AD9C41F00305AE0 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		097FB72E2AD9D1CD00305AE0 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		097FB7302ADA5F7800305AE0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		099A2FB82ABB325C00BA95E5 /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = HospitalityDemo/Shared/Libraries/libFMDB.a; sourceTree = "<group>"; };
 		099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLCipher.a; path = HospitalityDemo/Shared/Libraries/libSQLCipher.a; sourceTree = "<group>"; };
 		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				EB4FD0C22ACF5DF1009B1D2C /* reservations.json */,
 				09B4900B2ACD01A900273F0E /* quadientcloud.json */,
 				097FB72A2AD9C05A00305AE0 /* splash.gif */,
+				097FB7302ADA5F7800305AE0 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 099B12592AB201A000DA4B8F;
 			productRefGroup = 099B12632AB201A000DA4B8F /* Products */;
@@ -473,6 +477,7 @@
 			files = (
 				099B126E2AB201A200DA4B8F /* Preview Assets.xcassets in Resources */,
 				099B126A2AB201A200DA4B8F /* Assets.xcassets in Resources */,
+				097FB7312ADA5F7800305AE0 /* Localizable.xcstrings in Resources */,
 				09B4900C2ACD01A900273F0E /* quadientcloud.json in Resources */,
 				EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */,
 				097FB72B2AD9C05A00305AE0 /* splash.gif in Resources */,

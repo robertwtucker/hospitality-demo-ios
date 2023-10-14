@@ -13,12 +13,12 @@ struct SettingsView: View {
   var body: some View {
       VStack {
         Spacer()
-        Text("Settings TBD")
+        Text("settings.temp.content")
           .padding(.bottom, 16)
         Button {
           showSettings.toggle()
         } label: {
-          Text("Dismiss")
+          Text("button.dismiss")
         }
         Spacer()
       }
