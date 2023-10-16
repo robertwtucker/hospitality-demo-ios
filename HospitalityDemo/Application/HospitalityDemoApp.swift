@@ -21,7 +21,7 @@ struct HospitalityDemoApp: App {
   var body: some Scene {
     WindowGroup {
       ZStack {
-        if launchScreen.state != .finished {
+        if userPreferences.showLaunchScreen && launchScreen.state != .finished {
           LaunchScreenView().zIndex(1)
         } else {
           ContentView()
