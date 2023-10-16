@@ -11,18 +11,42 @@ struct SettingsView: View {
   @Binding var showSettings: Bool
   
   var body: some View {
-      VStack {
+    Form {
+      generalSection
+      aboutSection
+      Button {
+        showSettings.toggle()
+      } label: {
+        Text("button.dismiss")
+      }
+      .frame(maxWidth: .infinity)
+    }
+  }
+  
+  
+  private var generalSection: some View {
+    Section("settings.general") {
+      HStack(spacing: 8) {
+        Label("settings.general.launchscreen", systemImage: "play.square")
         Spacer()
-        Text("settings.temp.content")
-          .padding(.bottom, 16)
-        Button {
-          showSettings.toggle()
-        } label: {
-          Text("button.dismiss")
-        }
-        Spacer()
+        Toggle(isOn: Binding {
+          userPreferences.showLaunchScreen
+        } set: { newValue in
+          userPreferences.showLaunchScreen = newValue
+        }) {}
       }
     }
+  }
+  
+  private var aboutSection: some View {
+    Section("settings.about") {
+      HStack {
+        Label("settings.about.demo", systemImage: "number.square")
+        Spacer()
+        Text("v\(UIApplication.version)")
+      }
+    }
+  }
 }
 
 #Preview {

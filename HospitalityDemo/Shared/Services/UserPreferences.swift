@@ -9,6 +9,7 @@ import SwiftUI
   class Storage {
     @AppStorage("advantageSdkClientId") public var clientId = ""
     @AppStorage("advantageSdkRegistrationId") public var registrationId = ""
+    @AppStorage("showLaunchScreen") public var showLaunchScreen = true
   }
   
   public static let shared = UserPreferences()
@@ -26,8 +27,15 @@ import SwiftUI
     }
   }
   
+  public var showLaunchScreen: Bool {
+    didSet {
+      storage.showLaunchScreen = showLaunchScreen
+    }
+  }
+  
   private init() {
     clientId = storage.clientId
     registrationId = storage.registrationId
+    showLaunchScreen = storage.showLaunchScreen
   }
 }
