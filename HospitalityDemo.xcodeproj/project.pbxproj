@@ -11,6 +11,7 @@
 		096735302AD0CA3B00C6AEE0 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967352F2AD0CA3B00C6AEE0 /* DocumentView.swift */; };
 		096735322AD1957900C6AEE0 /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096735312AD1957900C6AEE0 /* AsyncContentView.swift */; };
 		0967353A2AD36EBC00C6AEE0 /* DCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096735392AD36EBC00C6AEE0 /* DCViewController.swift */; };
+		097C72242ADD85DA007398A5 /* UIApplication+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C72232ADD85DA007398A5 /* UIApplication+Version.swift */; };
 		097FB71B2AD8643300305AE0 /* StayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB71A2AD8643300305AE0 /* StayManager.swift */; };
 		097FB71D2AD87B6700305AE0 /* ReservationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB71C2AD87B6700305AE0 /* ReservationsListView.swift */; };
 		097FB71F2AD88CBA00305AE0 /* CheckInConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB71E2AD88CB900305AE0 /* CheckInConfirmView.swift */; };
@@ -82,6 +83,7 @@
 		0967352F2AD0CA3B00C6AEE0 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		096735312AD1957900C6AEE0 /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		096735392AD36EBC00C6AEE0 /* DCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCViewController.swift; sourceTree = "<group>"; };
+		097C72232ADD85DA007398A5 /* UIApplication+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Version.swift"; sourceTree = "<group>"; };
 		097FB71A2AD8643300305AE0 /* StayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayManager.swift; sourceTree = "<group>"; };
 		097FB71C2AD87B6700305AE0 /* ReservationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsListView.swift; sourceTree = "<group>"; };
 		097FB71E2AD88CB900305AE0 /* CheckInConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInConfirmView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				09B490042ACCF4F200273F0E /* Bundle+JsonFileReader.swift */,
+				097C72232ADD85DA007398A5 /* UIApplication+Version.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				099AC43E2AB7D21A0023D8B3 /* LoadingView.swift in Sources */,
 				09B490022ACCDF2D00273F0E /* ErrorView.swift in Sources */,
 				097FB7292AD999FE00305AE0 /* ActivityItemView.swift in Sources */,
+				097C72242ADD85DA007398A5 /* UIApplication+Version.swift in Sources */,
 				099AC4452AB7DBC20023D8B3 /* ConciergeView.swift in Sources */,
 				097FB7232AD8D68900305AE0 /* RatingView.swift in Sources */,
 				097FB7212AD8CCC000305AE0 /* ReservationCardView.swift in Sources */,
