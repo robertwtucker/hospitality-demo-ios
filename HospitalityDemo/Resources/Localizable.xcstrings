@@ -33,6 +33,38 @@
         }
       }
     },
+    "activity.list.empty.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statements you receive will appear here."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los estados de cuenta que reciba aparecerán aquí."
+          }
+        }
+      }
+    },
+    "activity.list.empty.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recent activity"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay actividad reciente"
+          }
+        }
+      }
+    },
     "activity.list.title" : {
       "localizations" : {
         "en" : {
@@ -151,7 +183,7 @@
       "localizations" : {
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Registrarse: %@"
           }
         }
@@ -332,16 +364,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icono de Usuario"
-          }
-        }
-      }
-    },
-    "No recent activity" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No hay actividad reciente"
           }
         }
       }
@@ -534,16 +556,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mostrar pantalla de inicio"
-          }
-        }
-      }
-    },
-    "Statements you receive will appear here." : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Los estados de cuenta que reciba aparecerán aquí."
           }
         }
       }
