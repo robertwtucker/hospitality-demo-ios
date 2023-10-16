@@ -36,6 +36,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+fastlane/builds
+fastlane/*.env
 
 # Shared Library folders (avoid checking in lib files)
 HospitalityDemo/Shared/Libraries/

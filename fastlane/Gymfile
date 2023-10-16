@@ -1,0 +1,14 @@
+# For more information about this configuration visit
+# https://docs.fastlane.tools/actions/gym/#gymfile
+
+scheme("HospitalityDemo")
+export_options({
+  method: "app-store",
+  provisioningProfiles: {
+    ENV["DEVELOPER_APP_IDENTIFIER"] => ENV["PROVISIONING_PROFILE_SPECIFIER"],
+  }
+})
+output_directory("./fastlane/builds")
+include_bitcode(false)
+include_symbols(false)
+
