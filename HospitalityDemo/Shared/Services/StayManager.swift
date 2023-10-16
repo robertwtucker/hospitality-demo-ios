@@ -40,7 +40,7 @@ import os
     
     do {
       let reservation = try JSONEncoder().encode(stay)
-      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\", \"Reservation\": \(reservation)}]}"
+      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\", \"Reservation\": \(String(data: reservation, encoding: .utf8 ) ?? "{}")}]}"
       print("payload:" ,payload)
       
       let url = cloudConfig.cloudUrl.replacingOccurrences(of: "<company>", with: cloudConfig.companyName)
