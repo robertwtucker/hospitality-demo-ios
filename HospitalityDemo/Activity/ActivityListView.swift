@@ -44,9 +44,9 @@ struct ActivityListView: View {
       .overlay {
         if model.isEmpty {
           ContentUnavailableView {
-            Label("activity.list.empty.title"/*"No recent activity"*/, systemImage: "person.and.background.dotted")
+            Label("activity.list.empty.title", systemImage: "person.and.background.dotted")
           } description: {
-            Text("activity.list.empty.message"/*"Statements you receive will appear here."*/)
+            Text("activity.list.empty.message")
           }
         }
       }
