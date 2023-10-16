@@ -43,7 +43,7 @@
 		09B48FFE2ACC529D00273F0E /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B48FFD2ACC529D00273F0E /* UserManager.swift */; };
 		09B490002ACC5DA700273F0E /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B48FFF2ACC5DA700273F0E /* UserPreferences.swift */; };
 		09B490022ACCDF2D00273F0E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B490012ACCDF2D00273F0E /* ErrorView.swift */; };
-		09B490052ACCF4F200273F0E /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B490042ACCF4F200273F0E /* FileReader.swift */; };
+		09B490052ACCF4F200273F0E /* Bundle+JsonFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B490042ACCF4F200273F0E /* Bundle+JsonFileReader.swift */; };
 		09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B490062ACCF6FB00273F0E /* CloudConfig.swift */; };
 		09B4900C2ACD01A900273F0E /* quadientcloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 09B4900B2ACD01A900273F0E /* quadientcloud.json */; };
 		09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */; };
@@ -119,7 +119,7 @@
 		09B48FFD2ACC529D00273F0E /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		09B48FFF2ACC5DA700273F0E /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		09B490012ACCDF2D00273F0E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		09B490042ACCF4F200273F0E /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
+		09B490042ACCF4F200273F0E /* Bundle+JsonFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+JsonFileReader.swift"; sourceTree = "<group>"; };
 		09B490062ACCF6FB00273F0E /* CloudConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConfig.swift; sourceTree = "<group>"; };
 		09B4900B2ACD01A900273F0E /* quadientcloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quadientcloud.json; sourceTree = "<group>"; };
 		09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBannerMenu.swift; sourceTree = "<group>"; };
@@ -164,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		097C72222ADD84CA007398A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				09B490042ACCF4F200273F0E /* Bundle+JsonFileReader.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		099AC4262AB4B6FE0023D8B3 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +186,7 @@
 		099AC4292AB4E2B40023D8B3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				097C72222ADD84CA007398A5 /* Extensions */,
 				099AC44A2AB8BF0B0023D8B3 /* Libraries */,
 				099AC42F2AB4E5810023D8B3 /* Models */,
 				099AC42A2AB4E2CE0023D8B3 /* Services */,
@@ -191,7 +200,6 @@
 			children = (
 				09B48FFD2ACC529D00273F0E /* UserManager.swift */,
 				09B48FFF2ACC5DA700273F0E /* UserPreferences.swift */,
-				09B490042ACCF4F200273F0E /* FileReader.swift */,
 				09B727E72AD5006B006BDA40 /* GenerateClient.swift */,
 				097FB71A2AD8643300305AE0 /* StayManager.swift */,
 			);
@@ -522,7 +530,7 @@
 				097FB7232AD8D68900305AE0 /* RatingView.swift in Sources */,
 				097FB7212AD8CCC000305AE0 /* ReservationCardView.swift in Sources */,
 				EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */,
-				09B490052ACCF4F200273F0E /* FileReader.swift in Sources */,
+				09B490052ACCF4F200273F0E /* Bundle+JsonFileReader.swift in Sources */,
 				EBF7ACAD2AB8949F00731645 /* ReservationDetailsView.swift in Sources */,
 				096735322AD1957900C6AEE0 /* AsyncContentView.swift in Sources */,
 				EB895AF22ACDCEEA00BF7711 /* ActivityModel.swift in Sources */,
