@@ -7,7 +7,7 @@ import Foundation
 import os
 
 @Observable public class StayManager {
-  public var currentStay: Reservation?
+  public var currentStay: Stay?
   private var cloudConfig: CloudConfig
   
   private let logger = Logger(
@@ -25,11 +25,11 @@ import os
   }
   
   public func checkIn(reservation: Reservation) {
-    currentStay = reservation
-    currentStay?.checkedIn = true
-    currentStay?.guestName = UserManager.shared.name
-    currentStay?.guestEmail = UserManager.shared.email
-    currentStay?.guestClientId = UserManager.shared.clientId
+    currentStay = Stay(reservation: reservation)
+    currentStay?.reservation.checkedIn = true
+    currentStay?.reservation.guestName = UserManager.shared.name
+    currentStay?.reservation.guestEmail = UserManager.shared.email
+    currentStay?.reservation.guestClientId = UserManager.shared.clientId
   }
   
   public func checkOut() async {
@@ -39,13 +39,12 @@ import os
     }
     
     do {
-      let reservation = try JSONEncoder().encode(stay)
-      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\", \"Reservation\": \(String(data: reservation, encoding: .utf8 ) ?? "{}")}]}"
-      print("payload:" ,payload)
+      let reservation = try String(data: JSONEncoder().encode(stay.reservation), encoding: .utf8) ?? "{}"
+      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\",\"Reservation\":\(reservation),\"sendEmail\":\(stay.sendEmail)}]}"
+      logger.debug("Generate request body: \(payload)")
       
       let url = cloudConfig.cloudUrl.replacingOccurrences(of: "<company>", with: cloudConfig.companyName)
       let client = GenerateClient(baseUrl: URL(string: url)!, apiKey: cloudConfig.generate.apiKey)
-      
       _ = await client.send(.onDemandCustomData(
         pipeline: cloudConfig.generate.checkOutPipeline, payload: payload))
       
