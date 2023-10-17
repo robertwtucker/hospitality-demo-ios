@@ -22,8 +22,9 @@ platform :ios do
     match({readonly: true, type: "appstore"})
   end
 
-  desc "Create ipa"
+  desc "Build the app (ipa)"
   lane :build do
+    setup_ci
     sync_certificates
     increment_build_number(xcodeproj: "HospitalityDemo.xcodeproj")
     gym
