@@ -223,6 +223,39 @@
         }
       }
     },
+    "checkout.complete" : {
+      "comment" : "Message confirming the check out process is complete.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have been checked out..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Has sido revisado..."
+          }
+        }
+      }
+    },
+    "checkout.sendEmail" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send statement in Email"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar estado de cuenta por correo electrónico"
+          }
+        }
+      }
+    },
     "checkout.temp.viewname" : {
       "localizations" : {
         "en" : {
