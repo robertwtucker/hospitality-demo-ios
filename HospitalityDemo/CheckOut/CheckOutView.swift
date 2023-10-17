@@ -9,7 +9,9 @@ import os
 struct CheckOutView: View {
   @Environment(StayManager.self) private var stay
   
-  @SwiftUI.State private var isProcessing: Bool = false
+  @SwiftUI.State private var isProcessing = false
+  @SwiftUI.State private var sendEmail = false
+  @SwiftUI.State private var showConfirm = false
   
   private let logger = Logger(
     subsystem: Bundle.main.bundleIdentifier!,
@@ -19,11 +21,17 @@ struct CheckOutView: View {
     VStack(spacing: 16) {
       Spacer()
       Text("checkout.temp.viewname")
+        .font(.title)
+      Toggle("checkout.sendEmail", isOn: $sendEmail)
+        .padding(.horizontal, 32)
+        .padding(.vertical, 24)
       Button {
         Task {
-          isProcessing = true
+          isProcessing.toggle()
+          stay.currentStay?.sendEmail = sendEmail
           await stay.checkOut()
-          isProcessing = false
+          isProcessing.toggle()
+          showConfirm.toggle()
         }
       } label: {
         HStack {
@@ -37,6 +45,9 @@ struct CheckOutView: View {
         }
       }
       Spacer()
+    }
+    .sheet(isPresented: $showConfirm) {
+      CheckOutConfirmView()
     }
   }
 }

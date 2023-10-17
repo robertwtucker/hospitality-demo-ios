@@ -12,6 +12,8 @@
 		096735322AD1957900C6AEE0 /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096735312AD1957900C6AEE0 /* AsyncContentView.swift */; };
 		0967353A2AD36EBC00C6AEE0 /* DCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096735392AD36EBC00C6AEE0 /* DCViewController.swift */; };
 		097C72242ADD85DA007398A5 /* UIApplication+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C72232ADD85DA007398A5 /* UIApplication+Version.swift */; };
+		097C722A2ADEF98C007398A5 /* Stay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C72292ADEF98C007398A5 /* Stay.swift */; };
+		097C722C2ADF0DA8007398A5 /* CheckOutConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097C722B2ADF0DA8007398A5 /* CheckOutConfirmView.swift */; };
 		097FB71B2AD8643300305AE0 /* StayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB71A2AD8643300305AE0 /* StayManager.swift */; };
 		097FB71D2AD87B6700305AE0 /* ReservationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB71C2AD87B6700305AE0 /* ReservationsListView.swift */; };
 		097FB71F2AD88CBA00305AE0 /* CheckInConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097FB71E2AD88CB900305AE0 /* CheckInConfirmView.swift */; };
@@ -84,6 +86,8 @@
 		096735312AD1957900C6AEE0 /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
 		096735392AD36EBC00C6AEE0 /* DCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCViewController.swift; sourceTree = "<group>"; };
 		097C72232ADD85DA007398A5 /* UIApplication+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Version.swift"; sourceTree = "<group>"; };
+		097C72292ADEF98C007398A5 /* Stay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stay.swift; sourceTree = "<group>"; };
+		097C722B2ADF0DA8007398A5 /* CheckOutConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutConfirmView.swift; sourceTree = "<group>"; };
 		097FB71A2AD8643300305AE0 /* StayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayManager.swift; sourceTree = "<group>"; };
 		097FB71C2AD87B6700305AE0 /* ReservationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsListView.swift; sourceTree = "<group>"; };
 		097FB71E2AD88CB900305AE0 /* CheckInConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInConfirmView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				EB895AF32ACDCF2200BF7711 /* Activity.swift */,
 				09B490062ACCF6FB00273F0E /* CloudConfig.swift */,
 				099AC43B2AB4FB7F0023D8B3 /* Reservation.swift */,
+				097C72292ADEF98C007398A5 /* Stay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				099AC4392AB4F7D60023D8B3 /* CheckOutView.swift */,
+				097C722B2ADF0DA8007398A5 /* CheckOutConfirmView.swift */,
 			);
 			path = CheckOut;
 			sourceTree = "<group>";
@@ -549,7 +555,9 @@
 				099B12662AB201A000DA4B8F /* HospitalityDemoApp.swift in Sources */,
 				EB1292A72AD5B4F10000AB85 /* HomeView.swift in Sources */,
 				09B490072ACCF6FB00273F0E /* CloudConfig.swift in Sources */,
+				097C722A2ADEF98C007398A5 /* Stay.swift in Sources */,
 				097FB72D2AD9C41F00305AE0 /* LaunchScreenView.swift in Sources */,
+				097C722C2ADF0DA8007398A5 /* CheckOutConfirmView.swift in Sources */,
 				09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */,
 				097FB72F2AD9D1CD00305AE0 /* GifImage.swift in Sources */,
 				097FB71D2AD87B6700305AE0 /* ReservationsListView.swift in Sources */,

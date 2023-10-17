@@ -9,7 +9,7 @@ struct ConciergeView: View {
   @Environment(StayManager.self) private var stay
   
   var body: some View {
-    WebView(url: URL(string: stay.currentStay?.hotel.conciergeUrl ?? "https://www.quadient.com/en/enterprise-industries/service-providers")!)
+    WebView(url: URL(string: stay.currentStay?.reservation.hotel.conciergeUrl ?? "https://www.quadient.com/en/enterprise-industries/service-providers")!)
   }
 }
 
