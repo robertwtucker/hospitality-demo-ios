@@ -27,20 +27,22 @@ struct ReservationCardView: View {
           .clipped()
         HStack {
           VStack(alignment: .leading) {
+            Spacer()
             Text("\(reservation.hotel.name)",
                  comment: "Hotel name"
             ).bold()
             Text("Check In: \(reservation.checkInDate)",
                  comment: "Date of check in"
             ).font(.caption)
+            Spacer()
           }
           Spacer()
           RatingView(rating: reservation.hotel.rating)
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal, 16)
         Spacer()
       }
-      .background(Color("brand/turquoise"))
+      .background(Color("brand/brown"))
       .foregroundColor(.white)
       .frame(width: cardAndImageWidth, height: cardHeight)
       .cornerRadius(cornerRadius)
