@@ -17,6 +17,7 @@ import os
   
   @MainActor
   func load() async {
+    state = .loading
     do {
       var documents = try await fetchRemoteDocuments()
       logger.debug("Fetch returned \(documents.count) documents (rewards)")
