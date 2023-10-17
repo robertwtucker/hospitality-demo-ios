@@ -5,6 +5,7 @@
 
 import SwiftUI
 import WebKit
+import AVKit
 
 enum LaunchScreenState {
   case loading, playing, finished
@@ -22,13 +23,6 @@ enum LaunchScreenState {
 struct LaunchScreenView: View {
   @Environment(LaunchScreenManager.self) private var launchScreen
   
-  @SwiftUI.State private var showSplashGif = false
-  @SwiftUI.State private var ticks = 0
-  
-  private let animationTimer = Timer
-    .publish(every: 0.5, on: .main, in: .common)
-    .autoconnect()
-  
   private var launchScreenState: Binding<LaunchScreenState> {
     Binding {
       launchScreen.state
@@ -37,30 +31,29 @@ struct LaunchScreenView: View {
     }
   }
   
-  var body: some View {
-    GifImage(name: "splash", launchScreenState: launchScreenState)
-      .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-      .onReceive(animationTimer) { date in
-        updateAnimation()
-      }
-      .opacity(showSplashGif ? 0 : 1)
+  private var avPlayer: AVPlayer {
+    let player = AVPlayer(url:  Bundle.main.url(forResource: "splashVideo", withExtension: "mp4")!)
+    player.play()
+    return player
   }
   
-  @MainActor
-  private func updateAnimation() {
-    switch launchScreen.state {
-    case .loading:
-      break
-    case .playing:
-      if ticks > 7 {
-        animationTimer.upstream.connect().cancel()
-        showSplashGif.toggle()
-        launchScreen.dismiss()
-      } else {
-        ticks += 1
+  var complete = NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)
+  
+  var body: some View {
+    ZStack {
+      GeometryReader { proxy in
+        VideoPlayer(player: avPlayer)
+          .ignoresSafeArea()
+          .frame(width: proxy.size.height * 16 / 9, height: proxy.size.height)
+          .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
+          .onReceive(complete) { (output) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+              launchScreen.dismiss()
+            }
+          }
       }
-    case .finished:
-      break
+      
     }
+    .ignoresSafeArea()
   }
 }

@@ -33,6 +33,9 @@
         }
       }
     },
+    "ACTIONS" : {
+
+    },
     "activity.list.empty.message" : {
       "localizations" : {
         "en" : {
@@ -80,6 +83,12 @@
           }
         }
       }
+    },
+    "All Checked In!" : {
+
+    },
+    "Browse & Order Food" : {
+
     },
     "button.checkin" : {
       "localizations" : {
@@ -147,6 +156,7 @@
     },
     "button.ok" : {
       "comment" : "Default action",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -178,6 +188,9 @@
         }
       }
     },
+    "Chat With Us" : {
+
+    },
     "Check In: %@" : {
       "comment" : "Date of check in",
       "localizations" : {
@@ -208,6 +221,7 @@
     },
     "checkin.complete" : {
       "comment" : "Message confirming the check in process is complete.",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -288,6 +302,9 @@
           }
         }
       }
+    },
+    "Hotel Name" : {
+
     },
     "login.cta" : {
       "localizations" : {
@@ -529,6 +546,12 @@
         }
       }
     },
+    "Room 42" : {
+
+    },
+    "Service Requests" : {
+
+    },
     "settings.about" : {
       "localizations" : {
         "en" : {
@@ -716,7 +739,10 @@
         }
       }
     },
-    "You are%@checked in." : {
+    "Where can we take you?" : {
+
+    },
+    "You are checked in" : {
 
     }
   },

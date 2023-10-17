@@ -126,22 +126,22 @@ struct LoginView: View {
       showError.toggle()
     }
   }
-    
-    private func selectIdentityProvider(using sdk: AdvantageSDK, ofType: String = "InspireAuthentication" ) async -> IdentityProvider? {
-      do {
-        guard let providers = try await sdk.authenticationService.listAvailableIdentityProviders() else {
-          return nil
-        }
-        for provider in providers {
-          if provider.providerType == ofType {
-            return provider
-          }
-        }
-      } catch {
-        logger.error("Advantage SDK returned an error getting list of identity providers: \(error.localizedDescription)")
+  
+  private func selectIdentityProvider(using sdk: AdvantageSDK, ofType: String = "InspireAuthentication" ) async -> IdentityProvider? {
+    do {
+      guard let providers = try await sdk.authenticationService.listAvailableIdentityProviders() else {
+        return nil
       }
-      return nil
+      for provider in providers {
+        if provider.providerType == ofType {
+          return provider
+        }
+      }
+    } catch {
+      logger.error("Advantage SDK returned an error getting list of identity providers: \(error.localizedDescription)")
     }
+    return nil
+  }
   
   private func clearFormFields() {
     username = ""

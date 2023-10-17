@@ -57,6 +57,7 @@
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
 		EB895AF22ACDCEEA00BF7711 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB895AF12ACDCEEA00BF7711 /* ActivityModel.swift */; };
 		EB895AF42ACDCF2200BF7711 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB895AF32ACDCF2200BF7711 /* Activity.swift */; };
+		EBCC40712ADF089B0075F3CF /* splashVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBCC40702ADF07180075F3CF /* splashVideo.mp4 */; };
 		EBF7ACA92AB8905C00731645 /* SessionBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACA82AB8905C00731645 /* SessionBannerView.swift */; };
 		EBF7ACAB2AB8935E00731645 /* ReservationBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACAA2AB8935E00731645 /* ReservationBannerView.swift */; };
 		EBF7ACAD2AB8949F00731645 /* ReservationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7ACAC2AB8949F00731645 /* ReservationDetailsView.swift */; };
@@ -136,6 +137,7 @@
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
 		EB895AF12ACDCEEA00BF7711 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		EB895AF32ACDCF2200BF7711 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		EBCC40702ADF07180075F3CF /* splashVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashVideo.mp4; sourceTree = "<group>"; };
 		EBF7ACA82AB8905C00731645 /* SessionBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBannerView.swift; sourceTree = "<group>"; };
 		EBF7ACAA2AB8935E00731645 /* ReservationBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationBannerView.swift; sourceTree = "<group>"; };
 		EBF7ACAC2AB8949F00731645 /* ReservationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailsView.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			children = (
 				EB4FD0C22ACF5DF1009B1D2C /* reservations.json */,
 				09B4900B2ACD01A900273F0E /* quadientcloud.json */,
+				EBCC40702ADF07180075F3CF /* splashVideo.mp4 */,
 				097FB72A2AD9C05A00305AE0 /* splash.gif */,
 				097FB7302ADA5F7800305AE0 /* Localizable.xcstrings */,
 			);
@@ -495,6 +498,7 @@
 				099B126E2AB201A200DA4B8F /* Preview Assets.xcassets in Resources */,
 				099B126A2AB201A200DA4B8F /* Assets.xcassets in Resources */,
 				097FB7312ADA5F7800305AE0 /* Localizable.xcstrings in Resources */,
+				EBCC40712ADF089B0075F3CF /* splashVideo.mp4 in Resources */,
 				09B4900C2ACD01A900273F0E /* quadientcloud.json in Resources */,
 				EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */,
 				097FB72B2AD9C05A00305AE0 /* splash.gif in Resources */,
