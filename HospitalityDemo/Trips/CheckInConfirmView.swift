@@ -30,10 +30,10 @@ struct CheckInConfirmView: View {
               .foregroundStyle(Color("brand/turquoise"))
               .bold()
           }
-          .padding(20)
+          .padding(.bottom, 10)
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, -8)
+//        .padding(.vertical, -8)
       }
       .background(Color("brand/beige").opacity(0.4))
       .ignoresSafeArea()
@@ -84,7 +84,7 @@ struct CheckInConfirmView: View {
           }
         }
       }
-      .padding(.top, -65)
+      .padding(.top, -10)
     }
   }
   
