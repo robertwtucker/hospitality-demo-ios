@@ -33,9 +33,6 @@
         }
       }
     },
-    "ACTIONS" : {
-
-    },
     "activity.list.empty.message" : {
       "localizations" : {
         "en" : {
@@ -83,12 +80,6 @@
           }
         }
       }
-    },
-    "All Checked In!" : {
-
-    },
-    "Browse & Order Food" : {
-
     },
     "button.checkin" : {
       "localizations" : {
@@ -156,7 +147,6 @@
     },
     "button.ok" : {
       "comment" : "Default action",
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -188,9 +178,6 @@
         }
       }
     },
-    "Chat With Us" : {
-
-    },
     "Check In: %@" : {
       "comment" : "Date of check in",
       "localizations" : {
@@ -219,20 +206,102 @@
         }
       }
     },
-    "checkin.complete" : {
-      "comment" : "Message confirming the check in process is complete.",
-      "extractionState" : "stale",
+    "checkin.confirm.actions" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You have been checked in..."
+            "value" : "actions"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Has sido registrado..."
+            "value" : "acciones"
+          }
+        }
+      }
+    },
+    "checkin.confirm.actions.chat" : {
+      "comment" : "Chat With Us",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chat With Us"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chatear con Nosotros"
+          }
+        }
+      }
+    },
+    "checkin.confirm.actions.order" : {
+      "comment" : "Browse & Order Food",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse & Order Food"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorar y Pedir Comida"
+          }
+        }
+      }
+    },
+    "checkin.confirm.actions.requests" : {
+      "comment" : "Service Requests",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service Requests"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solicitudes de Servicio"
+          }
+        }
+      }
+    },
+    "checkin.confirm.checkedin" : {
+      "comment" : "All Checked In!",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All Checked In!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Todo registrado!"
+          }
+        }
+      }
+    },
+    "checkin.confirm.room42" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Room: 42"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Habitación: 42"
           }
         }
       }
@@ -286,6 +355,38 @@
         }
       }
     },
+    "home.checkedin.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are checked in"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estás registrado"
+          }
+        }
+      }
+    },
+    "home.search.prompt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where can we take you?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿A dónde podemos llevarte?"
+          }
+        }
+      }
+    },
     "Hotel check in time is %@, check out time is %@" : {
       "comment" : "Message specifying the hotel's check in and check out times",
       "localizations" : {
@@ -303,15 +404,12 @@
         }
       }
     },
-    "Hotel Name" : {
-
-    },
     "login.cta" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " Log in below"
+            "value" : "Log in below"
           }
         },
         "es" : {
@@ -546,12 +644,6 @@
         }
       }
     },
-    "Room 42" : {
-
-    },
-    "Service Requests" : {
-
-    },
     "settings.about" : {
       "localizations" : {
         "en" : {
@@ -740,10 +832,15 @@
       }
     },
     "Where can we take you?" : {
-
-    },
-    "You are checked in" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿A dónde podemos llevarte?"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

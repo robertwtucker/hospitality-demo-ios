@@ -7,7 +7,8 @@ import SwiftUI
 
 struct HomeView: View {
   @Environment(StayManager.self) private var stay
-  @SwiftUI.State private var search = ""
+  
+  @SwiftUI.State private var searchText = ""
   
   var body: some View {
     if stay.checkedIn {
@@ -23,7 +24,7 @@ struct HomeView: View {
       Image("hotel/logo")
         .padding(.top, 30)
       Spacer()
-      Text("You are checked in")
+      Text("home.checkedin.message")
       Spacer()
       Image("general/travel")
         .resizable()
@@ -47,7 +48,7 @@ struct HomeView: View {
             .frame(minWidth: 0, maxWidth: 15)
             .frame(minHeight: 0, maxHeight: 15)
             .foregroundColor(Color("brand/brown"))
-          TextField ("Where can we take you?", text: $search, prompt: Text("Where can we take you?"))
+          TextField ("home.search.prompt", text: $searchText, prompt: Text("home.search.prompt"))
             .font(.footnote)
             .foregroundColor(Color("brand/brown"))
         }
@@ -67,8 +68,6 @@ struct HomeView: View {
     }
   }
 }
-
-
 
 #Preview {
   HomeView()
