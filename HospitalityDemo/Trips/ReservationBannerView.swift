@@ -22,7 +22,7 @@ struct ReservationBannerView: View {
       Spacer()
       RatingView(rating: reservation.hotel.rating).padding(.horizontal, 20)
     }
-    .background(Color(UIColor.systemBackground))
+    .background(Color(UIColor.secondarySystemBackground))
     .shadow(radius: 10, x: 0, y: 0)
   }
 }
