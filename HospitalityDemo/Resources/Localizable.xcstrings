@@ -92,7 +92,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Registrarse"
+            "value" : "Registro"
           }
         }
       }
@@ -124,7 +124,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Despedir"
+            "value" : "Rechazar"
           }
         }
       }
@@ -173,7 +173,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Intentar Otra Vez"
+            "value" : "Intenta de nuevo."
           }
         }
       }
@@ -234,7 +234,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chatear con Nosotros"
+            "value" : "Habla Con Nosotros"
           }
         }
       }
@@ -285,7 +285,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¡Todo registrado!"
+            "value" : "¡Registrado!"
           }
         }
       }
@@ -318,7 +318,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Has sido revisado..."
+            "value" : "Ha registrado su salida..."
           }
         }
       }
@@ -350,7 +350,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vista de Salir"
+            "value" : "Vista de Salida"
           }
         }
       }
@@ -415,7 +415,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Iniciar sesión a continuación"
+            "value" : "Inicia sesión a continuación"
           }
         }
       }
@@ -527,7 +527,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fecha de Registrarse:"
+            "value" : "Fecha de Entrada:"
           }
         }
       }
@@ -543,7 +543,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fecha de Salir:"
+            "value" : "Fecha de Salida:"
           }
         }
       }
@@ -746,7 +746,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Salir"
+            "value" : "Salida"
           }
         }
       }
@@ -778,7 +778,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hogar"
+            "value" : "Home"
           }
         }
       }
@@ -827,17 +827,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bienvenido, %@!"
-          }
-        }
-      }
-    },
-    "Where can we take you?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿A dónde podemos llevarte?"
           }
         }
       }
