@@ -10,8 +10,8 @@ struct ReservationCardView: View {
   
   private let cornerRadius: CGFloat = 24
   private let cardAndImageWidth: CGFloat = 340
-  private let cardHeight: CGFloat = 240
-  private let imageHeight: CGFloat = 180
+  private let cardHeight: CGFloat = 180
+  private let imageHeight: CGFloat = 120
   
   var body: some View {
     ZStack {

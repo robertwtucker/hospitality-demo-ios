@@ -33,6 +33,9 @@
         }
       }
     },
+    "%lld" : {
+
+    },
     "activity.list.empty.message" : {
       "localizations" : {
         "en" : {
@@ -344,13 +347,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Check Out View"
+            "value" : "Ready To Checkout?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vista de Salir"
+            "value" : "¿Listo Para Revisar?"
           }
         }
       }
@@ -841,6 +844,9 @@
           }
         }
       }
+    },
+    "Would you like to leave any feedback?" : {
+
     }
   },
   "version" : "1.0"
