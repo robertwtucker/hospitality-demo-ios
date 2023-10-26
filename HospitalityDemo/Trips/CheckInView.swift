@@ -13,51 +13,49 @@ struct CheckInView: View {
   @SwiftUI.State private var showConfirm = false
   
   var body: some View {
-    Group {
-      VStack {
-        Image("general/checkIn")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(maxWidth: .infinity)
-        ZStack(alignment: .top) {
-          ReservationDetailsView(reservation: reservation)
-            .padding(.top, 60)
-            .padding(.bottom, 20)
-            .padding(.horizontal, 20)
-            .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
-            .background(Color("brand/beige").opacity(0.4))
-            .cornerRadius(15)
-          ReservationBannerView(reservation: reservation)
-        }
-        .padding(.top, -10)
-        .padding(.bottom, 20)
-        DatePicker(
-          selection: $arrivalTime,
-          in: ...Date.now,
-          displayedComponents: .hourAndMinute
-        ) {
-          Text("checkin.arrival",
-               comment: "Time of arrival")
-        }
-        .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
-        Button(action: {
-          stay.checkIn(reservation: reservation)
-          showConfirm.toggle()
-        }, label: {
-          HStack {
-            Spacer()
-            Text("button.checkin")
-            Spacer()
-          }
-        })
-        .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
-        .background(Color("brand/turquoise"))
-        .foregroundColor(.white)
-        .buttonStyle(.bordered)
-        .controlSize(.large)
-        .cornerRadius(10)
-        .padding(.vertical, 20)
+    VStack {
+      Image("general/checkIn")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(maxWidth: .infinity)
+      ZStack(alignment: .top) {
+        ReservationDetailsView(reservation: reservation)
+          .padding(.top, 60)
+          .padding(.bottom, 20)
+          .padding(.horizontal, 20)
+          .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
+          .background(Color("brand/beige").opacity(0.4))
+          .cornerRadius(15)
+        ReservationBannerView(reservation: reservation)
       }
+      .padding(.top, -10)
+      .padding(.bottom, 20)
+      DatePicker(
+        selection: $arrivalTime,
+        in: ...Date.now,
+        displayedComponents: .hourAndMinute
+      ) {
+        Text("checkin.arrival",
+             comment: "Time of arrival")
+      }
+      .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
+      Button(action: {
+        stay.checkIn(reservation: reservation)
+        showConfirm.toggle()
+      }, label: {
+        HStack {
+          Spacer()
+          Text("button.checkin")
+          Spacer()
+        }
+      })
+      .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
+      .background(Color("brand/turquoise"))
+      .foregroundColor(.white)
+      .buttonStyle(.bordered)
+      .controlSize(.large)
+      .cornerRadius(10)
+      .padding(.vertical, 20)
       Spacer()
     }
     .sheet(isPresented: $showConfirm) {

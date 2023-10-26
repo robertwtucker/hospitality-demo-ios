@@ -16,13 +16,15 @@ struct ReservationsListView: View {
         Text("reservations.list.title")
           .foregroundStyle(Color("brand/brown"))
           .padding(.top, 20)
-          .font(.title2).bold()
+          .font(.title2)
+          .bold()
         ScrollView {
           ForEach(reservations) { reservation in
             NavigationLink {
               CheckInView(reservation: reservation)
             } label: {
               ReservationCardView(reservation: reservation)
+                .padding(.top, 8)
             }
           }
         }

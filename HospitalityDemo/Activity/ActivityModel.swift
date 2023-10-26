@@ -20,6 +20,7 @@ import os
     state = .loading
     do {
       var documents = try await fetchRemoteDocuments()
+      documents.reverse()
       logger.debug("Fetch returned \(documents.count) documents (rewards)")
       documents = filterActivity(from: documents)
       state = .loaded(documents.map { document in

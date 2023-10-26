@@ -15,7 +15,8 @@ struct ActivityListView: View {
         Text("activity.list.title")
           .foregroundStyle(Color("brand/brown"))
           .padding(.top, 20)
-          .font(.title2).bold()
+          .font(.title2)
+          .bold()
         List {
           ForEach(activities) { activity in
             ZStack {
@@ -25,11 +26,9 @@ struct ActivityListView: View {
                 EmptyView()
               }
               .opacity(0)
-              
               ActivityItemView(activity: activity)
             }
             .listRowSeparator(.hidden)
-            .listStyle(.plain)
             .buttonStyle(.plain)
           }
           .onDelete(perform: { indexSet in
@@ -38,7 +37,9 @@ struct ActivityListView: View {
             }
           })
         }
+        .padding(.horizontal, 0)
         .scrollContentBackground(.hidden)
+        .listStyle(PlainListStyle())
       }
       .toolbar(.hidden)
       .overlay {
@@ -54,6 +55,7 @@ struct ActivityListView: View {
         await model.load()
       }
     }
+    .padding(.horizontal, 0)
   }
   
   private let logger = Logger(
