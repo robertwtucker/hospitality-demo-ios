@@ -6,6 +6,7 @@ jobs:
   deploy:
     name: Deploy to TestFlight
     runs-on: macos-latest
+    environment: CI
 
     steps:
       - uses: actions/checkout@v2

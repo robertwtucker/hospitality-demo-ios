@@ -30,7 +30,7 @@ struct ReservationCardView: View {
             Spacer()
             Text("\(reservation.hotel.name)",
                  comment: "Hotel name"
-            ).bold()
+            ).font(.subheadline).bold()
             Text("Check In: \(reservation.checkInDate)",
                  comment: "Date of check in"
             ).font(.caption)

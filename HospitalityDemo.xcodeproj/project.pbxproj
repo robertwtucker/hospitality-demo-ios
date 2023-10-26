@@ -27,7 +27,6 @@
 		097FB7312ADA5F7800305AE0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 097FB7302ADA5F7800305AE0 /* Localizable.xcstrings */; };
 		099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FB82ABB325C00BA95E5 /* libFMDB.a */; };
 		099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */; };
-		099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */; };
 		099AC4352AB4E6410023D8B3 /* ReservationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */; };
 		099AC43A2AB4F7D60023D8B3 /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC4392AB4F7D60023D8B3 /* CheckOutView.swift */; };
 		099AC43C2AB4FB7F0023D8B3 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099AC43B2AB4FB7F0023D8B3 /* Reservation.swift */; };
@@ -52,6 +51,7 @@
 		09B727E42AD4548A006BDA40 /* SessionBannerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */; };
 		09B727E62AD45684006BDA40 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E52AD45684006BDA40 /* SettingsView.swift */; };
 		09B727E82AD5006B006BDA40 /* GenerateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B727E72AD5006B006BDA40 /* GenerateClient.swift */; };
+		E1003D412AE6C3160040081C /* AdvantageSdkLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1003D402AE6C3160040081C /* AdvantageSdkLite.xcframework */; };
 		EB1292A72AD5B4F10000AB85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1292A62AD5B4F10000AB85 /* HomeView.swift */; };
 		EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513542ABB7BE9003AF103 /* CheckInView.swift */; };
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
@@ -102,7 +102,6 @@
 		097FB7302ADA5F7800305AE0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		099A2FB82ABB325C00BA95E5 /* libFMDB.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMDB.a; path = HospitalityDemo/Shared/Libraries/libFMDB.a; sourceTree = "<group>"; };
 		099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSQLCipher.a; path = HospitalityDemo/Shared/Libraries/libSQLCipher.a; sourceTree = "<group>"; };
-		099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAdvantageSdkLite.a; path = HospitalityDemo/Shared/Libraries/libAdvantageSdkLite.a; sourceTree = "<group>"; };
 		099AC4342AB4E6410023D8B3 /* ReservationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsModel.swift; sourceTree = "<group>"; };
 		099AC4392AB4F7D60023D8B3 /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 		099AC43B2AB4FB7F0023D8B3 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionBannerMenu.swift; sourceTree = "<group>"; };
 		09B727E52AD45684006BDA40 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		09B727E72AD5006B006BDA40 /* GenerateClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateClient.swift; sourceTree = "<group>"; };
+		E1003D402AE6C3160040081C /* AdvantageSdkLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdvantageSdkLite.xcframework; path = HospitalityDemo/Shared/Libraries/AdvantageSdkLite.xcframework; sourceTree = "<group>"; };
 		EB1292A62AD5B4F10000AB85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB2513542ABB7BE9003AF103 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0916E3BC2ACDD3E1000801D0 /* UserNotifications.framework in Frameworks */,
-				099A2FC12ABCAB4300BA95E5 /* libAdvantageSdkLite.a in Frameworks */,
 				099A2FBE2ABC86CC00BA95E5 /* libFMDB.a in Frameworks */,
+				E1003D412AE6C3160040081C /* AdvantageSdkLite.xcframework in Frameworks */,
 				099A2FBF2ABC86D000BA95E5 /* libSQLCipher.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +297,8 @@
 		099AC44B2AB8CCB80023D8B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1003D402AE6C3160040081C /* AdvantageSdkLite.xcframework */,
 				0916E3BB2ACDD3E0000801D0 /* UserNotifications.framework */,
-				099A2FC02ABCAB4300BA95E5 /* libAdvantageSdkLite.a */,
 				099A2FB82ABB325C00BA95E5 /* libFMDB.a */,
 				099A2FBA2ABB325C00BA95E5 /* libSQLCipher.a */,
 			);
@@ -720,16 +720,18 @@
 		099B12882AB201A200DA4B8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HospitalityDemo/HospitalityDemo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"HospitalityDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 94GENMY2GG;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HospitalityDemo/Info.plist;
@@ -762,7 +764,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.quadient.spt.HospitalityDemo";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "HospitalityDemo/Shared/Libraries/HospitalityDemo-BridgingHeader.h";
@@ -776,16 +779,18 @@
 		099B12892AB201A200DA4B8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HospitalityDemo/HospitalityDemo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"HospitalityDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 94GENMY2GG;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/HospitalityDemo/Shared/Libraries";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HospitalityDemo/Info.plist;
@@ -818,7 +823,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.quadient.spt.HospitalityDemo";
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "HospitalityDemo/Shared/Libraries/HospitalityDemo-BridgingHeader.h";
