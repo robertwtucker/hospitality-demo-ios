@@ -47,7 +47,6 @@ struct CheckOutView: View {
           .padding(.top, 32)
           .foregroundColor(Color("brand/brown"))
         
-        
         VStack(alignment: .leading) {
           Text("Would you like to leave any feedback?")
             .font(.footnote)
