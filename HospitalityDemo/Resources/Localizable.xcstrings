@@ -33,6 +33,9 @@
         }
       }
     },
+    "%lld" : {
+
+    },
     "activity.list.empty.message" : {
       "localizations" : {
         "en" : {
@@ -344,13 +347,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Check Out View"
+            "value" : "Ready To Checkout?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vista de Salida"
+            "value" : "¿Listo Para Revisar?"
           }
         }
       }
@@ -830,6 +833,19 @@
           }
         }
       }
+    },
+    "Where can we take you?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿A dónde podemos llevarte?"
+          }
+        }
+      }
+    },
+    "Would you like to leave any feedback?" : {
     }
   },
   "version" : "1.0"
