@@ -23,6 +23,17 @@
         }
       }
     },
+    "%@ to %@" : {
+      "comment" : "Dates of stay",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ to %2$@"
+          }
+        }
+      }
+    },
     "%@** **** **** **%@" : {
       "localizations" : {
         "es" : {
@@ -34,7 +45,7 @@
       }
     },
     "%lld" : {
-
+      "comment" : "Points"
     },
     "activity.list.empty.message" : {
       "localizations" : {
@@ -359,6 +370,7 @@
       }
     },
     "home.checkedin.message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -406,6 +418,9 @@
           }
         }
       }
+    },
+    "HOTEL NAME" : {
+
     },
     "login.cta" : {
       "localizations" : {
@@ -518,6 +533,12 @@
           }
         }
       }
+    },
+    "Points" : {
+
+    },
+    "QUADY HOTEL" : {
+
     },
     "reservation.checkin.date" : {
       "localizations" : {
@@ -713,6 +734,7 @@
     },
     "Stay: %@ to %@" : {
       "comment" : "Dates of stay",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -817,6 +839,9 @@
           }
         }
       }
+    },
+    "Welcome to" : {
+
     },
     "Welcome, %@!" : {
       "localizations" : {

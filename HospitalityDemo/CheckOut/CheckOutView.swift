@@ -38,29 +38,35 @@ struct CheckOutView: View {
           Spacer()
           RatingView(rating: stay.currentStay?.reservation.hotel.rating ?? 0.0).padding(.horizontal, 20)
         }
-        .background(Color(UIColor.systemBackground))
+        .background(Color(UIColor.secondarySystemBackground))
         .shadow(radius: 10, x: 0, y: 0)
       }
-      
       VStack(spacing: 32) {
         Text("checkout.temp.viewname")
           .font(.title)
           .padding(.top, 32)
           .foregroundColor(Color("brand/brown"))
+        
         VStack(alignment: .leading) {
           Text("Would you like to leave any feedback?")
             .font(.footnote)
-          TextEditor(text: $additionalInformation)
-            .foregroundColor(.gray)
-            .frame(height: 100)
-            .border(Color("brand/brown"))
-            .font(.caption)
+          ZStack {
+            RoundedRectangle(cornerRadius: 10)
+              .fill(Color("brand/brown").opacity(0.25))
+              .stroke(Color("brand/brown"))
+              .frame(height: 100)
+            TextEditor(text: $additionalInformation)
+              .padding(5)
+              .scrollContentBackground(.hidden)
+              .foregroundColor(Color(UIColor.secondaryLabel))
+              .frame(height: 100)
+              .font(.caption)
+          }
           Text("\(maxCharacters-additionalInformation.count)")
             .font(.caption)
             .foregroundColor(additionalInformation.count <= maxCharacters ? .gray : .red)
             .frame(maxWidth: .infinity, alignment: .trailing)
         }
-        
         Toggle("checkout.sendEmail", isOn: $sendEmail)
         Button {
           Task {
