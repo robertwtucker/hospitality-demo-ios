@@ -27,7 +27,7 @@ struct CheckInView: View {
           .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
           .background(Color("brand/beige").opacity(0.4))
           .cornerRadius(15)
-        ReservationBannerView(reservation: reservation)
+        HotelBannerView(reservation: reservation)
       }
       .padding(.top, -10)
       .padding(.bottom, 20)

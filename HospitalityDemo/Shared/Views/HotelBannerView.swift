@@ -5,11 +5,10 @@
 
 import SwiftUI
 
-struct ReservationBannerView: View {
+struct HotelBannerView: View {
   let reservation: Reservation
   
   var body: some View {
-    
     HStack {
       Image("hotel/logo")
         .padding(.leading, 20)
@@ -27,7 +26,6 @@ struct ReservationBannerView: View {
   }
 }
 
-
 #Preview {
-  ReservationBannerView(reservation: Reservation.sampleData)
+  HotelBannerView(reservation: Reservation.sampleData)
 }

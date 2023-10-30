@@ -32,27 +32,13 @@ struct CheckOutView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(maxWidth: .infinity)
-          HStack {
-            Image("hotel/logo")
-              .padding(.leading, 20)
-              .frame(height: 25)
-              .aspectRatio(contentMode: .fit)
-            Text(stay.reservation.hotel.name)
-              .font(.caption)
-              .padding(.vertical, 10)
-              .bold()
-            Spacer()
-            RatingView(rating: stay.reservation.hotel.rating).padding(.horizontal, 20)
-          }
-          .background(Color(UIColor.secondarySystemBackground))
-          .shadow(radius: 10, x: 0, y: 0)
+          HotelBannerView(reservation: stayModel.currentStay!.reservation)
         }
         VStack(spacing: 32) {
           Text("checkout.title", comment: "Checkout view title")
             .font(.title)
             .padding(.top, 32)
             .foregroundColor(Color("brand/brown"))
-          
           VStack(alignment: .leading) {
             Text("checkout.feedback", comment: "Prompt to leave feedback for hotel")
               .font(.footnote)
