@@ -33,7 +33,7 @@ import os
     
     do {
       let reservation = try String(data: JSONEncoder().encode(stay.reservation), encoding: .utf8) ?? "{}"
-      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\",\"Reservation\":\(reservation),\"sendEmail\":\(stay.sendEmail)}]}"
+      let payload = "{\"Clients\":[{\"ClientID\":\"ID123\",\"Reservation\":\(reservation),\"sendEmail\":\(stay.sendEmail),\"feedback\":\"\(stay.feedback)\"}]}"
       logger.debug("Generate request body: \(payload)")
       
       let url = cloudConfig.cloudUrl.replacingOccurrences(of: "<company>", with: cloudConfig.companyName)

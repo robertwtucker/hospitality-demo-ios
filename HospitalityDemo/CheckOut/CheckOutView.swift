@@ -12,7 +12,7 @@ struct CheckOutView: View {
   @SwiftUI.State private var isProcessing = false
   @SwiftUI.State private var sendEmail = false
   @SwiftUI.State private var showConfirm = false
-  @SwiftUI.State private var additionalInformation = ""
+  @SwiftUI.State private var feedback = ""
   let maxCharacters = 255
   
   private let logger = Logger(
@@ -61,16 +61,16 @@ struct CheckOutView: View {
                 .fill(Color("brand/brown").opacity(0.25))
                 .stroke(Color("brand/brown"))
                 .frame(height: 100)
-              TextEditor(text: $additionalInformation)
+              TextEditor(text: $feedback)
                 .padding(5)
                 .scrollContentBackground(.hidden)
                 .foregroundColor(Color(UIColor.secondaryLabel))
                 .frame(height: 100)
                 .font(.caption)
             }
-            Text("\(maxCharacters-additionalInformation.count)")
+            Text("\(maxCharacters-feedback.count)")
               .font(.caption)
-              .foregroundColor(additionalInformation.count <= maxCharacters ? .gray : .red)
+              .foregroundColor(feedback.count <= maxCharacters ? .gray : .red)
               .frame(maxWidth: .infinity, alignment: .trailing)
           }
           Toggle(String(localized: "checkout.sendEmail", comment: "Prompt to send document in email"), isOn: $sendEmail)
@@ -78,6 +78,7 @@ struct CheckOutView: View {
             Task {
               isProcessing.toggle()
               stayModel.currentStay?.sendEmail = sendEmail
+              stayModel.currentStay?.feedback = feedback
               await stayModel.checkOut()
               isProcessing.toggle()
               showConfirm.toggle()
