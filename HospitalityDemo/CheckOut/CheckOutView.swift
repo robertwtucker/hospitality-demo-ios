@@ -48,7 +48,7 @@ struct CheckOutView: View {
           .shadow(radius: 10, x: 0, y: 0)
         }
         VStack(spacing: 32) {
-          Text("checkout.temp.viewname")
+          Text("checkout.title", comment: "Checkout view title")
             .font(.title)
             .padding(.top, 32)
             .foregroundColor(Color("brand/brown"))

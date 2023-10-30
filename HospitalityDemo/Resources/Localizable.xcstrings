@@ -380,6 +380,7 @@
       }
     },
     "checkout.sendEmail" : {
+      "comment" : "Prompt to send document in email",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -395,7 +396,8 @@
         }
       }
     },
-    "checkout.temp.viewname" : {
+    "checkout.title" : {
+      "comment" : "Checkout view title",
       "localizations" : {
         "en" : {
           "stringUnit" : {
