@@ -26,9 +26,9 @@
     "%@ to %@" : {
       "comment" : "Dates of stay",
       "localizations" : {
-        "en" : {
+        "es" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "%1$@ to %2$@"
           }
         }
@@ -45,7 +45,15 @@
       }
     },
     "%lld" : {
-      "comment" : "Points"
+      "comment" : "Points value",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "activity.list.empty.message" : {
       "localizations" : {
@@ -91,6 +99,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Actividad de la Cuenta"
+          }
+        }
+      }
+    },
+    "activity.points" : {
+      "comment" : "'Points' label",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Points"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puntos"
           }
         }
       }
@@ -337,6 +362,23 @@
         }
       }
     },
+    "checkout.feedback" : {
+      "comment" : "Prompt to leave feedback for hotel",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Would you like to leave any feedback?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Quieres dejar algún comentario?"
+          }
+        }
+      }
+    },
     "checkout.sendEmail" : {
       "localizations" : {
         "en" : {
@@ -369,19 +411,53 @@
         }
       }
     },
-    "home.checkedin.message" : {
-      "extractionState" : "stale",
+    "home.button.dining" : {
+      "comment" : "'Dining' menu button label",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You are checked in"
+            "value" : "Dining"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Estás registrado"
+            "value" : "Comida"
+          }
+        }
+      }
+    },
+    "home.button.open" : {
+      "comment" : "'Open Door' menu button label",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Door"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puerta Abierta"
+          }
+        }
+      }
+    },
+    "home.button.staff" : {
+      "comment" : "'Staff' menu button label",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Staff"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personal"
           }
         }
       }
@@ -402,6 +478,23 @@
         }
       }
     },
+    "home.welcome" : {
+      "comment" : "Welcome to hotel intro",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido a"
+          }
+        }
+      }
+    },
     "Hotel check in time is %@, check out time is %@" : {
       "comment" : "Message specifying the hotel's check in and check out times",
       "localizations" : {
@@ -418,9 +511,6 @@
           }
         }
       }
-    },
-    "HOTEL NAME" : {
-
     },
     "login.cta" : {
       "localizations" : {
@@ -534,11 +624,15 @@
         }
       }
     },
-    "Points" : {
-
-    },
     "QUADY HOTEL" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QUADY HOTEL"
+          }
+        }
+      }
     },
     "reservation.checkin.date" : {
       "localizations" : {
@@ -732,18 +826,6 @@
         }
       }
     },
-    "Stay: %@ to %@" : {
-      "comment" : "Dates of stay",
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Estancia: %1$@ a %2$@"
-          }
-        }
-      }
-    },
     "tab.activity" : {
       "localizations" : {
         "en" : {
@@ -840,9 +922,6 @@
         }
       }
     },
-    "Welcome to" : {
-
-    },
     "Welcome, %@!" : {
       "localizations" : {
         "en" : {
@@ -858,19 +937,6 @@
           }
         }
       }
-    },
-    "Where can we take you?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿A dónde podemos llevarte?"
-          }
-        }
-      }
-    },
-    "Would you like to leave any feedback?" : {
     }
   },
   "version" : "1.0"

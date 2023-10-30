@@ -17,8 +17,7 @@ struct ReservationDetailsView: View {
         Image(systemName: "mappin.and.ellipse")
           .foregroundColor(.red)
           .padding(.horizontal, -5)
-        Text("\(Text(reservation.hotel.name).bold()) | \(Text(reservation.hotel.location).bold())",
-             comment: "Hotel name and city")
+        Text("\(Text(reservation.hotel.name).bold()) | \(Text(reservation.hotel.location).bold())", comment: "Hotel name and city")
       }
       .padding(.bottom, 1)
       HStack {
@@ -34,7 +33,6 @@ struct ReservationDetailsView: View {
         Text(reservation.checkInDate)
           .bold()
       }
-      .padding(.bottom, 1)
       HStack {
         Text("reservation.checkout.date")
         Spacer()

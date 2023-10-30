@@ -6,12 +6,12 @@
 import SwiftUI
 
 struct HomeView: View {
-  @Environment(StayManager.self) private var stay
+  @Environment(StayModel.self) private var stayModel
   
   @SwiftUI.State private var searchText = ""
   
   var body: some View {
-    if stay.checkedIn {
+    if stayModel.checkedIn {
       checkedInHome
     }
     else {
@@ -19,14 +19,17 @@ struct HomeView: View {
     }
   }
   
+  @ViewBuilder
   private var checkedInHome: some View {
+    let hotelName = stayModel.currentStay!.reservation.hotel.name
+    
     VStack {
       LogoCircle()
       Spacer()
       VStack(spacing: 8) {
-        Text("Welcome to")
+        Text("home.welcome", comment: "Welcome to hotel intro")
           .font(.headline)
-        Text("\(stay.currentStay?.reservation.hotel.name ?? "HOTEL NAME")")
+        Text(hotelName)
           .font(.title)
           .bold()
       }
@@ -34,11 +37,11 @@ struct HomeView: View {
       Spacer()
       HStack {
         Spacer()
-        MenuButton(title: "Open Door", icon: Image(systemName: "lock.open.rotation"))
+        MenuButton(title: String(localized: "home.button.open", comment: "'Open Door' menu button label") , icon: Image(systemName: "lock.open.rotation"))
         Spacer()
-        MenuButton(title: "Dining", icon: Image(systemName: "fork.knife"))
+        MenuButton(title: String(localized: "home.button.dining", comment: "'Dining' menu button label"), icon: Image(systemName: "fork.knife"))
         Spacer()
-        MenuButton(title: "Staff", icon: Image(systemName: "person.wave.2.fill"))
+        MenuButton(title: String(localized: "home.button.staff", comment: "'Staff' menu button label"), icon: Image(systemName: "person.wave.2.fill"))
         Spacer()
       }
       Spacer()
@@ -62,7 +65,7 @@ struct HomeView: View {
             .frame(minWidth: 0, maxWidth: 15)
             .frame(minHeight: 0, maxHeight: 15)
             .foregroundColor(Color("brand/brown"))
-          TextField ("home.search.prompt", text: $searchText, prompt: Text("home.search.prompt").foregroundColor(Color(UIColor.label)))
+          TextField("home.search.prompt", text: $searchText, prompt: Text("home.search.prompt").foregroundColor(Color(UIColor.label)))
             .font(.footnote)
             .foregroundColor(Color("brand/brown"))
         }
@@ -144,5 +147,5 @@ struct MenuButton: View {
 
 #Preview {
   HomeView()
-    .environment(StayManager.shared)
+    .environment(StayModel())
 }

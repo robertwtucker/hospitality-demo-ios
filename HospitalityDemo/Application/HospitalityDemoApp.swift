@@ -14,9 +14,13 @@ struct HospitalityDemoApp: App {
   @Environment(\.scenePhase) private var scenePhase
   
   @SwiftUI.State private var launchScreen = LaunchScreenManager()
-  @SwiftUI.State private var stayManager = StayManager.shared
-  @SwiftUI.State private var userManager = UserManager.shared
+  @SwiftUI.State private var sdkModel = AdvantageSdkModel()
+  @SwiftUI.State private var stayModel = StayModel()
   @SwiftUI.State private var userPreferences = UserPreferences.shared
+  
+  private let logger = Logger(
+    subsystem: Bundle.main.bundleIdentifier!,
+    category: String(describing: AppDelegate.self))
   
   var body: some Scene {
     WindowGroup {
@@ -28,74 +32,17 @@ struct HospitalityDemoApp: App {
         }
       }
       .task {
-        initializeAdvantageSdk()
+        sdkModel.initializeAdvantageSdk(delegate: appDelegate)
+        sdkModel.loginWithCurrentSession()
         authorizeDeviceForNotifications()
-        loginWithCurrentSession()
       }
       .environment(launchScreen)
-      .environment(stayManager)
-      .environment(userManager)
+      .environment(sdkModel)
+      .environment(stayModel)
       .environment(userPreferences)
       .onChange(of: scenePhase) { _, newValue in
         handleScenePhase(scenePhase: newValue)
       }
-      .onChange(of: userManager.currentSession) { oldValue, newValue in
-        guard let newValue = newValue else {
-          clearUserSettings()
-          return
-        }
-        if oldValue?.clientID != newValue.clientID {
-          setupUserSession(newValue)
-        }
-      }
-    }
-  }
-  
-  private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: AppDelegate.self))
-  
-  private var sdk: AdvantageSDK {
-    return AdvantageSDK.sharedInstance()
-  }
-  
-  private func initializeAdvantageSdk() {
-    logger.debug("Reading cloud configuration from file")
-    var config = Bundle.main.decode(CloudConfig.self, from: "quadientcloud.json")
-#if targetEnvironment(simulator)
-    config.advantageSdk.rootedDeviceEnabled = true
-#else
-    config.advantageSdk.rootedDeviceEnabled = false
-#endif
-    
-    let connectionSettings = ConnectionSettings()
-    connectionSettings.applicationId = config.advantageSdk.applicationId
-    connectionSettings.companyName = config.companyName
-    connectionSettings.cloudURL = config.cloudUrl
-    connectionSettings.authenticationClientId = config.advantageSdk.authenticationClientId
-    connectionSettings.redirectUrl = config.advantageSdk.redirectUrl
-    
-    let options = Options(
-      customSettings: true,
-      rootedDeviceEnabled: config.advantageSdk.rootedDeviceEnabled,
-      loggerSettings: LoggerSettings.server.rawValue,
-      encryptionRequired: false)
-    options?.minimumSupportedCloudVersion = config.advantageSdk.minimumSupportedCloudVersion
-    
-    sdk.initialize(with: connectionSettings, databaseKey: "", options: options)
-    
-    if sdk.isInitialized {
-      guard let libraryInfo = sdk.libraryInfo() else {
-        logger.warning("Advantage SDK initialized but library info could not be determined")
-        return
-      }
-      logger.info("Advantage SDK v\(libraryInfo.versionName!) initialized")
-      
-      // Register delegates
-      sdk.documentService.setDocumentDownloadStatusDelegate(appDelegate)
-      sdk.addErrorDelegate(appDelegate)
-    } else {
-      fatalError("Advantage SDK could not be initialized")
     }
   }
   
@@ -110,40 +57,6 @@ struct HospitalityDemoApp: App {
     }
   }
   
-  private func loginWithCurrentSession() {
-    Task {
-      do {
-        guard let sessionInfo = try await sdk.authenticationService.loginWithCurrentSession() else { return }
-        logger.info("Current Advantage SDK session is still valid")
-        UserManager.shared.currentSession = sessionInfo
-      } catch {
-        logger.debug("No valid Advantage SDK session found, will prompt to log in")
-      }
-    }
-  }
-  
-  private func clearUserSettings() {
-    UserPreferences.shared.clientId = ""
-    Task {
-      await withCheckedContinuation { continuation in
-        sdk.storageService.clearDatabase { error in
-          if let error = error {
-            logger.error("Failed to clear Advantage SDK database due to error: \(error.localizedDescription)")
-          }
-          continuation.resume()
-        }
-      }
-    }
-  }
-  
-  private func setupUserSession(_ sessionInfo: SessionInfo) {
-    UserPreferences.shared.clientId = sessionInfo.clientID!
-    logger.info("Setting up for user: \(sessionInfo.name!) (\(sessionInfo.email!))")
-#if !targetEnvironment(simulator)
-    UIApplication.shared.registerForRemoteNotifications()
-#endif
-  }
-  
   private func authorizeDeviceForNotifications() {
     Task {
       let userNotificationCenter = UNUserNotificationCenter.current()
@@ -154,13 +67,9 @@ struct HospitalityDemoApp: App {
   
   private func setIconBadgeCount() {
     Task {
-      let count = await withCheckedContinuation { continuation in
-        AdvantageSDK.sharedInstance().documentService.unreadDocumentsCount { result, error in
-          continuation.resume(returning: result)
-        }
-      }
+      let count = await sdkModel.iconBadgeCount()
       await MainActor.run {
-        UNUserNotificationCenter.current().setBadgeCount(Int(count))
+        UNUserNotificationCenter.current().setBadgeCount(count)
       }
     }
   }
