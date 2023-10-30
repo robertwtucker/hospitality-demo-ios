@@ -8,7 +8,7 @@ import os
 
 struct LoginView: View {
   @Environment(\.dismiss) private var dismiss
-  @Environment(UserManager.self) private var userManager
+  @Environment(AdvantageSdkModel.self) private var sdkModel
   
   @SwiftUI.State private var username = ""
   @SwiftUI.State private var password = ""
@@ -102,45 +102,14 @@ struct LoginView: View {
   }
   
   private func login() async {
-    guard let sdk = AdvantageSDK.sharedInstance() else {
-      logger.error("Unable to accees shared instance of SDK")
-      return
-    }
-    
-    guard let identityProvider = await selectIdentityProvider(using: sdk) else {
-      errorMessage = "Error selecting identity provider: Inspire Authentication not available."
-      logger.error("\(errorMessage)")
-      showError.toggle()
-      return
-    }
-    logger.debug("Using identity provider: \(identityProvider.providerType!) (\(identityProvider.providerId!))")
-    
     do {
-      guard let sessionInfo = try await sdk.authenticationService.login(withCredentials: username, password: password, identityProvider: identityProvider) else {
-        return }
+      try await sdkModel.login(username: username, password: password)
       clearFormFields()
-      userManager.currentSession = sessionInfo
     } catch {
       errorMessage = "Login error: \(error.localizedDescription)"
       logger.error("\(errorMessage)")
       showError.toggle()
     }
-  }
-  
-  private func selectIdentityProvider(using sdk: AdvantageSDK, ofType: String = "InspireAuthentication" ) async -> IdentityProvider? {
-    do {
-      guard let providers = try await sdk.authenticationService.listAvailableIdentityProviders() else {
-        return nil
-      }
-      for provider in providers {
-        if provider.providerType == ofType {
-          return provider
-        }
-      }
-    } catch {
-      logger.error("Advantage SDK returned an error getting list of identity providers: \(error.localizedDescription)")
-    }
-    return nil
   }
   
   private func clearFormFields() {
@@ -151,5 +120,5 @@ struct LoginView: View {
 
 #Preview {
   LoginView()
-    .environment(UserManager.shared)
+    .environment(AdvantageSdkModel())
 }

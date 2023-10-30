@@ -7,11 +7,12 @@ import SwiftUI
 
 struct CheckInConfirmView: View {
   @Environment(\.dismiss) private var dismiss
-  @Environment(StayManager.self) private var stay
+  
+  public var reservation: Reservation
   
   var body: some View {
     VStack {
-      Image("\(stay.currentStay?.reservation.hotel.imageName ?? "hotel/background")")
+      Image(reservation.hotel.imageName)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: .infinity)
@@ -20,7 +21,7 @@ struct CheckInConfirmView: View {
           Text("checkin.confirm.checkedin", comment: "All Checked In!")
             .font(.title)
             .foregroundStyle(Color(UIColor.secondaryLabel))
-          Text("\(stay.currentStay?.reservation.hotel.name ?? "Hotel Name")")
+          Text(reservation.hotel.name)
             .font(.headline)
             .foregroundStyle(Color("brand/aqua"))
             .bold()
@@ -86,6 +87,5 @@ struct CheckInConfirmView: View {
 }
 
 #Preview {
-  CheckInConfirmView()
-    .environment(StayManager.shared)
+  CheckInConfirmView(reservation: Reservation.sampleData)
 }

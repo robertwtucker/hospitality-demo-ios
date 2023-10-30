@@ -6,19 +6,16 @@
 import Foundation
 import os
 
-@Observable public class StayManager {
+@Observable public class StayModel {
   public var currentStay: Stay?
-  private var cloudConfig: CloudConfig
+  private(set) var reservations: Reservations = []
+  private var cloudConfig = CloudConfigSettings.shared.cloudConfig
   
   private let logger = Logger(
     subsystem: Bundle.main.bundleIdentifier!,
     category: String(describing: CheckOutView.self))
   
-  public static var shared = StayManager()
-  
-  private init() {
-    cloudConfig = Bundle.main.decode(CloudConfig.self, from: "quadientcloud.json")
-  }
+  public init() { }
   
   public var checkedIn: Bool {
     currentStay != nil ? true : false
@@ -26,10 +23,6 @@ import os
   
   public func checkIn(reservation: Reservation) {
     currentStay = Stay(reservation: reservation)
-    currentStay?.reservation.checkedIn = true
-    currentStay?.reservation.guestName = UserManager.shared.name
-    currentStay?.reservation.guestEmail = UserManager.shared.email
-    currentStay?.reservation.guestClientId = UserManager.shared.clientId
   }
   
   public func checkOut() async {
@@ -52,5 +45,10 @@ import os
     } catch {
       logger.error("Caught error encoding reservation: \(error)")
     }
+  }
+  
+  @MainActor
+  func loadReservations() async {
+    reservations = Bundle.main.decode(Reservations.self, from: "reservations.json")
   }
 }

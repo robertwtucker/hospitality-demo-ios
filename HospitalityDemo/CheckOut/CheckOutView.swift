@@ -7,7 +7,7 @@ import SwiftUI
 import os
 
 struct CheckOutView: View {
-  @Environment(StayManager.self) private var stay
+  @Environment(StayModel.self) private var stayModel
   
   @SwiftUI.State private var isProcessing = false
   @SwiftUI.State private var sendEmail = false
@@ -20,89 +20,98 @@ struct CheckOutView: View {
     category: String(describing: CheckOutView.self))
   
   var body: some View {
-    VStack {
+    checkOutView
+  }
+  
+  @ViewBuilder
+  private var checkOutView: some View {
+    if let stay = stayModel.currentStay {
       VStack {
-        Image("general/checkOut")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(maxWidth: .infinity)
-        HStack {
-          Image("hotel/logo")
-            .padding(.leading, 20)
-            .frame(height: 25)
+        VStack {
+          Image("general/checkOut")
+            .resizable()
             .aspectRatio(contentMode: .fit)
-          Text("\(stay.currentStay?.reservation.hotel.name ?? "Hotel Name")")
-            .font(.caption)
-            .padding(.vertical, 10)
-            .bold()
-          Spacer()
-          RatingView(rating: stay.currentStay?.reservation.hotel.rating ?? 0.0).padding(.horizontal, 20)
-        }
-        .background(Color(UIColor.secondarySystemBackground))
-        .shadow(radius: 10, x: 0, y: 0)
-      }
-      VStack(spacing: 32) {
-        Text("checkout.temp.viewname")
-          .font(.title)
-          .padding(.top, 32)
-          .foregroundColor(Color("brand/brown"))
-        
-        VStack(alignment: .leading) {
-          Text("Would you like to leave any feedback?")
-            .font(.footnote)
-          ZStack {
-            RoundedRectangle(cornerRadius: 10)
-              .fill(Color("brand/brown").opacity(0.25))
-              .stroke(Color("brand/brown"))
-              .frame(height: 100)
-            TextEditor(text: $additionalInformation)
-              .padding(5)
-              .scrollContentBackground(.hidden)
-              .foregroundColor(Color(UIColor.secondaryLabel))
-              .frame(height: 100)
-              .font(.caption)
-          }
-          Text("\(maxCharacters-additionalInformation.count)")
-            .font(.caption)
-            .foregroundColor(additionalInformation.count <= maxCharacters ? .gray : .red)
-            .frame(maxWidth: .infinity, alignment: .trailing)
-        }
-        Toggle("checkout.sendEmail", isOn: $sendEmail)
-        Button {
-          Task {
-            isProcessing.toggle()
-            stay.currentStay?.sendEmail = sendEmail
-            await stay.checkOut()
-            isProcessing.toggle()
-            showConfirm.toggle()
-          }
-        } label: {
+            .frame(maxWidth: .infinity)
           HStack {
+            Image("hotel/logo")
+              .padding(.leading, 20)
+              .frame(height: 25)
+              .aspectRatio(contentMode: .fit)
+            Text(stay.reservation.hotel.name)
+              .font(.caption)
+              .padding(.vertical, 10)
+              .bold()
             Spacer()
-            if isProcessing {
-              ProgressView()
-            } else {
-              Text("button.checkout")
-            }
-            Spacer()
+            RatingView(rating: stay.reservation.hotel.rating).padding(.horizontal, 20)
           }
+          .background(Color(UIColor.secondarySystemBackground))
+          .shadow(radius: 10, x: 0, y: 0)
         }
-        .background(Color("brand/turquoise"))
-        .foregroundColor(.white)
-        .buttonStyle(.bordered)
-        .controlSize(.large)
-        .cornerRadius(10)
-        Spacer()
+        VStack(spacing: 32) {
+          Text("checkout.temp.viewname")
+            .font(.title)
+            .padding(.top, 32)
+            .foregroundColor(Color("brand/brown"))
+          
+          VStack(alignment: .leading) {
+            Text("checkout.feedback", comment: "Prompt to leave feedback for hotel")
+              .font(.footnote)
+            ZStack {
+              RoundedRectangle(cornerRadius: 10)
+                .fill(Color("brand/brown").opacity(0.25))
+                .stroke(Color("brand/brown"))
+                .frame(height: 100)
+              TextEditor(text: $additionalInformation)
+                .padding(5)
+                .scrollContentBackground(.hidden)
+                .foregroundColor(Color(UIColor.secondaryLabel))
+                .frame(height: 100)
+                .font(.caption)
+            }
+            Text("\(maxCharacters-additionalInformation.count)")
+              .font(.caption)
+              .foregroundColor(additionalInformation.count <= maxCharacters ? .gray : .red)
+              .frame(maxWidth: .infinity, alignment: .trailing)
+          }
+          Toggle(String(localized: "checkout.sendEmail", comment: "Prompt to send document in email"), isOn: $sendEmail)
+          Button {
+            Task {
+              isProcessing.toggle()
+              stayModel.currentStay?.sendEmail = sendEmail
+              await stayModel.checkOut()
+              isProcessing.toggle()
+              showConfirm.toggle()
+            }
+          } label: {
+            HStack {
+              Spacer()
+              if isProcessing {
+                ProgressView()
+              } else {
+                Text("button.checkout")
+              }
+              Spacer()
+            }
+          }
+          .background(Color("brand/turquoise"))
+          .foregroundColor(.white)
+          .buttonStyle(.bordered)
+          .controlSize(.large)
+          .cornerRadius(10)
+          Spacer()
+        }
+        .padding(.horizontal, 20)
+        .sheet(isPresented: $showConfirm) {
+          CheckOutConfirmView()
+        }
       }
-      .padding(.horizontal, 20)
-      .sheet(isPresented: $showConfirm) {
-        CheckOutConfirmView()
-      }
+    } else {
+      EmptyView()
     }
   }
 }
 
 #Preview {
   CheckOutView()
-    .environment(StayManager.shared)
+    .environment(StayModel())
 }

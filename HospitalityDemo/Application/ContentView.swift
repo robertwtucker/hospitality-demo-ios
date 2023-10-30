@@ -6,18 +6,18 @@
 import SwiftUI
 
 struct ContentView: View {
-  @Environment(StayManager.self) private var stay
-  @Environment(UserManager.self) private var user
+  @Environment(StayModel.self) private var stayModel
+  @Environment(AdvantageSdkModel.self) private var sdkModel
   
   @SwiftUI.State private var selectedTab: Tab = .home
   
   private var availableTabs: [Tab] {
-    stay.checkedIn ? Tab.checkedInTabs() : Tab.checkedOutTabs()
+    stayModel.checkedIn ? Tab.checkedInTabs() : Tab.checkedOutTabs()
   }
   
   private var showLogin: Binding<Bool> {
     Binding {
-      !user.isAuthenticated
+      !sdkModel.isSignedIn
     } set: { _ in }
   }
   
@@ -34,7 +34,7 @@ struct ContentView: View {
       }
       .padding(.top, 32)
       
-      SessionBannerView()
+      SessionBannerView(guestName: sdkModel.currentUser?.name ?? "Guest")
     }
     .sheet(isPresented: showLogin) {
       LoginView()
@@ -46,6 +46,6 @@ struct ContentView: View {
 
 #Preview {
   ContentView()
-    .environment(StayManager.shared)
-    .environment(UserManager.shared)
+    .environment(StayModel())
+    .environment(AdvantageSdkModel())
 }

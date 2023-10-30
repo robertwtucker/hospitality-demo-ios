@@ -6,9 +6,10 @@
 import SwiftUI
 
 struct CheckInView: View {
-  @Environment(StayManager.self) private var stay
+  @Environment(StayModel.self) private var stayModel
+  @Environment(AdvantageSdkModel.self) private var sdkModel
   
-  var reservation: Reservation
+  @SwiftUI.State var reservation: Reservation
   @SwiftUI.State private var arrivalTime = Date.now
   @SwiftUI.State private var showConfirm = false
   
@@ -35,12 +36,15 @@ struct CheckInView: View {
         in: ...Date.now,
         displayedComponents: .hourAndMinute
       ) {
-        Text("checkin.arrival",
-             comment: "Time of arrival")
+        Text("checkin.arrival", comment: "Time of arrival")
       }
       .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
       Button(action: {
-        stay.checkIn(reservation: reservation)
+        reservation.checkedIn = true
+        reservation.guestName = sdkModel.currentUser?.name
+        reservation.guestEmail = sdkModel.currentUser?.email
+        reservation.guestClientId = sdkModel.currentUser?.clientID
+        stayModel.checkIn(reservation: reservation)
         showConfirm.toggle()
       }, label: {
         HStack {
@@ -59,12 +63,13 @@ struct CheckInView: View {
       Spacer()
     }
     .sheet(isPresented: $showConfirm) {
-      CheckInConfirmView()
+      CheckInConfirmView(reservation: reservation)
     }
   }
 }
 
 #Preview {
   CheckInView(reservation: Reservation.sampleData)
-    .environment(StayManager.shared)
+    .environment(StayModel())
+    .environment(AdvantageSdkModel())
 }

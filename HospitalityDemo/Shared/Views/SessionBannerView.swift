@@ -6,14 +6,14 @@
 import SwiftUI
 
 struct SessionBannerView: View {
-  @Environment(UserManager.self) private var user
+  let guestName: String
   
   @SwiftUI.State private var showSettings = false
   
   var body: some View {
     VStack {
       HStack {
-        Text("Welcome, \(user.name ?? "Guest")!")
+        Text("Welcome, \(guestName)!")
         Spacer()
         SessionBannerMenu(showSettings: $showSettings)
       }
@@ -31,6 +31,5 @@ struct SessionBannerView: View {
 }
 
 #Preview {
-  SessionBannerView()
-    .environment(UserManager.shared)
+  SessionBannerView(guestName: "Honored Guest")
 }
