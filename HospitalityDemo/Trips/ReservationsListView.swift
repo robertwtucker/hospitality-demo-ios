@@ -19,18 +19,16 @@ struct ReservationsListView: View {
         .font(.title2)
         .bold()
       ScrollView {
-        ForEach(stayModel.reservations) { reservation in
-          NavigationLink {
-            CheckInView(reservation: reservation)
-          } label: {
-            ReservationCardView(reservation: reservation)
-              .padding(.top, 8)
+        VStack(spacing: 8) {
+          ForEach(stayModel.reservations) { reservation in
+            NavigationLink {
+              CheckInView(reservation: reservation)
+            } label: {
+              ReservationCardView(reservation: reservation)
+            }
           }
         }
       }
-      .buttonStyle(.plain)
-      .scrollIndicators(.hidden)
-      .toolbar(.hidden)
       .overlay {
         if stayModel.reservations.count == 0 {
           ContentUnavailableView {
