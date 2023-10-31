@@ -11,6 +11,17 @@ struct CheckInView: View {
   
   @SwiftUI.State var reservation: Reservation
   @SwiftUI.State private var arrivalTime = Date.now
+  
+  let dateRange: ClosedRange<Date> = {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.year, .month, .day, .hour], from: Date.now)
+    let startComponents = DateComponents(year: components.year, month: components.month, day: components.day, hour: (components.hour ?? 0) + 1, minute: 0)
+    let endComponents = DateComponents(year: components.year, month: components.month, day: components.day, hour: 23, minute: 59)
+    return calendar.date(from:startComponents)!
+    ...
+    calendar.date(from:endComponents)!
+    }()
+  
   @SwiftUI.State private var showConfirm = false
   
   var body: some View {
@@ -33,7 +44,7 @@ struct CheckInView: View {
       .padding(.bottom, 20)
       DatePicker(
         selection: $arrivalTime,
-        in: ...Date.now,
+        in: dateRange,
         displayedComponents: .hourAndMinute
       ) {
         Text("checkin.arrival", comment: "Time of arrival")
