@@ -40,6 +40,18 @@ extension Reservation: Identifiable {
   public var id: Int { _id }
 }
 
+// MARK: - Hashable
+
+extension Reservation: Hashable {
+  public static func == (lhs: Reservation, rhs: Reservation) -> Bool {
+    return lhs._id == rhs._id
+  }
+  
+  public func hash(into hasher: inout Hasher) {
+      hasher.combine(_id)
+  }
+}
+
 // MARK: - Sample Data
 
 extension Reservation {

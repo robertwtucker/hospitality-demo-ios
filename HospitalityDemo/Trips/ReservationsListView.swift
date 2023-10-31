@@ -8,11 +8,10 @@ import SwiftUI
 struct ReservationsListView: View {
   @Environment(StayModel.self) private var stayModel
   
-  @SwiftUI.State private var arrivalTime = Date.now
-  @SwiftUI.State private var showDetails = false
+  @SwiftUI.State private var presentedReservations: Reservations = []
   
   var body: some View {
-    NavigationStack {
+    NavigationStack(path: $presentedReservations) {
       Text("reservations.list.title")
         .foregroundStyle(Color("brand/brown"))
         .padding(.top, 20)
@@ -21,11 +20,12 @@ struct ReservationsListView: View {
       ScrollView {
         VStack(spacing: 8) {
           ForEach(stayModel.reservations) { reservation in
-            NavigationLink {
-              CheckInView(reservation: reservation)
-            } label: {
+            NavigationLink(value: reservation) {
               ReservationCardView(reservation: reservation)
             }
+          }
+          .navigationDestination(for: Reservation.self) { reservation in
+            CheckInView(reservation: reservation)
           }
         }
       }
@@ -46,10 +46,14 @@ struct ReservationsListView: View {
       .refreshable {
         await stayModel.loadReservations()
       }
+      .onChange(of: stayModel.checkedIn) {
+        presentedReservations = []
+      }
     }
   }
 }
 
 #Preview {
   ReservationsListView()
+    .environment(StayModel())
 }
