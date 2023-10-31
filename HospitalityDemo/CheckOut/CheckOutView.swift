@@ -26,15 +26,18 @@ struct CheckOutView: View {
           .resizable()
           .aspectRatio(contentMode: .fit)
           .frame(maxWidth: .infinity)
-        HotelBannerView(reservation: stayModel.currentStay!.reservation)
+        HotelBannerView(
+          reservation: stayModel.currentStay?.reservation ?? Reservation.empty)
       }
       VStack(spacing: 32) {
-        Text("checkout.title", comment: "Checkout view title")
+        Text("checkout.title",
+             comment: "Checkout view title")
           .font(.title)
           .padding(.top, 32)
           .foregroundColor(Color("brand/brown"))
         VStack(alignment: .leading) {
-          Text("checkout.feedback", comment: "Prompt to leave feedback for hotel")
+          Text("checkout.feedback",
+               comment: "Prompt to leave feedback for hotel")
             .font(.footnote)
           ZStack {
             RoundedRectangle(cornerRadius: 10)
@@ -53,7 +56,9 @@ struct CheckOutView: View {
             .foregroundColor(feedback.count <= maxCharacters ? .gray : .red)
             .frame(maxWidth: .infinity, alignment: .trailing)
         }
-        Toggle(String(localized: "checkout.sendEmail", comment: "Prompt to send document in email"), isOn: $sendEmail)
+        Toggle(String(localized: "checkout.sendEmail",
+                      comment: "Prompt to send document in email"),
+               isOn: $sendEmail)
         Button {
           Task {
             isProcessing.toggle()
