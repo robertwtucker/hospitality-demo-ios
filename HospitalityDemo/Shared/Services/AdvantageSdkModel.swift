@@ -170,7 +170,11 @@ import OSLog
     UserPreferences.shared.clientId = sessionInfo.clientID!
     logger.info("Setting up for user: \(sessionInfo.name!) (\(sessionInfo.email!))")
 #if !targetEnvironment(simulator)
-    UIApplication.shared.registerForRemoteNotifications()
+    Task {
+      await MainActor.run(body: {
+        UIApplication.shared.registerForRemoteNotifications()
+      })
+    }
 #endif
     Task {
       await self.loadDocuments()
