@@ -13,6 +13,9 @@ struct CheckOutView: View {
   @SwiftUI.State private var sendEmail = false
   @SwiftUI.State private var showConfirm = false
   @SwiftUI.State private var feedback = ""
+  
+  @FocusState private var feedbackIsFocused: Bool
+  
   let maxCharacters = 255
   
   private let logger = Logger(
@@ -46,6 +49,14 @@ struct CheckOutView: View {
                 .stroke(Color("brand/brown"))
                 .frame(height: 100)
               TextEditor(text: $feedback)
+                .focused($feedbackIsFocused)
+                .onChange(of: feedback) {
+                  guard let newValueLastChar = feedback.last else { return }
+                  if newValueLastChar == "\n" {
+                    feedback.removeLast()
+                    feedbackIsFocused = false
+                  }
+                }
                 .padding(5)
                 .scrollContentBackground(.hidden)
                 .foregroundColor(Color(UIColor.secondaryLabel))
