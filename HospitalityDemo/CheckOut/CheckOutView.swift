@@ -4,7 +4,6 @@
 //
 
 import SwiftUI
-import os
 
 struct CheckOutView: View {
   @Environment(StayModel.self) private var stayModel
@@ -17,10 +16,6 @@ struct CheckOutView: View {
   @FocusState private var feedbackIsFocused: Bool
   
   let maxCharacters = 255
-  
-  private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: CheckOutView.self))
   
   var body: some View {
     ScrollView {

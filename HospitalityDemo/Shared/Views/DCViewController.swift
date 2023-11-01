@@ -4,15 +4,15 @@
 //
 
 import UIKit
-import os
+import OSLog
 
 class DCViewController: UIViewController {
   var document: DocumentInfo?
   var documentViewStateDelegate: AdvantageSdkDocumentViewStateTracking?
   
   private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: AppDelegate.self))
+    subsystem: K.Logging.bundleIdentifier,
+    category: K.Logging.sdk)
   
   override func viewDidLoad() {
     super.viewDidLoad()
