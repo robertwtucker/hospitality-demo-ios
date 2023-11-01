@@ -13,7 +13,7 @@ struct ReservationsListView: View {
   var body: some View {
     NavigationStack(path: $presentedReservations) {
       Text("reservations.list.title")
-        .foregroundStyle(Color("brand/brown"))
+        .foregroundStyle(Color(K.Colors.brown))
         .padding(.top, 20)
         .font(.title2)
         .bold()

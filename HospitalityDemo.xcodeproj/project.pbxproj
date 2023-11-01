@@ -227,17 +227,17 @@
 		099AC4302AB4E58E0023D8B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EBF7ACAA2AB8935E00731645 /* HotelBannerView.swift */,
-				099AC43D2AB7D21A0023D8B3 /* LoadingView.swift */,
 				099AC43F2AB7D4C40023D8B3 /* LoginView.swift */,
-				099AC4422AB7D8180023D8B3 /* WebView.swift */,
+				EBF7ACAA2AB8935E00731645 /* HotelBannerView.swift */,
 				EBF7ACA82AB8905C00731645 /* SessionBannerView.swift */,
 				09B727E32AD4548A006BDA40 /* SessionBannerMenu.swift */,
-				09B490012ACCDF2D00273F0E /* ErrorView.swift */,
 				0967352F2AD0CA3B00C6AEE0 /* DocumentView.swift */,
 				096735392AD36EBC00C6AEE0 /* DCViewController.swift */,
 				09B727E52AD45684006BDA40 /* SettingsView.swift */,
 				097FB7222AD8D68900305AE0 /* RatingView.swift */,
+				09B490012ACCDF2D00273F0E /* ErrorView.swift */,
+				099AC43D2AB7D21A0023D8B3 /* LoadingView.swift */,
+				099AC4422AB7D8180023D8B3 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

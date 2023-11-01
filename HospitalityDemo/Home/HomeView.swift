@@ -33,19 +33,25 @@ struct HomeView: View {
           .font(.title)
           .bold()
       }
-      .foregroundColor(Color("brand/turquoise"))
+      .foregroundColor(Color(K.Colors.turquoise))
       Spacer()
       HStack {
         Spacer()
-        MenuButton(title: String(localized: "home.button.open", comment: "'Open Door' menu button label") , icon: Image(systemName: "lock.open.rotation"))
+        MenuButton(title: String(localized: "home.button.open",
+                                 comment: "'Open Door' menu button label"),
+                   icon: Image(systemName: "lock.open.rotation"))
         Spacer()
-        MenuButton(title: String(localized: "home.button.dining", comment: "'Dining' menu button label"), icon: Image(systemName: "fork.knife"))
+        MenuButton(title: String(localized: "home.button.dining", 
+                                 comment: "'Dining' menu button label"),
+                   icon: Image(systemName: "fork.knife"))
         Spacer()
-        MenuButton(title: String(localized: "home.button.staff", comment: "'Staff' menu button label"), icon: Image(systemName: "person.wave.2.fill"))
+        MenuButton(title: String(localized: "home.button.staff", 
+                                 comment: "'Staff' menu button label"),
+                   icon: Image(systemName: "person.wave.2.fill"))
         Spacer()
       }
       Spacer()
-      Image("general/dayOff")
+      Image(K.Images.General.dayOff)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: UIScreen.main.bounds.size.width - 100)
@@ -64,21 +70,21 @@ struct HomeView: View {
             .frame(width: 15, height: 15, alignment: .center)
             .frame(minWidth: 0, maxWidth: 15)
             .frame(minHeight: 0, maxHeight: 15)
-            .foregroundColor(Color("brand/brown"))
+            .foregroundColor(Color(K.Colors.brown))
           TextField("home.search.prompt", text: $searchText, prompt: Text("home.search.prompt").foregroundColor(Color(UIColor.label)))
             .font(.footnote)
-            .foregroundColor(Color("brand/brown"))
+            .foregroundColor(Color(K.Colors.brown))
         }
         .padding()
         .overlay(
           RoundedRectangle(cornerRadius: 10.0)
-            .strokeBorder(Color("brand/brown"), style: StrokeStyle(lineWidth: 2))
+            .strokeBorder(Color(K.Colors.brown), style: StrokeStyle(lineWidth: 2))
         )
         .padding()
         Spacer(minLength: 20)
       }
       Spacer()
-      Image("general/travel")
+      Image(K.Images.General.travel)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: UIScreen.main.bounds.size.width - 100)
@@ -94,13 +100,14 @@ struct LogoCircle: View {
       VStack {
         Circle()
           .trim(from: 0, to: 0.5)
-          .fill(Color("brand/brown"))
+          .fill(Color(K.Colors.brown))
           .frame(width: UIScreen.main.bounds.size.width + 200)
           .padding(.top, -(UIScreen.main.bounds.size.width))
-          .shadow(color: Color("brand/turquoise").opacity(0.75), radius: 10, x: 0, y: 0)
+          .shadow(color: Color(K.Colors.turquoise).opacity(0.75),
+                  radius: 10, x: 0, y: 0)
       }
       VStack {
-        Image("hotel/logo_white")
+        Image(K.Images.Hotel.logo_white)
           .resizable()
           .aspectRatio(contentMode: .fit)
           .padding(.top, -30)
@@ -120,20 +127,20 @@ struct MenuButton: View {
   
   var body: some View {
     Button(action: {
-      print(#function)
+      // Not Implemented
     }) {
       ZStack {
         RoundedRectangle(cornerRadius: 10)
-          .fill(Color("brand/brown").opacity(0.25))
-          .stroke(Color("brand/brown"))
+          .fill(Color(K.Colors.brown).opacity(0.25))
+          .stroke(Color(K.Colors.brown))
         VStack {
           icon
             .resizable()
-            .foregroundColor(Color("brand/turquoise"))
+            .foregroundColor(Color(K.Colors.turquoise))
             .aspectRatio(contentMode: .fit)
             .frame(width: 30, height: 30)
           Text(title)
-            .foregroundColor(Color("brand/turquoise"))
+            .foregroundColor(Color(K.Colors.turquoise))
             .multilineTextAlignment(.center)
             .padding(.top, 5)
             .font(.footnote)

@@ -18,58 +18,62 @@ struct CheckInConfirmView: View {
         .frame(maxWidth: .infinity)
       VStack {
         VStack(alignment: .center, spacing: 8) {
-          Text("checkin.confirm.checkedin", comment: "All Checked In!")
+          Text("checkin.confirm.checkedin", 
+               comment: "All Checked In!")
             .font(.title)
             .foregroundStyle(Color(UIColor.secondaryLabel))
           Text(reservation.hotel.name)
             .font(.headline)
-            .foregroundStyle(Color("brand/aqua"))
+            .foregroundStyle(Color(K.Colors.aqua))
             .bold()
           Text("checkin.confirm.room42")
             .font(.subheadline)
-            .foregroundStyle(Color("brand/aqua"))
+            .foregroundStyle(Color(K.Colors.aqua))
             .bold()
         }
         .padding(.bottom, 10)
       }
       .frame(maxWidth: .infinity)
     }
-    .background(Color("brand/beige").opacity(0.4))
+    .background(Color(K.Colors.beige).opacity(0.4))
     .ignoresSafeArea()
     Form {
       Section(header: Text("checkin.confirm.actions")) {
         Button(action: {}) {
           HStack {
             Image(systemName: "ellipsis.bubble")
-              .foregroundColor(Color("brand/turquoise"))
+              .foregroundColor(Color(K.Colors.turquoise))
               .padding(.trailing, 8)
               .font(.title2)
-            Text("checkin.confirm.actions.chat", comment: "Chat With Us")
+            Text("checkin.confirm.actions.chat", 
+                 comment: "Chat With Us")
           }
         }
-        .foregroundColor(Color("brand/turquoise"))
+        .foregroundColor(Color(K.Colors.turquoise))
         .padding(.vertical, 8)
         Button(action: {}) {
           HStack {
             Image(systemName: "bell")
-              .foregroundColor(Color("brand/turquoise"))
+              .foregroundColor(Color(K.Colors.turquoise))
               .padding(.trailing, 8)
               .font(.title2)
-            Text("checkin.confirm.actions.requests", comment: "Service Requests")
+            Text("checkin.confirm.actions.requests", 
+                 comment: "Service Requests")
           }
         }
-        .foregroundColor(Color("brand/turquoise"))
+        .foregroundColor(Color(K.Colors.turquoise))
         .padding(.vertical, 8)
         Button(action: {}) {
           HStack {
             Image(systemName: "fork.knife")
-              .foregroundColor(Color("brand/turquoise"))
+              .foregroundColor(Color(K.Colors.turquoise))
               .padding(.trailing, 8)
               .font(.title2)
-            Text("checkin.confirm.actions.order", comment: "Browse & Order Food")
+            Text("checkin.confirm.actions.order", 
+                 comment: "Browse & Order Food")
           }
         }
-        .foregroundColor(Color("brand/turquoise"))
+        .foregroundColor(Color(K.Colors.turquoise))
         .padding(.vertical, 8)
       }
       Button {

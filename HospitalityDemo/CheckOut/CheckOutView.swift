@@ -21,7 +21,7 @@ struct CheckOutView: View {
     ScrollView {
       VStack {
         VStack {
-          Image("general/checkOut")
+          Image(K.Images.General.checkOut)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(maxWidth: .infinity)
@@ -33,15 +33,15 @@ struct CheckOutView: View {
                comment: "Checkout view title")
           .font(.title)
           .padding(.top, 32)
-          .foregroundColor(Color("brand/brown"))
+          .foregroundColor(Color(K.Colors.brown))
           VStack(alignment: .leading) {
             Text("checkout.feedback",
                  comment: "Prompt to leave feedback for hotel")
             .font(.footnote)
             ZStack {
               RoundedRectangle(cornerRadius: 10)
-                .fill(Color("brand/brown").opacity(0.25))
-                .stroke(Color("brand/brown"))
+                .fill(Color(K.Colors.brown).opacity(0.25))
+                .stroke(Color(K.Colors.brown))
                 .frame(height: 100)
               TextEditor(text: $feedback)
                 .focused($feedbackIsFocused)
@@ -86,7 +86,7 @@ struct CheckOutView: View {
               Spacer()
             }
           }
-          .background(Color("brand/turquoise"))
+          .background(Color(K.Colors.turquoise))
           .foregroundColor(.white)
           .buttonStyle(.bordered)
           .controlSize(.large)

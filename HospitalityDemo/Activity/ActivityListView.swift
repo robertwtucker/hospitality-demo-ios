@@ -11,7 +11,7 @@ struct ActivityListView: View {
   var body: some View {
     NavigationStack {
       Text("activity.list.title")
-        .foregroundStyle(Color("brand/brown"))
+        .foregroundStyle(Color(K.Colors.brown))
         .padding(.top, 20)
         .font(.title2)
         .bold()
