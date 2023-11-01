@@ -9,9 +9,10 @@ struct CheckInView: View {
   @Environment(StayModel.self) private var stayModel
   @Environment(AdvantageSdkModel.self) private var sdkModel
   
-  @SwiftUI.State var reservation: Reservation
   @SwiftUI.State private var arrivalTime = Date.now
+  @SwiftUI.State private var showConfirm = false
   
+  let reservation: Reservation
   let dateRange: ClosedRange<Date> = {
     let calendar = Calendar.current
     let components = calendar.dateComponents([.year, .month, .day, .hour], from: Date.now)
@@ -30,9 +31,7 @@ struct CheckInView: View {
     return calendar.date(from:startComponents)!
     ...
     calendar.date(from:endComponents)!
-    }()
-  
-  @SwiftUI.State private var showConfirm = false
+  }()
   
   var body: some View {
     VStack {
@@ -61,11 +60,12 @@ struct CheckInView: View {
       }
       .frame(maxWidth: UIScreen.main.bounds.size.width - 50)
       Button(action: {
-        reservation.checkedIn = true
-        reservation.guestName = sdkModel.currentUser?.name
-        reservation.guestEmail = sdkModel.currentUser?.email
-        reservation.guestClientId = sdkModel.currentUser?.clientID
-        stayModel.checkIn(reservation: reservation)
+        var tempRes = reservation
+        tempRes.checkedIn = true
+        tempRes.guestName = sdkModel.currentUser?.name
+        tempRes.guestEmail = sdkModel.currentUser?.email
+        tempRes.guestClientId = sdkModel.currentUser?.clientID
+        stayModel.checkIn(reservation: tempRes)
         showConfirm.toggle()
       }, label: {
         HStack {
