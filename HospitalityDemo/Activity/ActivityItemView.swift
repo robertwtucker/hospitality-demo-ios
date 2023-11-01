@@ -13,14 +13,14 @@ struct ActivityItemView: View {
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 10)
-        .fill(Color("brand/sand").opacity(0.4))
+        .fill(Color(K.Colors.sand).opacity(0.4))
       HStack {
         VStack {
           ZStack {
             RoundedRectangle(cornerRadius: 10)
-              .fill(Color("brand/brown"))
+              .fill(Color(K.Colors.brown))
             RoundedRectangle(cornerRadius: 0)
-              .fill(Color("brand/brown"))
+              .fill(Color(K.Colors.brown))
               .padding(.leading, 10)
             VStack {
               Text("\(activity.points!)", comment: "Points value")
@@ -29,7 +29,7 @@ struct ActivityItemView: View {
               Text("activity.points", comment: "'Points' label")
                 .font(.footnote)
             }
-            .foregroundColor(Color("brand/beige"))
+            .foregroundColor(Color(K.Colors.beige))
           }
         }
         .frame(maxWidth: 75)

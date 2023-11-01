@@ -11,7 +11,7 @@ struct CheckOutConfirmView: View {
   var body: some View {
       VStack(spacing: 32) {
         Spacer()
-        Image("general/checkOutConfirm")
+        Image(K.Images.General.checkOutConfirm)
           .resizable()
           .aspectRatio(contentMode: .fit)
           .frame(maxWidth: .infinity)
@@ -22,7 +22,7 @@ struct CheckOutConfirmView: View {
         } label: {
           Text("button.ok")
         }
-        .background(Color("brand/aqua"))
+        .background(Color(K.Colors.aqua))
         .foregroundColor(.white)
         .buttonStyle(.bordered)
         .controlSize(.large)

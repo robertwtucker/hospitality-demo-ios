@@ -10,7 +10,7 @@ struct HotelBannerView: View {
   
   var body: some View {
     HStack {
-      Image("hotel/logo")
+      Image(K.Images.Hotel.logo)
         .padding(.leading, 20)
         .frame(height: 25)
         .aspectRatio(contentMode: .fit)

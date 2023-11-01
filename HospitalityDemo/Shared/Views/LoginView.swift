@@ -29,7 +29,7 @@ struct LoginView: View {
   
   var body: some View {
     NavigationStack {
-      Image("general/traveling")
+      Image(K.Images.General.traveling)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(maxWidth: .infinity)
