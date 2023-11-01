@@ -4,14 +4,9 @@
 //
 
 import SwiftUI
-import os
 
 struct ActivityListView: View {
   @Environment(AdvantageSdkModel.self) private var sdkModel
-  
-  private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: ActivityListView.self))
   
   var body: some View {
     NavigationStack {
@@ -64,7 +59,6 @@ struct ActivityListView: View {
     }
     .padding(.horizontal, 0)
   }
-  
 }
 
 #Preview {

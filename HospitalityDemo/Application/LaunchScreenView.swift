@@ -15,21 +15,12 @@ enum LaunchScreenState {
   var state: LaunchScreenState = .loading
   
   func dismiss() {
-    print("Launch screen dismissed")
     state = .finished
   }
 }
 
 struct LaunchScreenView: View {
   @Environment(LaunchScreenManager.self) private var launchScreen
-  
-  private var launchScreenState: Binding<LaunchScreenState> {
-    Binding {
-      launchScreen.state
-    } set: { newValue in
-      launchScreen.state = newValue
-    }
-  }
   
   private var avPlayer: AVPlayer {
     let player = AVPlayer(url:  Bundle.main.url(forResource: "splashVideo", withExtension: "mp4")!)
@@ -52,7 +43,6 @@ struct LaunchScreenView: View {
             }
           }
       }
-      
     }
     .ignoresSafeArea()
   }

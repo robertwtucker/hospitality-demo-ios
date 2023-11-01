@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import os
+import OSLog
 
 struct GenerateClient {
   enum Endpoint {
@@ -24,8 +24,8 @@ struct GenerateClient {
   }
   
   private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: GenerateClient.self))
+    subsystem: K.Logging.bundleIdentifier,
+    category: K.Logging.services)
   
   func send(_ endpoint: Endpoint) async -> GenerateResponse? {
     switch endpoint {
@@ -62,7 +62,7 @@ struct GenerateClient {
     do {
       logger.debug("\(request.httpMethod!) \(request.url!)")
       let (data, _) = try await URLSession.shared.data(for: request)
-      print("Response: \(String(decoding: data, as: UTF8.self))")
+      logger.debug("Raw response: \(String(decoding: data, as: UTF8.self))")
       response = try JSONDecoder().decode(GenerateResponse.self, from: data)
       logger.debug("Generate result: \(response!.status), job: \(response?.id ?? "n/a")")
     } catch {

@@ -51,6 +51,7 @@
 		E1003D412AE6C3160040081C /* AdvantageSdkLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1003D402AE6C3160040081C /* AdvantageSdkLite.xcframework */; };
 		E1003D462AE87D3C0040081C /* AdvantageSdkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1003D452AE87D3C0040081C /* AdvantageSdkModel.swift */; };
 		E1003D482AEEC4360040081C /* CloudConfigSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1003D472AEEC4360040081C /* CloudConfigSettings.swift */; };
+		E17900532AF1BE3100E2D859 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17900522AF1BE3100E2D859 /* AppConstants.swift */; };
 		EB1292A72AD5B4F10000AB85 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1292A62AD5B4F10000AB85 /* HomeView.swift */; };
 		EB2513552ABB7BE9003AF103 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2513542ABB7BE9003AF103 /* CheckInView.swift */; };
 		EB4FD0C32ACF5DF1009B1D2C /* reservations.json in Resources */ = {isa = PBXBuildFile; fileRef = EB4FD0C22ACF5DF1009B1D2C /* reservations.json */; };
@@ -129,6 +130,7 @@
 		E1003D402AE6C3160040081C /* AdvantageSdkLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AdvantageSdkLite.xcframework; path = HospitalityDemo/Shared/Libraries/AdvantageSdkLite.xcframework; sourceTree = "<group>"; };
 		E1003D452AE87D3C0040081C /* AdvantageSdkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvantageSdkModel.swift; sourceTree = "<group>"; };
 		E1003D472AEEC4360040081C /* CloudConfigSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudConfigSettings.swift; sourceTree = "<group>"; };
+		E17900522AF1BE3100E2D859 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		EB1292A62AD5B4F10000AB85 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB2513542ABB7BE9003AF103 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		EB4FD0C22ACF5DF1009B1D2C /* reservations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reservations.json; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				099B12672AB201A000DA4B8F /* ContentView.swift */,
 				097FB72C2AD9C41F00305AE0 /* LaunchScreenView.swift */,
 				097FB7242AD8F5A900305AE0 /* Tabs.swift */,
+				E17900522AF1BE3100E2D859 /* AppConstants.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				EBF7ACAB2AB8935E00731645 /* HotelBannerView.swift in Sources */,
 				099AC4402AB7D4C40023D8B3 /* LoginView.swift in Sources */,
 				099AC43E2AB7D21A0023D8B3 /* LoadingView.swift in Sources */,
+				E17900532AF1BE3100E2D859 /* AppConstants.swift in Sources */,
 				09B490022ACCDF2D00273F0E /* ErrorView.swift in Sources */,
 				097FB7292AD999FE00305AE0 /* ActivityItemView.swift in Sources */,
 				097C72242ADD85DA007398A5 /* UIApplication+Version.swift in Sources */,

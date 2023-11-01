@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-import os
+import OSLog
 import UserNotifications
 
 @main
@@ -17,10 +17,6 @@ struct HospitalityDemoApp: App {
   @SwiftUI.State private var sdkModel = AdvantageSdkModel()
   @SwiftUI.State private var stayModel = StayModel()
   @SwiftUI.State private var userPreferences = UserPreferences.shared
-  
-  private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: AppDelegate.self))
   
   var body: some Scene {
     WindowGroup {
@@ -79,8 +75,8 @@ struct HospitalityDemoApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: AppDelegate.self))
+    subsystem: K.Logging.bundleIdentifier,
+    category: K.Logging.delegate)
   
   private var sdk: AdvantageSDK {
     return AdvantageSDK.sharedInstance()

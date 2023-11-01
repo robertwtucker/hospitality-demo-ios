@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-import os
+import OSLog
 
 struct LoginView: View {
   @Environment(\.dismiss) private var dismiss
@@ -20,8 +20,8 @@ struct LoginView: View {
   @FocusState private var isUsernameFocused: Bool
   
   private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: LoginView.self))
+    subsystem: K.Logging.bundleIdentifier,
+    category: K.Logging.sdk)
   
   private var isLoginDisabled: Bool {
     [username, password].contains(where: \.isEmpty)

@@ -12,10 +12,8 @@ import OSLog
   private var cloudConfig = CloudConfigSettings.shared.cloudConfig
   
   private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: AdvantageSdkModel.self))
-  
-  init() { }
+    subsystem: K.Logging.bundleIdentifier,
+    category: K.Logging.sdk)
   
   public var isSignedIn: Bool {
     currentUser != nil
@@ -96,7 +94,7 @@ import OSLog
     Task {
       await withCheckedContinuation { continuation in
         AdvantageSDK.sharedInstance().authenticationService.logout { error in
-          print("Logged out \(error == nil ? "successfully" : "with error: \(String(describing: error))")")
+          self.logger.info("Logged out \(error == nil ? "successfully" : "with error: \(String(describing: error))")")
           continuation.resume()
         }
       }
@@ -107,7 +105,7 @@ import OSLog
   public func loadDocuments() async {
     do {
       documents = try await fetchRemoteDocuments()
-      logger.debug("Fetch returned \(self.documents.count) documents (rewards)")
+      logger.debug("Fetch returned \(self.documents.count) documents")
     } catch {
       logger.error("Error loading remote documents: \(error)")
     }

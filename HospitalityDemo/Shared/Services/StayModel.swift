@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import os
+import OSLog
 
 @Observable public class StayModel {
   public var currentStay: Stay?
@@ -12,10 +12,8 @@ import os
   private var cloudConfig = CloudConfigSettings.shared.cloudConfig
   
   private let logger = Logger(
-    subsystem: Bundle.main.bundleIdentifier!,
-    category: String(describing: CheckOutView.self))
-  
-  public init() { }
+    subsystem: K.Logging.bundleIdentifier,
+    category: K.Logging.model)
   
   public var checkedIn: Bool {
     currentStay != nil ? true : false
