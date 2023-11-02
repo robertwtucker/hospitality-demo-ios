@@ -11,15 +11,16 @@ enum LaunchScreenState {
   case loading, playing, finished
 }
 
+@MainActor
 @Observable final class LaunchScreenManager: NSObject {
-  var state: LaunchScreenState = .loading
+  private(set) var state: LaunchScreenState = .loading
   
   func dismiss() {
     state = .finished
   }
 }
 
-struct LaunchScreenView: View {
+struct LaunchScreen: View {
   @Environment(LaunchScreenManager.self) private var launchScreen
   
   private var avPlayer: AVPlayer {
@@ -37,9 +38,11 @@ struct LaunchScreenView: View {
           .ignoresSafeArea()
           .frame(width: proxy.size.height * 16 / 9, height: proxy.size.height)
           .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
-          .onReceive(complete) { (output) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-              launchScreen.dismiss()
+          .onReceive(complete) { _ in
+            Task {
+              await MainActor.run {
+                launchScreen.dismiss()
+              }
             }
           }
       }
